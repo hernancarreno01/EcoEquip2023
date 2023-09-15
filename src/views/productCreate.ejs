@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('./partials/head.ejs') %>
+
+        <link rel="stylesheet" href="/css/styleproductCreate.css" />
+
+        <title>EcoEquip - Home</title>
+
+</head>
+
+<body>
+
+    <%- include('./partials/header.ejs') %>
+
+        <div class='containerCreate'>
+            <h3>CREAR NUEVO PRODUCTO</h3>
+            <div class='containerForm'>
+                <div>
+                    <form action="/productCreate" method="POST" enctype="multipart/form-data" >
+
+                        <input type="text" id="nombre" name="nombre" required placeholder="Nombre del Producto"><br><br>
+                
+                        <select class='selector' id="categoria" name="categoria" required>
+                            <option value="" disabled selected>Seleccionar Categoría de Producto</option>
+                            <option value="taza" name="taza">Taza</option>
+                            <option value="botella" name="botella">Botella</option>
+                            <option value="kids" name="kids">Kids</option>
+                            <option value="altaCapacidad" name="altaCapacidad">Alta Capacidad</option>
+                            <option value="coleccion" name="coleccion">Colección "Japan"</option>
+                            <option value="fastflip" name="fastflip">Fast Flip</option>
+                            <option value="ofertas" name="ofertas">Ofertas</option>
+                        </select><br><br>
+            
+                        <input type="text" id="descripcion" name="descripcion" required placeholder="Descripción"><br><br>
+                
+                        <input type="number" id="precio" name="precio" step="0.01" required placeholder="Precio"><br><br>
+                    
+                        <input class='selector' type="file" id="imagen_principal" name="imagen_principal" accept="image/" multiple required><br><br>
+
+                        <!--<input class='selector' type="file" id="imagen_color1" name="imagen_color1" accept="image/"><br><br>
+
+                        <input class='selector' type="file" id="imagen_color2" name="imagen_color2" accept="image/*"><br><br>-->
+
+                       
+                    <div class="signinForm">
+                        <button type="submit">Guardar Edición</button>
+                        <button type="button">Preview</button>
+                        <button type="reset" >Borrar Datos</button>
+                    </div>
+                    </form>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <%- include('./partials/footer.ejs') %>
+
+</body>
+
+</html>

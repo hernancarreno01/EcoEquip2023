@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs') %>
+
+    <title>EcoEquip - Usuarios</title>
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <div  class="table">
+        <h2>Lista de Usuarios</h2>
+        <thead>
+          </thead>
+          <br>
+          <tbody>
+            <section class="userList">
+              <% listadoUsuarios.forEach(function(usuario) { %>
+                <div class="userProfile">
+                  <ul><hr class="rounded">
+                    <li class="userTitle"><th>Foto de Perfil: </th></li>
+                    <li class="userInfo"><td>   <img class="UserImg" src="<%= usuario.avatar%>" />    </td></li>
+                    <li class="userTitle"><th>Nombre de Usuario: </th></li>
+                    <li class="userInfo"><td><%= usuario.userName %></td></li>
+                    <li class="userTitle"><th>Nombre: </th></li>
+                    <li class="userInfo"><td><%= usuario.firstName %></td></li>
+                    <li class="userTitle"><th>Apellido: </th></li>
+                    <li class="userInfo"><td><%= usuario.lastName %></td></li>
+                    <li class="userTitle"><th>Correo Electrónico: </th></li>
+                    <li class="userInfo"><td><%= usuario.email %></td></li>
+                    <li class="userTitle"><th>Rol: </th>   </li>
+                    <li class="userInfo"><td><%= usuario.role %></td></li>
+                    <li class="userTitle"><th>Borrado?: </th></li>
+                    <li class="userInfo"><td><%= usuario.deleted %></td></li>
+                  </ul>
+                 </div> 
+                </tr><br>
+              <% }); %>
+          </section>
+          </tbody>
+        </table>
+    </div>
+    
+    
+    
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

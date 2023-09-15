@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <%- include('./partials/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/styleproductCart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <title>EcoEquip - Carrito de compras</title>
+</head>
+
+<body>
+
+  <%- include('./partials/header.ejs') %>
+
+    <!-- CARRITO DE COMPRAS -->
+    <div>
+      <h1 class="Heading-1">Tu carrito de compras</h1>
+
+      <div class="container">
+        <div class="step active" id="step1">
+          <div class="products">
+            <h2 class="style-titles">Carrito</h2>
+            <!-- PASO 1: PRODUCTOS QUE SE AGREGAN AL CARRITO -->
+            <div class="product">
+              <img src="img\botellasprincipal.png" alt="Botella">
+              <span class="style-names">Botella</span>
+              <span class="style-price">$50</span>
+            </div>
+            <div class="product">
+              <img src="img\tazasprincipal.png" alt="Taza">
+              <span class="style-names">Taza</span>
+              <span class="style-price">$30</span>
+            </div>
+          </div>
+          <!--FIN CARRITO DE COMPRAS  -->
+
+          <!-- RESUMEN DE COMPRA -->
+          <div class="summary">
+            <h2 class="style-titles">Resumen de compras</h2>
+            <div class="total-price-container">
+              <div id="total-sumary">
+                <span class="style-names">Total: </span>
+              </div>
+              <div id="price">
+                <span class="style-price">$80 </span>
+              </div>
+            </div>
+          </div>
+          <div class="container-button">
+            <button class="button">Siguiente</button>
+          </div>
+        </div>
+        <!--FIN RESUMEN DE COMPRA  -->
+
+        <!-- PASO 2: AGREGAR LOS DATOS DE ENVIO -->
+        <div class="step" id="step2">
+          <div class="cardForm">
+            <div class="data">
+              <form class="form">
+                <p h2 class="style-titles">DATOS DE ENVIO</p>
+                <div class="field">
+                  <input type="text" class="input-field" id="name" name="name" placeholder="Nombre" autocomplete="off">
+                </div>
+                <div class="field">
+                  <input type="text" class="input-field" id="surname" name="surname" placeholder="Apellido"
+                    autocomplete="off">
+                </div>
+                <div class="field">
+                  <input type="email" class="input-field" id="email" name="email" placeholder="E-mail"
+                    autocomplete="off">
+                </div>
+                <div class="field">
+                  <input type="text" class="input-field" id="address" name="address" placeholder="Dirección"
+                    autocomplete="off">
+                </div>
+                <div class="field">
+                  <input type="text" class="input-field" id="city" name="city" placeholder="Ciudad" autocomplete="off">
+                </div>
+                <div class="field">
+                  <input type="tel" class="input-field" id="tel" name="tel" placeholder="Movil/WhatsApp"
+                    autocomplete="off">
+                </div>
+            </div>
+          </div>
+          <div class="container-button">
+            <button class="button">Enviar</button>
+          </div>
+          <div>
+            <h3>Newsletter y Promociones</h5>
+              <div>
+                <label for="promociones">
+                  <input type="radio" name="promociones" id="promociones">
+                  Quiero recibir e-mails con promociones
+                </label>
+              </div>
+              <div>
+                <label for="promociones-por-whatsapp">
+                  <input type="radio" name="promociones-por-whatsapp" id="promociones-por-whatsapp">
+                  Quiero recibir ofertas y promociones por WhatsApp
+                </label>
+              </div>
+              <div>
+                <h3>Términos y condiciones</h4>
+                  <label for="termPolitics">
+                    <input type="radio" name="termPolitics" id="termPolitics">
+                    Acepto los
+                    <a href="teminos-y-condiciones">Términos y condiciones</a>
+                    y
+                    <a href="terminos-y-condiciones">Politicas de privacidad</a>
+                  </label>
+              </div>
+          </div>
+          <div class="container-button">
+            <button class="button">Siguiente</button>
+          </div>
+          </form>
+        </div>
+        <!-- PASO 3: FORMA DE PAGO -->
+        <div class="step" id="step3">
+          <h2 class="style-titles">Forma de Pago</h2>
+          <label>
+            <input type="radio" name="payment" value="creditCard" required>
+            Tarjeta de Crédito
+          </label>
+          <label>
+            <input type="radio" name="payment" value="debitCard" required>
+            Tarjeta de Débito
+          </label>
+          <div class="container-button">
+            <button class="button">Volver al Inicio</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+
+  </body>
+</html>

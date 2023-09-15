@@ -1,0 +1,217 @@
+@import "styleproductDetail.css";
+@import "users.css";
+@import "styleproductList.css";
+
+
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap");
+:root {
+  --verde-oscuro: #658864;
+  --verde-oscuro2: #293a28;
+  --verde-claro: #b7b78a;
+  --verde-aqua: #e0ebe5;
+  --gris-oscuro: #dddddd;
+  --gris-claro: #eeeeee;
+  --blanco: #ffffff;
+  --amarillo: #e4cb0c;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Prompt", sans-serif;
+  font-size: 16px;
+  line-height: 1.15;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0.02;
+  line-height: 1.55;
+  color: var(--verde-oscuro2);
+  background-color: var(--gris-claro);
+  font-family: "Prompt", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+}
+
+p,
+li,
+ul,
+pre,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+blockquote,
+figcaption {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.button {
+  color: var(--verde-oscuro);
+  cursor: pointer;
+  display: flex;
+  padding: 0.5rem 1rem;
+  position: relative;
+  box-sizing: border-box;
+  font-style: normal;
+  transition: 0.3s;
+  align-items: flex-start;
+  flex-shrink: 1;
+  font-weight: 500;
+  line-height: 14px;
+  padding-top: 12px;
+  border-color: var(--verde-claro);
+  border-style: solid;
+  border-width: 1px;
+  padding-left: 24px;
+  border-radius: 15px;
+  padding-right: 24px;
+  padding-bottom: 12px;
+  text-decoration: none;
+  background-color: transparent;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.3);
+}
+.button:hover {
+  color: var(--gris-claro);
+  border-color: var(--amarillo);
+  background-color: var(--amarillo);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.input {
+  color: var(--verde-oscuro2);
+  cursor: auto;
+  text-align: left;
+  outline: none;
+  padding: 5px 5px;
+  background-color: var(--gris-claro);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.textarea {
+  color: var(--verde-oscuro);
+  cursor: auto;
+  padding: 0.5rem;
+  border-color: var(--gris-oscuro);
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: var(--gris-claro);
+}
+.list {
+  width: 100%;
+  margin: 1em 0px 1em 0px;
+  display: block;
+  padding: 0px 0px 0px 1.5rem;
+  list-style-type: none;
+  list-style-position: outside;
+}
+.list-item {
+  display: list-item;
+}
+.teleport-show {
+  transform: translateX(0%) !important;
+}
+.section-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  justify-content: center;
+}
+.max-width-container {
+  width: 100%;
+  display: flex;
+  max-width: 1328px;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  flex-direction: column;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.navbar-link {
+  color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+  height: auto;
+  font-size: 13px;
+  text-align: left;
+  transition: 0.3s;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 10px;
+}
+.navbar-link:hover {
+  color: var(--amarillo);
+}
+.navbar-logo-title {
+  color: var(--gris-oscuro);
+  cursor: pointer;
+  height: auto;
+  font-size: 24px;
+  transition: 0.3s;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 500;
+  line-height: 20px;
+  margin-left: 64px;
+  margin-right: 64px;
+  letter-spacing: 0.4em;
+  text-decoration: none;
+}
+.navbar-logo-title:hover {
+  color: rgba(239, 193, 76, 1);
+}
+.Heading-3 {
+  font-size: 24px;
+  font-style: normal;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.4em;
+  text-transform: none;
+  text-decoration: none;
+}
+.Content {
+  font-size: 16px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02;
+  text-transform: none;
+  text-decoration: none;
+}
+.Heading-1 {
+  font-size: 36px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 500;
+  line-height: 47px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.Heading-2 {
+  font-size: 28px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "userName": "Chochi",
+    "firstName": "Evelyn",
+    "lastName": "Cramer",
+    "email": "ecramer0@examiner.com",
+    "adress": "Calle Falsa 123",
+    "city": "SanMi",
+    "password": "iL4/SETiD",
+    "avatar": "/img/avatars/user01.jpeg",
+    "telephone": "12345678",
+    "role": "admin",
+    "deleted": false
+  },
+  {
+    "id": 2,
+    "userName": "Pochi",
+    "firstName": "Krisha",
+    "lastName": "Cormode",
+    "email": "kcormode1@businessinsider.com",
+    "adress": "Calle Falsa 123",
+    "city": "SanMi",
+    "password": "sA3%})+",
+    "avatar": "/img/avatars/user02.jpeg",
+    "telephone": "12345678",
+    "role": "admin",
+    "deleted": false
+  },
+  {
+    "id": 3,
+    "userName": "Pocho",
+    "firstName": "Amber",
+    "lastName": "Fortin",
+    "email": "afortin2@cam.ac.uk",
+    "adress": "Calle Falsa 123",
+    "city": "SanMi",
+    "password": "oM2!RWaL",
+    "avatar": "/img/avatars/defaultAvatar.png",
+    "telephone": "12345678",
+    "role": "usuario",
+    "deleted": false
+  },
+  {
+    "id": 4,
+    "userName": "Tino",
+    "firstName": "Bevon",
+    "lastName": "Dory",
+    "email": "bdory3@eventbrite.com",
+    "adress": "Calle Falsa 123",
+    "city": "SanMi",
+    "password": "tL4,KJ`0",
+    "avatar": "/img/avatars/defaultAvatar.png",
+    "telephone": "12345678",
+    "role": "usuario",
+    "deleted": false
+  },
+  {
+    "id": 5,
+    "userName": "Toto",
+    "firstName": "Beilul",
+    "lastName": "Ibotson",
+    "email": "bibotson4@yahoo.co.jp",
+    "adress": "Calle Falsa 123",
+    "city": "SanMi",
+    "password": "dU1{3GQ",
+    "avatar": "/img/avatars/defaultAvatar.png",
+    "telephone": "12345678",
+    "role": "usuario",
+    "deleted": false
+  }
+]

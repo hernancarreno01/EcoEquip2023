@@ -1,0 +1,21 @@
+{
+  "name": "ecoequip",
+  "version": "1.0.0",
+  "description": "![enter image description here](https://github.com/emirchus/grupo_4_ecoquip/blob/main/Files/bannerreadme.jpg)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node .",
+    "test": "nodemon ./src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.1",
+    "override": "^0.0.1"
+  },
+  "keywords": []
+}

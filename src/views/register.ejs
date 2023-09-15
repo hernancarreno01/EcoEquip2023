@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <%- include('./partials/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/stylelogin.css" />
+
+    <title>EcoEquip - Register</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="mark">
+      <img src="./img/logoEcoEquipParaFondoClaro.png" alt="EcoEquip" />
+    </div>
+    <div class="form">
+      <h2>Creá tu cuenta</h2>
+      <h3>Ingresá tus datos</h3>
+      <form class="signinForm" action="/register" method="post">
+        <input type="text" name="nombre" autocomplete="name" placeholder="Nombre" aria-label="" />
+        <input type="text" name="apellido"  autocomplete="family-name" placeholder="Apellido" aria-label="" />
+        <input type="email" name="email" autocomplete="email" placeholder="Correo" aria-label="" />
+        <input type="password" name="password" autocomplete="new-password" placeholder="Contraseña" />
+
+        <span>Al registrarte aceptas nuestros
+          <a href="/signup">Términos y Condiciones</a></span>
+        <button type="submit">Registrarse</button>
+      </form>
+      <hr class="divider" />
+      <span>¿Ya tenes una cuenta? <a href="/login">Inicia sesión</a></span>
+    </div>
+  </div>
+
+  <div class="container land"></div>
+</body>
+
+</html>

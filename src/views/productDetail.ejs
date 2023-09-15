@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head.ejs') %>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+    <title>EcoEquip - Home</title>
+</head>
+
+<body>
+  <%- include('./partials/header.ejs') %>
+
+    <article class="contenedor">
+      <div class="bloque-sup">
+        <div class="panel-img-precio">
+          <img class="imgPrincipal" src="/img/<%= producto.image %>" alt="taza térmica negra" />
+          <h2 class="precio"><%= producto.price%></h2>
+        </div>
+
+        <div class="botones">
+          <button class="boton-comprar">Comprar</button>
+          <div class="cantidad">
+            <i class="fas fa-chevron-up"></i>
+            <p>1</p>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloque-inf">
+        <section class="descripcion">
+          <img src="/img/logoEcoEquipParaFondoClaro.png" alt="" />
+          <h2><%= producto.name%></h2>
+          <p>
+            <%= producto.description%>
+          </p>
+        </section>
+        <section class="opciones">
+          <div class="modelos">
+            <h2>Modelos</h2>
+            <!--<p>1 2 3 <bold>4</bold> 5</p>-->
+          </div>
+          <ul class="carrusel">
+            <li>
+              <p class="iconoFlecha"><i class="fas fa-chevron-left"></i></p>
+            </li>
+            <li>
+              <img class="imgSecundaria" src="<%= producto.image2%>" alt="" />
+            </li>
+            <li>
+              <img class="imgSecundaria" src="<%= producto.image3%>" alt="" />
+            </li>
+            <li>
+              <img class="imgSecundaria" src="<%= producto.image4%>" alt="" />
+            </li>
+            <li>
+              <p class="iconoFlecha"><i class="fas fa-chevron-right"></i></p>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </article>
+
+    <%- include('./partials/footer.ejs') %>
+    
+  </body>
+</html>
