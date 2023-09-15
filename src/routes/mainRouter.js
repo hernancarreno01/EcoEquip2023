@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const mainController = require('../controllers/mainController')
+const productController = require('../controllers/productController')
+const userController = require('../controllers/userController')
 const multer = require('multer');
 const path = require('path');
 
@@ -21,22 +23,23 @@ const uploadFile = multer ({ storage})
 
 
 router.get("/", mainController.home);
-router.get("/login", mainController.login);
-router.get("/productCart", mainController.productCart);
-router.get("/productDetail/:id", mainController.productDetail);
-router.get("/register", mainController.register);
+router.get("/login",  userController.login);
+
+router.get("/register",  userController.register);
 router.get("/header", mainController.header);
 router.get("/header2", mainController.header2);
-router.get("/productCreate", mainController.productCreate);
-router.get("/productModify/:id", mainController.productModify);
-router.get("/users", mainController.users);
-router.get('/productList', mainController.productList);
+router.get("/productCreate", productController.productCreate);
+router.get("/productCart", productController.productCart);
+router.get("/productDetail/:id", productController.productDetail);
+router.get("/productModify/:id", productController.productModify);
+router.get('/productList', productController.productList);
 
-router.post("/productCreate",  uploadFile.single("imagen_principal"), mainController.productCreateProcess);
-router.put("/productModify/:id", uploadFile.single("archivo"), mainController.productModifyProcess);
-router.delete("/productDelete/:id", mainController.productDelete);
-router.put("/productAlta/:id", mainController.recuperarProcess);
+router.post("/productCreate",  uploadFile.single("imagen_principal"), productController.productCreateProcess);
+router.put("/productModify/:id", uploadFile.single("archivo"), productController.productModifyProcess);
+router.delete("/productDelete/:id", productController.productDelete);
+router.put("/productAlta/:id", productController.recuperarProcess);
 
-router.post("/register", mainController.altaUser);
+router.get("/users", userController.users);
+router.post("/register", userController.altaUser);
 
 module.exports = router

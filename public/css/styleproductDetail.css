@@ -20,7 +20,7 @@
     margin:5%;
 }
 .contenedor{
-    width: 90%;
+    width: 95%;
     padding: 5%;
     border-radius: 15px;
     background-color: #e0ebe5;
@@ -42,22 +42,16 @@
     border-radius: 5%;
     border: #658864 solid 6px;
 }
-.precio{
-    font-size: 1.4rem;
-    color: var(--verde-oscuro);
-    position: absolute;
-    top: 20px;
-    right: 5%
-}
+
 .botones{
     margin-top: 20px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    position: relative;
     align-items: center;
 }
-/*.boton-comprar{
-    width: 45%;    
+.boton-comprar{
+    width: 40%;    
     font-size: 1.3em;
     padding: 0.3em;
     border-radius: 15px;
@@ -70,8 +64,8 @@
 .boton-comprar:hover{
     background-color:#efc14cff;
     color: var(--verde-oscuro);
-}*/
-.boton-comprar {
+}
+/*.boton-comprar {
     color: var(--verde-oscuro);
     cursor: pointer;
     display: flex;
@@ -101,7 +95,7 @@
     border-color: var(--amarillo);
     background-color: var(--amarillo);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  }
+  }*/
 
 .cantidad i{
     font-size: 1.5em;
@@ -111,10 +105,11 @@
     color: #efc14cff;
 }
 .cantidad{
-    width: 45%;
+    width: 30%;
     color: #658864;
+    position: relative;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 
@@ -127,6 +122,14 @@
     border: 1px solid var(--verde-oscuro);
     border-radius: 25%;
     text-align: center; 
+}
+.precio{
+    width: 30%;
+    font-size: 1.8em;
+    color: var(--verde-oscuro);
+    position: absolute;
+    top: 20px;
+    right: 5%
 }  
 
 ul li{
@@ -200,6 +203,9 @@ ul li{
     .bloque-inf{
         width: 45%;
     }
+    .precio{
+        font-size: 2.1em;
+    }
 }
 
 
@@ -219,7 +225,7 @@ ul li{
     font-size: 20px;
     letter-spacing: 10px;
 }
-@media(min-width: 460px){
+@media(min-width: 900px){
     .contenedor{
         display: flex;
         flex-direction: row-reverse;
@@ -237,6 +243,9 @@ ul li{
     }
     .bloque-inf{
         width: 45%;
+    }
+    .precio{
+        font-size: 2.3rem;
     }
   }
 
