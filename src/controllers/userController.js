@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const multer = require('multer');
 
 let listaUsuarios = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf-8'));
 
@@ -23,6 +22,7 @@ const userController = {
             "lastName": req.body.apellido, 
             "email": req.body.email, 
             "password": req.body.password,
+            "avatar": req.file.filename,
             "role": "usuario",
             "deleted": false
         };

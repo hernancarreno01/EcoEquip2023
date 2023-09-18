@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const mainController = require('../controllers/mainController')
 const productController = require('../controllers/productController')
-const userController = require('../controllers/userController')
 const multer = require('multer');
 const path = require('path');
 
@@ -23,9 +22,7 @@ const uploadFile = multer ({ storage})
 
 
 router.get("/", mainController.home);
-router.get("/login",  userController.login);
 
-router.get("/register",  userController.register);
 router.get("/header", mainController.header);
 router.get("/header2", mainController.header2);
 router.get("/productCreate", productController.productCreate);
@@ -39,7 +36,6 @@ router.put("/productModify/:id", uploadFile.single("archivo"), productController
 router.delete("/productDelete/:id", productController.productDelete);
 router.put("/productAlta/:id", productController.recuperarProcess);
 
-router.get("/users", userController.users);
-router.post("/register", userController.altaUser);
+
 
 module.exports = router

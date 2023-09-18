@@ -98,7 +98,7 @@
   }*/
 
 .cantidad i{
-    font-size: 1.5em;
+    font-size:1em;
     transition: all 0.55s;
 }
 .cantidad i:hover, .iconoFlecha:hover{
@@ -114,8 +114,8 @@
 }
 
 .cantidad p{    
-    font-size: 1.5em;
-    width: 1.5em;
+    font-size: 1.3rem;    
+    width: 2rem;
     height: fit-content;
     margin:0 5px;
     color: #658864;
@@ -125,7 +125,7 @@
 }
 .precio{
     width: 30%;
-    font-size: 1.8em;
+    font-size: 1.8 rem;
     color: var(--verde-oscuro);
     position: absolute;
     top: 20px;
@@ -203,9 +203,8 @@ ul li{
     .bloque-inf{
         width: 45%;
     }
-    .precio{
-        font-size: 2.1em;
-    }
+    
+    
 }
 
 
@@ -244,9 +243,7 @@ ul li{
     .bloque-inf{
         width: 45%;
     }
-    .precio{
-        font-size: 2.3rem;
-    }
+    
   }
 
 

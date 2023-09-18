@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "name": "Vaso Largo",
-    "category": "fastflip",
-    "image": "1695401135378.jpg",
+    "name": "Taza Metálica Blanca",
+    "category": "taza",
+    "image": "1694990454590.jpg",
     "image2": "/img/botellasprincipal.png",
     "image3": "/img/jarroRosa.jpg",
     "image4": "/img/jarroNgr.png",
-    "description": "Vaso Metálico color Blanco ",
+    "description": "Taza con Tapa",
     "model": "justo nec condimentum neque",
     "price": "30000",
     "deleted": false
@@ -15,12 +15,12 @@
   {
     "id": 2,
     "name": "AquaBuddy",
-    "category": "kids",
-    "image": "1695594676230.jpg",
+    "category": "ofertas",
+    "image": "1695673403298.png",
     "image2": "/img/flipprincipal.png",
     "image3": "/img/flipprincipal.png",
     "image4": "/img/flipprincipal.png",
-    "description": "La Botella para los  más peques de la casa.",
+    "description": "La",
     "model": "Model 5421",
     "price": "3333",
     "deleted": false
@@ -40,11 +40,29 @@
   },
   {
     "id": 4,
-    "name": "Tazon",
+    "name": "Botella",
+    "category": "fastflip",
+    "image": "1695170133489.png",
+    "description": "Botellas de 900 ml de capacidad",
+    "price": "10000",
+    "deleted": false
+  },
+  {
+    "id": 5,
+    "name": "Taza violeta",
     "category": "taza",
-    "image": "1695363669635.webp",
-    "description": "Plastico",
-    "price": "5555",
+    "image": "1695492366466.jpg",
+    "description": "Violeta",
+    "price": "8000",
+    "deleted": false
+  },
+  {
+    "id": 6,
+    "name": "Termo",
+    "category": "ofertas",
+    "image": "1694936131639.jpg",
+    "description": "Estampada",
+    "price": "12000",
     "deleted": false
   }
 ]
