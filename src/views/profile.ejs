@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs') %>
+
+    <title>EcoEquip - Perfil</title>
+  </head>
+
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <h1 class="h1">Mi perfil</h1>
+    <section class="perfil">
+        <div class="bloqueImagen">
+            <div>
+                <!-- <img class="avatar" src="/img/<%=usuario.avatar%>" alt="imagenPerfil" /> -->
+                <img class="avatar" src="/img/avatars/<%=usuario.avatar%>" alt="imagenPerfil" />  
+            </div>
+            <a href="/profileEdit/<%=usuario.id%>">Cambiar foto de perfil</a>
+        </div>
+        <div class="bloqueDatos">
+            <p>Nombre de usuario: <%= usuario.userName %></p>
+            <p>Nombre: <%= usuario.firstName %></p>
+            <p>Apellido: <%= usuario.lastName %></p>
+            <p>Correo electrónico: <%= usuario.email %></p>
+            <p>Dirección: <%= usuario.adress %></p>
+            <p>Ciudad: <%= usuario.city %></p>
+            <p>Teléfono: <%= usuario.telephone %></p>
+            <p>Rol: <%= usuario.role %></p> 
+            <a href="">Editar perfil</a> 
+        </div>
+        
+    </section>
+
+    
+    
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

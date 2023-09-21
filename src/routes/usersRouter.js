@@ -21,7 +21,12 @@ const uploadFile = multer ({ storage})
 router.get("/login",  userController.login);
 router.get("/register",  userController.register);
 router.get("/users", userController.users);
-router.post("/register", uploadFile.single("avatar"), userController.altaUser);
+router.get("/profile/:id", userController.profile);
+router.get("/profileEdit/:id", userController.profileEdit);
+
+router.post("/register", userController.altaUser);
+router.put("/profileEdit/:id",uploadFile.single("avatar"), userController.profileEditProcess);
+
 
 
 

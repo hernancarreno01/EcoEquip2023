@@ -16,10 +16,10 @@
           <tbody>
             <section class="userList">
               <% listadoUsuarios.forEach(function(usuario) { %>
-                <div class="userProfile">
+                <div class="userProfile" >
                   <ul><hr class="rounded">
                     <li class="userTitle"><th>Foto de Perfil: </th></li>
-                    <li class="userInfo"><td>   <img class="UserImg" src="<%= usuario.avatar%>" />    </td></li>
+                    <li class="userInfo"><td>   <img class="UserImg" src="/img/avatars/<%=usuario.avatar%>" />    </td></li>
                     <li class="userTitle"><th>Nombre de Usuario: </th></li>
                     <li class="userInfo"><td><%= usuario.userName %></td></li>
                     <li class="userTitle"><th>Nombre: </th></li>

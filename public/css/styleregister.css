@@ -24,6 +24,7 @@
   
   input[type="text"],
   input[type="email"],
+  input[type="file"],
   input[type="password"] {
     width: 100%;
     max-width: 400px;

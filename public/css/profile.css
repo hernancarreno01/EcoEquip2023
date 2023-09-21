@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+    font-family: "Source Sans Pro", sans-serif;
+}
+:root{
+    --verde-oscuro: #658864;
+    --verde-claro: #B7B78A;
+    --gris-oscuro: #DDDDDD;
+    --gris-claro: #EEEEEE;
+    --verde-aqua: #e0ebe5;
+    --dl-color-pallet-green: #dfe7ddff;
+}
+.h1{
+    margin-bottom: 30px;
+}
+.perfil{
+    width: 100%;
+    display: flex;
+
+}
+.bloqueImagen{
+    width: 50%;
+    text-align: center;
+}
+.bloqueDatos{
+    width: 50%;
+}
