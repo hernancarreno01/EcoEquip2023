@@ -26,8 +26,8 @@ router.get("/profileEdit/:id", userController.profileEdit);
 
 router.post("/register", userController.altaUser);
 router.put("/profileEdit/:id",uploadFile.single("avatar"), userController.profileEditProcess);
-
-
+router.delete("/userDelete/:id",userController.userDelete);
+router.put("/userRetrieve/:id",userController.recuperarProcess )
 
 
 

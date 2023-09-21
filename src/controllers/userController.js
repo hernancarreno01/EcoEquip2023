@@ -54,6 +54,22 @@ const userController = {
         listaUsuarios.push(usuarioNuevo);
         fs.writeFileSync(path.join(__dirname, '../data/users.json'),JSON.stringify(listaUsuarios, null,2), 'utf-8')
         res.redirect('/')
+    },
+    userDelete:(req, res) => {
+        let usuarioEncontrado = listaUsuarios.find(( user)=> user.id == req.params.id)
+    
+        usuarioEncontrado.deleted = true;        
+        
+        fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(listaUsuarios, null, 2), 'utf-8')
+        res.render('profileEdit', {usuario: usuarioEncontrado})
+    },
+    recuperarProcess:  (req, res) => {
+        let usuarioEncontrado = listaUsuarios.find(( user)=> user.id == req.params.id)
+    
+        usuarioEncontrado.deleted = false;        
+        
+        fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(listaUsuarios, null, 2), 'utf-8')
+        res.render('profileEdit', {usuario: usuarioEncontrado})
     }
 
 }

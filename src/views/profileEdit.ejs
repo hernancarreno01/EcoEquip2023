@@ -13,7 +13,6 @@
     <section class="perfil">
         <div class="bloqueImagen">
             <div>
-                <!-- <img class="avatar" src="/img/<%=usuario.avatar%>" alt="imagenPerfil" /> -->
                 <img class="avatar" src="/img/avatars/<%=usuario.avatar%>" alt="imagenPerfil" />  
             </div>
         </div>
@@ -42,12 +41,17 @@
                 <button type="submit">Guardar cambios</button>
 
             </form>
+            <% if(usuario.deleted == false){%>
             <form action="/userDelete/<%= usuario.id%>?_method=delete" method="post">
                 <div class="signinForm">
-                    <button type="submit" >Eliminar Usuario</button>
+                    <button type="submit" >Eliminar usuario</button>
                 </div>
             </form> 
-           
+            <% }else{ %>
+            <form action="/userRetrieve/<%= usuario.id%>?_method=put" method="post">
+                <button type="submit" >Recuperar ususario</button>
+            </form>                        
+            <% } %>
         </div>
         
     </section>
