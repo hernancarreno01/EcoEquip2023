@@ -42,12 +42,15 @@ const userController = {
     altaUser:(req, res)=>{
         let usuarioNuevo = {
             "id":listaUsuarios.length + 1,
-            /*"userName":req.body.nombre,*/
+            "username":"Nombre de usuario",
             "name":req.body.nombre,
             "lastName": req.body.apellido, 
-            "email": req.body.email, 
+            "email": req.body.email,
+            "adress":"dirección",
+            "city":"ciudad",
             "password": req.body.password,
-            "avatar": req.file.filename,
+            "avatar":"/img/avatars/defaultAvatar.png",
+            "telephone":"55555555",
             "role": "usuario",
             "deleted": false
         };
