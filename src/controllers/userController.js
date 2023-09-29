@@ -42,12 +42,12 @@ const userController = {
     altaUser:(req, res)=>{
         let usuarioNuevo = {
             "id":listaUsuarios.length + 1,
-            "username":"Nombre de usuario",
+            "username":req.body.nombreUsuario,
             "name":req.body.nombre,
             "lastName": req.body.apellido, 
             "email": req.body.email,
-            "adress":"dirección",
-            "city":"ciudad",
+            "adress":req.body.direccion,
+            "city":req.body.ciudad,
             "password": req.body.password,
             "avatar":"/img/avatars/defaultAvatar.png",
             "telephone":"55555555",
