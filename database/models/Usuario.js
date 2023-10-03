@@ -37,10 +37,7 @@ module.exports = (sequelize, dataTypes) => {
         rol_id: {
             type: dataTypes.INTEGER
         },
-        deleted: {
-            type: dataTypes.DATE
-        },
-        creado: {
+        created_at: {
             type: dataTypes.DATE
         },
         editado: {
