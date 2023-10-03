@@ -49,8 +49,8 @@ const userController = {
             "adress":req.body.direccion,
             "city":req.body.ciudad,
             "password": req.body.password,
-            "avatar":"/img/avatars/defaultAvatar.png",
-            "telephone":"55555555",
+            "avatar":req.file.filename,
+            "telephone":req.body.telefono,
             "role": "usuario",
             "deleted": false
         };

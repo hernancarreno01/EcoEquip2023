@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
+const db = require('../database/models')
 
 let listaProductos = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf-8'));
 
@@ -20,8 +21,8 @@ const productController = {
         let productoEncontrado = listaProductos.find(( producto)=> producto.id == req.params.id)
         res.render('productModify', {producto: productoEncontrado})
     },
-    productList: (req, res)=>{
-        let productosVisibles = listaProductos.filter((user)=> user.deleted == false);
+    productList: async (req, res)=>{
+        let productosVisibles =  await db.Producto.findAll()
         res.render('productList',{listaProductos: productosVisibles}) 
     },    
     productCreateProcess:(req, res)=>{

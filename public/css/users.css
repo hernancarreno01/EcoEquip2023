@@ -35,3 +35,11 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+
+@media(min-width: 460px){
+
+}
+
+@media(min-width: 900px){
+    
+}

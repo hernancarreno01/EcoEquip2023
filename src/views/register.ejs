@@ -18,7 +18,7 @@
     <div class="form">
       <h2>Creá tu cuenta</h2>
       <h3>Ingresá tus datos</h3>
-      <form class="signinForm" action="/register" method="post" >
+      <form class="signinForm" action="/register" method="post" enctype="multipart/form-data" >
         <input type="text" name="nombreUsuario" autocomplete="NombredeUsuario" placeholder="Nombre de Usuario" aria-label="" />
         <input type="text" name="nombre" autocomplete="name" placeholder="Nombre" aria-label="" />
         <input type="text" name="apellido"  autocomplete="family-name" placeholder="Apellido" aria-label="" />
@@ -26,6 +26,7 @@
         <input type="text" name="direccion"  autocomplete="Dirección" placeholder="Dirección" aria-label="" />
         <input type="text" name="ciudad"  autocomplete="ciudad" placeholder="Ciudad" aria-label="" />
         <input type="password" name="password" autocomplete="new-password" placeholder="Contraseña" />
+        <input type="text" name="telefono"  autocomplete="telefono" placeholder="Teléfono" aria-label="" />
         <input type="file" id="avatar" name="avatar" accept="image/" multiple required><br><br>
         
 
