@@ -5,7 +5,6 @@
 
 📋 <strong><a href="https://trello.com/invite/b/Scb6zxY8/ATTI7272b788f3fa90e9d488c6256f3a84252462C99D/ecoequip">Tablero EcoEquip</a></strong>
 
-## ----------------------------------------------------------------------
 
 ## Retrospectiva - Sprint 05
 
@@ -33,7 +32,6 @@
 
 **Resolución proactiva de problemas:** Continuemos abordando los desafíos de manera proactiva y temprana, incluso en situaciones de ausencia, para mantener nuestro enfoque en los objetivos del sprint.
 
-## ----------------------------------------------------------------------
 
 ## Retrospectiva - Sprint 04
 
@@ -57,7 +55,6 @@
 
 **Resolución proactiva de problemas:** Continuemos abordando los desafíos de manera proactiva y temprana, incluso en situaciones de ausencia, para mantener nuestro enfoque en los objetivos del sprint.
 
-## ----------------------------------------------------------------------
 
 ## Retrospectiva - Sprint 03
 
@@ -79,7 +76,6 @@
 
 **Resolución proactiva de problemas:** Continuemos abordando los desafíos de manera proactiva y temprana, incluso en situaciones de ausencia, para mantener nuestro enfoque en los objetivos del sprint.
 
-## ----------------------------------------------------------------------
 
 ## Retrospectiva - Sprint 02
 
@@ -101,7 +97,6 @@
 
 **Resolución proactiva de problemas:** Sigamos abordando los desafíos de manera proactiva y temprana, evitando la perdida tiempo y manteniendo nuestro enfoque en los objetivos planteados en principio.
 
-## ----------------------------------------------------------------------
 
 ## Retrospectiva - Sprint 01
 
@@ -142,5 +137,3 @@ El último sprint fue una experiencia enriquecedora, donde trabajamos en equipo 
 1.  **Evitar la procrastinación:** Dejar de posponer tareas importantes y en su lugar abordarlas de manera proactiva y temprana.
     
 2.  **No escatimar en retroalimentación:** Dejar de temer a señalar áreas de mejora y proporcionar retroalimentación constructiva para el crecimiento del equipo.
-
-## ----------------------------------------------------------------------
