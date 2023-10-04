@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Usuarios';
+    let alias = 'Usuario';
     let cols = {
         id: {
             autoIncrement: true,
@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
         direccion: {
             type: dataTypes.STRING
         },
-        cliudad_id: {
+        ciudad_id: {
             type: dataTypes.INTEGER
         },
         password: {
@@ -34,19 +34,19 @@ module.exports = (sequelize, dataTypes) => {
         telefono: {
             type: dataTypes.STRING
         },
-        rol_id: {
+        roles_id: {
             type: dataTypes.INTEGER
         },
         created_at: {
             type: dataTypes.DATE
         },
-        editado: {
+        updated_at: {
             type: dataTypes.DATE
         }
     };
 
     let config = {
-        tableName: "ecoequip",
+        tableName: "usuarios",
         timestamps: false
     };
 

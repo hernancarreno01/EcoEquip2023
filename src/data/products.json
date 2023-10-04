@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "name": "Taza Metálica Blanca",
-    "category": "taza",
-    "image": "1694990454590.jpg",
+    "name": "Taza",
+    "category": "kids",
+    "image": "1697237439946.jpg",
     "image2": "/img/botellasprincipal.png",
     "image3": "/img/jarroRosa.jpg",
     "image4": "/img/jarroNgr.png",
-    "description": "Taza con Tapa",
+    "description": "Taza",
     "model": "justo nec condimentum neque",
     "price": "30000",
     "deleted": false

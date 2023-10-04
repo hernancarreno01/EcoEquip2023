@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models')
 
 let listaUsuarios = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf-8'));
 
@@ -10,8 +11,8 @@ const userController = {
     register: (req, res) => {
         res.render('register');
     },    
-    users: (req, res)=>{
-        let usuariosVisibles = listaUsuarios.filter((user)=> user.deleted == false);
+    users: async (req, res)=>{
+        let usuariosVisibles = await db.Usuario.findAll()
         res.render('users',{listadoUsuarios: usuariosVisibles})
     },
     profile: (req,res)=>{
