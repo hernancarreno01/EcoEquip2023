@@ -51,6 +51,19 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Usuario = sequelize.define(alias, cols, config);
-
+    Usuario.associate = function(models) {
+        Usuario.hasMany(models.Factura,{
+            foreignKey:"usuarios_id",
+            as:"facturas"
+        })
+        Usuario.hasMany(models.Ciudad,{
+            foreignKey:"usuarios_id",
+            as:"ciudades"
+        })
+        Usuario.belongsTo(models.Rol,{
+            foreignKey:"usuarios_id",
+            as:"rol"
+        })
+    }
     return Usuario;
 }

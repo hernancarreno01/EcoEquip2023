@@ -45,6 +45,20 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Producto = sequelize.define(alias, cols, config);
+    
+    Producto.associate = function(models) {
+        Producto.belongsTo(models.Categoria,{
+            foreignKey:"categorias_id",
+            as:"categoria"
+        })
+        Producto.belongsToMany(models.Factura,{            
+            as:"facturas",
+            throught: "factura_producto",
+            foreignKey:"productos_id",
+            otherKey:"facturas_id"
+        })
+        
+    }
 
     return Producto;
 }
