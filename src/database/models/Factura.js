@@ -13,7 +13,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER 
         },
         fecha:{
-            type: dataTypes.DATETIME
+            type: dataTypes.DATE
         }
 
     };
