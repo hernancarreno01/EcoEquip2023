@@ -18,9 +18,11 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Ciudad = sequelize.define(alias, cols, config);
-    Ciudad.belongsTo(models.Usuario,{
-        foreignKey:"ciudad_id",
-        as:"ciudad"
-    })
+    Ciudad.associate = function(models) {
+        Ciudad.belongsTo(models.Usuario,{
+            foreignKey:"ciudad_id",
+            as:"ciudad"
+        })
+    }
     return Ciudad;
 }

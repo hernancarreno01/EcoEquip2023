@@ -28,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
     Factura.associate = function(models) {        
         Factura.belongsToMany(models.Producto,{            
             as:"productos",
-            throught: "factura_producto",
+            through: "factura_producto",
             foreignKey:"facturas_id",
             otherKey:"productos_id"
         })
