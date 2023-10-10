@@ -33,8 +33,10 @@ CREATE TABLE `productos` (
     `imagen_01` BLOB NOT NULL,
     `imagen_02` BLOB NOT NULL,
     `imagen_03` BLOB NOT NULL,
-    `create_at` TIMESTAMP NULL,
-    `updated_at` TIMESTAMP NULL
+    `creado_el` TIMESTAMP NULL,
+    `editado_el` TIMESTAMP NULL,
+    `borrado_el` TIMESTAMP NULL
+
 );
 
 CREATE TABLE `usuarios` (

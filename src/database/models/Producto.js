@@ -6,7 +6,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true, 
             type: dataTypes.INTEGER
         },
-        name: {
+        nombre: {
             allowNull: false,
             type: dataTypes.STRING
         },
@@ -28,15 +28,15 @@ module.exports = (sequelize, dataTypes) => {
         imagen_03: {
             type: dataTypes.STRING
         },        
-        /*creado_el: {
+        creado_el: {
             type: dataTypes.DATE
         },
         editado_el: {
             type: dataTypes.DATE
         },
-        borrado_el:{ //en el der faltaría este
+        borrado_el:{ 
             type: dataTypes.DATE
-        }*/
+        }
     };
 
     let config = {
