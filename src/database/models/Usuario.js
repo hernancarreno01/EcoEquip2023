@@ -53,15 +53,15 @@ module.exports = (sequelize, dataTypes) => {
     const Usuario = sequelize.define(alias, cols, config);
     Usuario.associate = function(models) {
         Usuario.hasMany(models.Factura,{
-            foreignKey:"usuarios_id",
+            foreignKey:"id",
             as:"facturas"
         })
         Usuario.hasMany(models.Ciudad,{
-            foreignKey:"usuarios_id",
+            foreignKey:"id",
             as:"ciudades"
         })
         Usuario.belongsTo(models.Rol,{
-            foreignKey:"usuarios_id",
+            foreignKey:"id",
             as:"rol"
         })
     }
