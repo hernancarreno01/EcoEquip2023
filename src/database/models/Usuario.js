@@ -22,10 +22,7 @@ module.exports = (sequelize, dataTypes) => {
         direccion: {
             type: dataTypes.STRING
         },
-        ciudad_id: {
-            type: dataTypes.INTEGER
-        },
-        password: {
+        contrasenia: {
             type: dataTypes.STRING
         },
         imagen_perfil: {
@@ -37,10 +34,13 @@ module.exports = (sequelize, dataTypes) => {
         roles_id: {
             type: dataTypes.INTEGER
         },
-        created_at: {
+        creado_el: {
             type: dataTypes.DATE
         },
-        updated_at: {
+        editado_el: {
+            type: dataTypes.DATE
+        },
+        borrado_el: {
             type: dataTypes.DATE
         }
     };

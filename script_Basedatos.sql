@@ -45,12 +45,13 @@ CREATE TABLE `usuarios` (
     `email` VARCHAR(255) NOT NULL,
     `direccion` VARCHAR(255) NOT NULL,
     `ciudad_id` INT UNSIGNED NOT NULL,
-    `password` VARCHAR(255) NOT NULL,
+    `contrasenia` VARCHAR(255) NOT NULL,
     `imagen_perfil` BLOB NOT NULL DEFAULT 'usuario_default.png',
     `telefono` VARCHAR(15) NOT NULL,
     `roles_id` INT UNSIGNED NOT NULL,
-    `created_at` TIMESTAMP NULL,
-    `updated_at` TIMESTAMP NULL
+    `creado_el` TIMESTAMP NULL,
+    `editado_el` TIMESTAMP NULL,
+    `borrado_el` TIMESTAMP NULL
 );
 
 CREATE TABLE `factura_prod` (
