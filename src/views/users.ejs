@@ -15,23 +15,23 @@
           <br>
           <tbody>
             <section class="userList">
-              <% listadoUsuarios.forEach(function(usuario) { %>
+              <% Usuarios.forEach(function(usuario) { %>
                 <div class="userProfile" >
                   <ul><hr class="rounded">
                     <li class="userTitle"><th>Foto de Perfil: </th></li>
-                    <li class="userInfo"><td><a href="/profile/<% usuario.id%>"></a><img class="UserImg" src="/img/avatars/<%=usuario.avatar%>" /></td></li>
+                    <li class="userInfo"><td><a href="/profile/<% usuario.id%>"></a><img class="UserImg" src="/img/avatars/<%=usuario.imagen_perfil%>" /></td></li>
                     <li class="userTitle"><th>Nombre de Usuario: </th></li>
                     <li class="userInfo"><td><%= usuario.nombre_usuario %></td></li>
                     <li class="userTitle"><th>Nombre: </th></li>
-                    <li class="userInfo"><td><%= usuario.firstName %></td></li>
+                    <li class="userInfo"><td><%= usuario.nombres %></td></li>
                     <li class="userTitle"><th>Apellido: </th></li>
-                    <li class="userInfo"><td><%= usuario.lastName %></td></li>
+                    <li class="userInfo"><td><%= usuario.apellido %></td></li>
                     <li class="userTitle"><th>Correo Electrónico: </th></li>
                     <li class="userInfo"><td><%= usuario.email %></td></li>
                     <li class="userTitle"><th>Rol: </th>   </li>
                     <li class="userInfo"><td><%= usuario.role %></td></li>
                     <li class="userTitle"><th>Borrado?: </th></li>
-                    <li class="userInfo"><td><%= usuario.deleted %></td></li>
+                    <li class="userInfo"><td><%= usuario.borrado_el %></td></li>
                   </ul>
                  </div> 
                 </tr><br>

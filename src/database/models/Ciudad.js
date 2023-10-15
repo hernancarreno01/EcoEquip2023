@@ -19,8 +19,8 @@ module.exports = (sequelize, dataTypes) => {
 
     const Ciudad = sequelize.define(alias, cols, config);
     Ciudad.associate = function(models) {
-        Ciudad.belongsTo(models.Usuario,{
-            foreignKey:"ciudad_id",
+        Ciudad.hasMany(models.Usuario,{
+            foreignKey:"usuarios_id",
             as:"ciudad"
         })
     }

@@ -1,29 +1,38 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models')
+const sequelize = db.sequelize;
 
-let listaUsuarios = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf-8'));
+//let listaUsuarios = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf-8'));
 
 const userController = {
-    login:  (req, res) => {
+    login: async (req, res) => {
         res.render('login');
     },    
-    register: (req, res) => {
-        res.render('register');
-    },    
-    users: async (req, res)=>{
-        let usuariosVisibles = await db.Usuario.findAll()
-        res.render('users',{listadoUsuarios: usuariosVisibles})
+    register: async (req, res) => {
+        /*const ciudades = await db.Ciudad.findAll()
+        res.render('register', {ciudades:ciudades} );*/
+        await db.Ciudad.findAll({paranoid: false})
+            .then(ciudad => {
+                res.render('register.ejs', {ciudad})
+            })        
     },
-    profile: (req,res)=>{
-        let usuarioEncontrado = listaUsuarios.find(( user)=> user.id == req.params.id)
+     
+    users: async (req, res)=>{
+        db.Usuario.findAll({paranoid: false})
+            .then(usuarios => {
+                res.render('users.ejs', {usuarios})
+            })        
+    },
+    profile: async (req,res)=>{
+        let usuarioEncontrado = await db.Usuario.findByPk(req.params.id)
         res.render('profile', {usuario: usuarioEncontrado})
     },
-    profileEdit: (req,res)=>{
-        let usuarioEncontrado = listaUsuarios.find(( user)=> user.id == req.params.id)
+    profileEdit: async (req,res)=>{
+        let usuarioEncontrado = await db.Usuario.findByPk(req.params.id)
         res.render('profileEdit', {usuario: usuarioEncontrado})
     },
-    profileEditProcess: (req, res) => {
+    profileEditProcess: async (req, res) => {
         let usuarioEncontrado = listaUsuarios.find(( user)=> user.id == req.params.id)
         
         
@@ -40,8 +49,12 @@ const userController = {
     
         res.render('profileEdit', {usuario: usuarioEncontrado})
     },
-    altaUser:(req, res)=>{
-        let usuarioNuevo = {
+    altaUser: async (req, res)=> {
+        console.log(req.body);
+            const usuarioNuevo = await db.Usuario.create({
+                 ...req.body
+            })
+        /*let usuarioNuevo = {
             "id":listaUsuarios.length + 1,
             "username":req.body.nombre_usuario,
             "name":req.body.nombre,
@@ -49,17 +62,17 @@ const userController = {
             "email": req.body.email,
             "adress":req.body.direccion,
             "city":req.body.ciudad,
-            "password": req.body.contrasenia,
+            "password": req.body.contrasenia,usuarioNuevo
             "avatar":req.file.filename,
             "telephone":req.body.telefono,
             "role": "usuario",
             "deleted": false
         };
         listaUsuarios.push(usuarioNuevo);
-        fs.writeFileSync(path.join(__dirname, '../data/users.json'),JSON.stringify(listaUsuarios, null,2), 'utf-8')
-        res.redirect('/')
+        fs.writeFileSync(path.join(__dirname, '../data/users.json'),JSON.stringify(listaUsuarios, null,2), 'utf-8')*/
+        res.redirect('/profile/'+ usuarioNuevo.id)
     },
-    userDelete:(req, res) => {
+    userDelete: async (req, res) => {
         let usuarioEncontrado = listaUsuarios.find(( user)=> user.id == req.params.id)
     
         usuarioEncontrado.deleted = true;        
@@ -67,7 +80,7 @@ const userController = {
         fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(listaUsuarios, null, 2), 'utf-8')
         res.render('profileEdit', {usuario: usuarioEncontrado})
     },
-    recuperarProcess:  (req, res) => {
+    recuperarProcess: async (req, res) => {
         let usuarioEncontrado = listaUsuarios.find(( user)=> user.id == req.params.id)
     
         usuarioEncontrado.deleted = false;        
