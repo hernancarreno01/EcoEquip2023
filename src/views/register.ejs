@@ -25,7 +25,7 @@
         <input type="email" name="email" autocomplete="email" placeholder="Correo" aria-label="" />
         <input type="text" name="direccion"  autocomplete="Dirección" placeholder="Dirección" aria-label="" />
         <!--<input type="text" name="ciudad"  autocomplete="ciudad" placeholder="Ciudad" aria-label="" />-->
-        <select type="select"  name="ciudad_id" id="ciudad_id" >
+        <select type="select" class="ciudad_id" name="ciudad_id" id="ciudad_id" >
           <option value="" disabled selected>- Seleccione la ciudad - </option>
           <% ciudad.forEach(ciudad => { %>
           <option value="<%= ciudad.id%>"><%= ciudad.nombre_ciudad%></option>

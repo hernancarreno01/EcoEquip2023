@@ -10,8 +10,7 @@ const userController = {
         res.render('login');
     },    
     register: async (req, res) => {
-        /*const ciudades = await db.Ciudad.findAll()
-        res.render('register', {ciudades:ciudades} );*/
+        
         await db.Ciudad.findAll({paranoid: false})
             .then(ciudad => {
                 res.render('register.ejs', {ciudad})
@@ -19,7 +18,7 @@ const userController = {
     },
      
     users: async (req, res)=>{
-        db.Usuario.findAll({paranoid: false})
+        await db.Usuario.findAll({paranoid: false})
             .then(usuarios => {
                 res.render('users.ejs', {usuarios})
             })        
@@ -33,7 +32,7 @@ const userController = {
         res.render('profileEdit', {usuario: usuarioEncontrado})
     },
     profileEditProcess: async (req, res) => {
-        let usuarioEncontrado = listaUsuarios.find(( user)=> user.id == req.params.id)
+        let usuarioEncontrado = await listaUsuarios.find(( user)=> user.id == req.params.id)
         
         
         usuarioEncontrado.userName = req.body.userName;
@@ -49,11 +48,12 @@ const userController = {
     
         res.render('profileEdit', {usuario: usuarioEncontrado})
     },
-    altaUser: async (req, res)=> {
-        console.log(req.body);
-            const usuarioNuevo = await db.Usuario.create({
-                 ...req.body
-            })
+    altaUser: async (req, res)=> {        
+        const usuarioNuevo = await db.Usuario.create({
+                ...req.body
+        })
+        console.log(usuarioNuevo);
+        res.redirect('/profile/'+ usuarioNuevo.id)
         /*let usuarioNuevo = {
             "id":listaUsuarios.length + 1,
             "username":req.body.nombre_usuario,
@@ -70,7 +70,7 @@ const userController = {
         };
         listaUsuarios.push(usuarioNuevo);
         fs.writeFileSync(path.join(__dirname, '../data/users.json'),JSON.stringify(listaUsuarios, null,2), 'utf-8')*/
-        res.redirect('/profile/'+ usuarioNuevo.id)
+        
     },
     userDelete: async (req, res) => {
         let usuarioEncontrado = listaUsuarios.find(( user)=> user.id == req.params.id)
