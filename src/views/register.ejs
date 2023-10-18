@@ -30,7 +30,7 @@
           <% ciudad.forEach(ciudad => { %>
           <option value="<%= ciudad.id%>"><%= ciudad.nombre_ciudad%></option>
           <% }); %>
-      </select>
+        </select>
         <input type="password" name="contrasenia" autocomplete="new-password" placeholder="Contraseña" />
         <input type="text" name="telefono"  autocomplete="telefono" placeholder="Teléfono" aria-label="" />
         <input type="file" id="avatar" name="avatar" accept="image/" multiple required><br><br> <!--cuidado con el name, en la bd está como imagen_perfil-->

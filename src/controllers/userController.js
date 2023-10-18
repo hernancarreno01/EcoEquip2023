@@ -25,18 +25,21 @@ const userController = {
             })        
     },
     'profile': async (req,res)=>{
-        let usuarioEncontrado = await db.Usuario.findByPk(req.params.id,{paranoid: false})
+        // let usuarioEncontrado = await db.Usuario.findByPk(req.params.id,{paranoid: false})
+        let usuarioEncontrado = await db.Usuario.findOne({ where: { id: req.params.id } })
         res.render('profile', {usuario: usuarioEncontrado})
     },
     'profileEdit': async (req,res)=>{
-        let usuarioEncontrado = await db.Usuario.findByPk(req.params.id)
-        res.render('profileEdit', {usuario: usuarioEncontrado})
+        const ciudades = await db.Ciudad.findAll({ paranoid: false });
+        const usuarioEncontrado = await db.Usuario.findOne({ where: { id: req.params.id } });        
+        
+        res.render('profileEdit', { ciudad: ciudades,usuario: usuarioEncontrado})
     },
     'profileEditProcess': async (req, res) => {
+        
         let usuarioEncontrado = await db.Usuario.update({
             ...req.body
-        },{
-            where:{
+        },{where:{
                 id: req.params.id
             }})
             console.log(usuarioEncontrado);
