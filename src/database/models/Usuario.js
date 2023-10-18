@@ -22,6 +22,7 @@ module.exports = (sequelize, dataTypes) => {
         direccion: {
             type: dataTypes.STRING
         },
+        ciudad_id: dataTypes.INTEGER,
         contrasenia: {
             type: dataTypes.STRING
         },
@@ -31,7 +32,10 @@ module.exports = (sequelize, dataTypes) => {
         telefono: {
             type: dataTypes.STRING
         },
-        roles_id: {
+        /*roles_id: {
+            type: dataTypes.INTEGER
+        },
+        facturas_id: {
             type: dataTypes.INTEGER
         },
         creado_el: {
@@ -42,26 +46,31 @@ module.exports = (sequelize, dataTypes) => {
         },
         borrado_el: {
             type: dataTypes.DATE
-        }
+        }*/
     };
 
     let config = {
         tableName: "usuarios",
-        timestamps: false
+        timestamps: false,//estaba en true y lo cambié porque daba error 1054:Unknown column 'createdAt' in 'field list'
+        paranoid: true,
+        deletedAt: 'borrado_el',
+        createdAt: 'creado_el',
+        updatedAt: 'updated_at'
+
     };
 
     const Usuario = sequelize.define(alias, cols, config);
     Usuario.associate = function(models) {
         Usuario.hasMany(models.Factura,{
-            foreignKey:"id",
+            foreignKey:"facturas_id",
             as:"facturas"
         })
-        Usuario.hasMany(models.Ciudad,{
-            foreignKey:"id",
+        Usuario.belongsTo(models.Ciudad,{
+            foreignKey:"ciudad_id",
             as:"ciudades"
         })
         Usuario.belongsTo(models.Rol,{
-            foreignKey:"id",
+            foreignKey:"roles_id",
             as:"rol"
         })
     }

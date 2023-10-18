@@ -84,5 +84,19 @@
     "deleted": false,
     "userName": "Verdani",
     "firstName": "Dani"
+  },
+  {
+    "id": 7,
+    "username": "Verdani",
+    "name": "Vero",
+    "lastName": "Ram",
+    "email": "vero@ram.com",
+    "adress": "Calle 366",
+    "city": "San Miguel",
+    "password": "147852",
+    "avatar": "1697546979358.jpg",
+    "telephone": "55553333",
+    "role": "usuario",
+    "deleted": false
   }
 ]

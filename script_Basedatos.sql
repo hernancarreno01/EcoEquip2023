@@ -48,9 +48,9 @@ CREATE TABLE `usuarios` (
     `direccion` VARCHAR(255) NOT NULL,
     `ciudad_id` INT UNSIGNED NOT NULL,
     `contrasenia` VARCHAR(255) NOT NULL,
-    `imagen_perfil` BLOB NOT NULL DEFAULT 'usuario_default.png',
+    `imagen_perfil` VARCHAR(255) NOT NULL DEFAULT 'defaultAvatar.png',
     `telefono` VARCHAR(15) NOT NULL,
-    `roles_id` INT UNSIGNED NOT NULL,
+    `roles_id` INT UNSIGNED NOT NULL DEFAULT 2,
     `creado_el` TIMESTAMP NULL,
     `editado_el` TIMESTAMP NULL,
     `borrado_el` TIMESTAMP NULL

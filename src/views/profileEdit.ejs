@@ -13,28 +13,32 @@
     <section class="perfil">
         <div class="bloqueImagen">
             <div>
-                <img class="avatar" src="/img/avatars/<%=usuario.avatar%>" alt="imagenPerfil" />  
+                <img class="avatar" src="/img/avatars/<%=usuario.imagen_perfil%>" alt="imagenPerfil" />  
             </div>
         </div>
         <div class="bloqueDatos">
             <form action="/profileEdit/<%= usuario.id %>?_method=put" method="POST" enctype="multipart/form-data">  
                 <p>Nombre de usuario: </p>
-                <input type="text" id="userName" name="userName" value=<%= usuario.userName %>>
+                <input type="text" id="userName" name="nombre_usuario" value=<%= usuario.nombre_usuario %>>
                 <p>Nombre: </p>
-                <input type="text" id="firstName" name="firstName" value=<%= usuario.firstName %>>
+                <input type="text" id="firstName" name="nombres" value=<%= usuario.nombres %>>
                 <p>Apellido: </p>
-                <input type="text" id="lastName" name="lastName" value=<%= usuario.lastName %>>
+                <input type="text" id="lastName" name="apellido" value=<%= usuario.apellido %>>
                 <p>Correo electrónico: </p>
                 <input type="email" id="email" name="email" value=<%= usuario.email %>>
                 <p>Dirección: </p>
-                <input type="text" id="adress" name="adress" value=<%= usuario.adress %>>
-                <p>Ciudad: </p>
-                <input type="text" id="city" name="city" value=<%= usuario.city %>>
+                <input type="text" id="adress" name="direccion" value=<%= usuario.direccion %>>
+                <select type="select" class="ciudad_id" name="ciudad_id" id="ciudad_id" >
+                    <option value="" disabled selected>- Seleccione la ciudad - </option>
+                    <% ciudad.forEach(ciudad => { %>
+                    <option value="<%= ciudad.id%>"><%= ciudad.nombre_ciudad%></option>
+                    <% }); %>
+                </select>                       
                 <p>Teléfono: </p>
-                <input type="text" id="telephone" name="telephone" value=<%= usuario.telephone %>>
+                <input type="text" id="telephone" name="telefono" value=<%= usuario.telefono %>>
                 <p>Rol: </p> 
-                <select class='selector' id="role" name="role" required>
-                    <option value="" disabled selected><%= usuario.role %></option>
+                <select class='selector' id="role" name="roles_id" required>
+                    <option value="" disabled selected><%= usuario.roles_id %></option>
                     <option value="Administrador" name="admin">Administrador</option>
                     <option value="Usuario" name="usuario">Usuario</option>
                 <input type="file" id="archivo" name="archivo" accept="image/" multiple required><br><br>

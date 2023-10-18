@@ -14,12 +14,13 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: "ciudad",
-        timestamps: false
+        timestamps: false,
+        paranoid: true
     };
 
     const Ciudad = sequelize.define(alias, cols, config);
     Ciudad.associate = function(models) {
-        Ciudad.belongsTo(models.Usuario,{
+        Ciudad.hasMany(models.Usuario,{
             foreignKey:"ciudad_id",
             as:"ciudad"
         })

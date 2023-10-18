@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
 const db = require('../database/models')
+const sequelize = db.sequelize
 
 let listaProductos = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf-8'));
 
@@ -25,22 +26,24 @@ const productController = {
         let productosVisibles =  await db.Producto.findAll()
         res.render('productList',{listaProductos: productosVisibles}) 
     },    
-    productCreateProcess:(req, res)=>{
-        let productoNuevo = {
-            "id":listaProductos.length + 1,
+    productCreateProcess: async (req, res)=>{
+        let productoNuevo = await db.Producto.create({
+            ...req.body
+            /*"id":listaProductos.length + 1,
             "name":req.body.nombre,
             "category":req.body.categoria,
             "image":req.file.filename,
             /*"image2":req.body.imagen_color1,
             "image3":req.body.imagen_color2,
-            "image4":req.body.imagen_color3,*/
+            "image4":req.body.imagen_color3,
             "description":req.body.descripcion,
             "price":req.body.precio,
-            "deleted":false
-        };
-        listaProductos.push(productoNuevo);
+            "deleted":false*/
+        });
+        console.log(productoNuevo);
+        /*listaProductos.push(productoNuevo);
         fs.writeFileSync(path.join(__dirname, '../data/products.json'),JSON.stringify(listaProductos, null,2), 'utf-8')
-        res.redirect('/')
+        res.redirect('/')*/
     },
     productModifyProcess: (req, res) => {
         let productoEncontrado = listaProductos.find(( producto)=> producto.id == req.params.id)

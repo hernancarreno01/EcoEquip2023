@@ -4,8 +4,8 @@ const multer = require('multer');
 
 
 const controller = {
-    home: (req, res) => {
-        res.render('home');
+    home: async (req, res) => {
+       await res.render('home');
     },    
     header: (req, res) => {
         res.render('header');
