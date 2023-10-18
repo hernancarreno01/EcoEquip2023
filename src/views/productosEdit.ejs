@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <%- include('./partials/head.ejs') %>
+  
+      <title>EcoEquip - Home</title>
+      
+  </head>
+
+<body>
+
+    <h1 class="titulo">Editar Producto: <%= Producto.nombre %></h1>
+    <section class="formulario">
+        <form action="/productos/update/<%= Producto.id %>" method="POST">
+            <label for="name">Nombre </label>
+            <p><input type="text" name="nombre" id="nombre" value="<%= Producto.nombre %>"></p>
+
+            <label for="precio">Precio </label>
+            <p><input type="number" name="precio" id="precio" value="<%= Producto.precio %>"></p>
+           
+            <label for="modelo">Modelo </label>
+            <p><input type="text" name="modelo" id="modelo" value="<%= Producto.modelo %>"></p>
+          
+            <label for="descripcion">Descripción </label>
+            <p><input type="text" name="descripcion" id="descripcion" value="<%= Producto.descripcion %>"></p>
+           
+            <br>
+            <p> <button class="botonAgregar" type="submit">Actualizar Producto</button>
+                <br>
+            <a  class="botonVolver" href="/productos"> Volver al Listado de Productos</a></p>
+        </form>
+    </section>
+</body>
+
+</html>

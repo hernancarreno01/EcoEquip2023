@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <%- include('./partials/head.ejs') %>
+  
+      <title>EcoEquip - Home</title>
+      
+  </head>
+
+<body>
+
+    <h1 class="titulo">Agregar Producto</h1>
+    <br>
+    <section class="formulario">
+        <form action="/productos/create" method="POST">
+            <label for="nombre">Nombre </label>
+            <p><input type="text" name="nombre" id=""></p>
+
+            <label for="precio">Precio </label>
+            <p><input type="number" name="precio" id=""> </p>
+
+            <label for="modelo">Modelo </label>
+            <p><input type="text" name="modelo" id=""></p>
+
+            <label for="descripcion">Descripción </label>
+            <p><input type="text" name="descripcion" id=""></p>
+
+            <br>
+            <p> <button class="botonAgregar" type="submit">Agregar Producto</button>
+            
+                <br>
+            <a  class="botonVolver" href="/productos">Listado de Productos</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>

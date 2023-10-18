@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <%- include('./partials/head.ejs') %>
+      
+          <title>EcoEquip - Home</title>
+          
+      </head>
+<body>
+
+    <h1><%= producto.nombre %> </h1>    
+    <br>
+    <p>PRECIO: <%= '$ ' + producto.precio %> </p>
+    <p>MODELO: <%= producto.modelo %> </p>
+    <p>DESCRIPCIÓN: <%= producto.descripcion%> </p>
+    <div>
+        <a href="/productos/edit/<%= producto.id %>">Editar Producto</a>
+        <br>
+        <a href="/productos/delete/<%= producto.id %>">Eliminar Producto</a>
+        <br>
+        <a href="/productos/restore/<%= producto.id %>">Restaurar Producto</a>
+    </div>
+
+</body>
+</html>

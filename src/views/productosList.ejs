@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('./partials/head.ejs') %>
+  
+      <title>EcoEquip - Home</title>
+      
+  </head>
+
+<body>
+
+    <h1>LISTADO DE PRODUCTOS</h1>
+    <br>
+    <ul>
+        <% for( let i = 0; i < productos.length; i++ ) { %>
+        <li>
+            <a href="/productos/detail/<%= productos[i].id %>"><%= productos[i].nombre %></a>
+        </li>
+        <% } %>
+
+    </ul>
+    <br>
+    <a  href="/productos/add">Agregar Producto</a></p>
+</body>
+
+</html>
