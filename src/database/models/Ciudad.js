@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
     const Ciudad = sequelize.define(alias, cols, config);
     Ciudad.associate = function(models) {
         Ciudad.hasMany(models.Usuario,{
-            foreignKey:"usuarios_id",
+            foreignKey:"ciudad_id",
             as:"ciudad"
         })
     }

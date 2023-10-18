@@ -33,8 +33,8 @@ module.exports = (sequelize, dataTypes) => {
             otherKey:"productos_id"
         })
         Factura.belongsTo(models.Usuario,{
-            foreignKey:"categorias_id",
-            as:"categoria"
+            foreignKey:"facturas_id",
+            as:"usuario"
         })
     }
     return Factura;
