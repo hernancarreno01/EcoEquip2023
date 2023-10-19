@@ -30,9 +30,9 @@ CREATE TABLE `productos` (
     `descripcion` TEXT NULL,
     `modelo` VARCHAR(255) NULL,
     `precio` DECIMAL(10, 2) NOT NULL,
-    `imagen_01` BLOB NOT NULL,
-    `imagen_02` BLOB NOT NULL,
-    `imagen_03` BLOB NOT NULL,
+    `imagen_01` VARCHAR(255) NOT NULL,
+    `imagen_02`  VARCHAR(255) NOT NULL,
+    `imagen_03`  VARCHAR(255) NOT NULL,
     `creado_el` TIMESTAMP NULL,
     `editado_el` TIMESTAMP NULL,
     `borrado_el` TIMESTAMP NULL

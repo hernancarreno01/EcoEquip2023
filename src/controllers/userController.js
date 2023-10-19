@@ -62,7 +62,8 @@ const userController = {
     },
     'altaUser': async (req, res)=> {        
         const usuarioNuevo = await db.Usuario.create({
-                ...req.body
+                ...req.body,
+                "imagen_perfil": req.file.filename
         })
         console.log(usuarioNuevo);
         res.redirect('/profile/'+ usuarioNuevo.id)

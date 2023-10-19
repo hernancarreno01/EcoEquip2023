@@ -32,10 +32,10 @@ module.exports = (sequelize, dataTypes) => {
         telefono: {
             type: dataTypes.STRING
         },
-        /*roles_id: {
+        roles_id: {
             type: dataTypes.INTEGER
         },
-        facturas_id: {
+        /*facturas_id: {
             type: dataTypes.INTEGER
         },
         creado_el: {

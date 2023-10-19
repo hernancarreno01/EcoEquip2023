@@ -5,8 +5,8 @@ const multer = require('multer');
 const path = require('path');
 
 const storage = multer.diskStorage({
-    destination: (req,file,cb)=>{
-        let folder = path.join(__dirname,'../../public/img/avatars')
+    destination: async(req,file,cb)=>{
+        let folder = path.join(__dirname,'../../public/img/avatars')        
         cb(null,folder)
     },
     filename: (req,file,cb)=>{
@@ -24,7 +24,7 @@ router.get("/users", userController.users);
 router.get("/profile/:id", userController.profile);
 router.get("/profileEdit/:id", userController.profileEdit);
 
-router.post("/register",uploadFile.single("avatar"), userController.altaUser);
+router.post("/register",uploadFile.single("imagen_perfil"), userController.altaUser);
 router.put("/profileEdit/:id",uploadFile.single("archivo"), userController.profileEditProcess);
 router.delete("/userDelete/:id",userController.userDelete);
 router.put("/userRetrieve/:id",userController.recuperarProcess )
