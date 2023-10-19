@@ -1,37 +1,61 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-
     <%- include('./partials/head.ejs') %>
-  
-      <title>EcoEquip - Home</title>
-      
-  </head>
+
+        <title>EcoEquip - Editar Producto</title>
+</head>
 
 <body>
+    <%- include('./partials/header.ejs') %>
 
-    <h1 class="titulo">Editar Producto: <%= Producto.nombre %></h1>
-    <section class="formulario">
-        <form action="/productos/update/<%= Producto.id %>" method="POST">
-            <label for="name">Nombre </label>
-            <p><input type="text" name="nombre" id="nombre" value="<%= Producto.nombre %>"></p>
+        <h1 class="h1">Editar Producto</h1>
+        <section class="perfil">
+            <div class="bloqueImagen">
+                <div>
+                    <img class="avatar" src="/img/productos/<%=producto.imagen_01%>" />
+                </div>
+            </div>
+            <div class="bloqueDatos">
+                <form action="/productosEdit/<%= producto.id %>?_method=put" method="POST"
+                    enctype="multipart/form-data">
+                    <p>Nombre del Producto: </p>
+                    <input type="text" id="nombre" name="nombre" value=<%=producto.nombre %>>
+                    <p>Precio: </p>
+                    <input type="text" id="precio" name="precio" value=<%=producto.precio %>>
+                    <p>Modelo: </p>
+                    <input type="text" id="modelo" name="modelo" value=<%=producto.modelo %>>
+                    <p>Descripción del Producto: </p>
+                    <input type="text" id="descripcion" name="descripcion" value=<%=producto.descripcion %>>
+                    <select type="select" class="categoria_id" name="categoria_id" id="categoria_id">
+                        <option value disabled selected>Seleccionar Categoría</option>
+                        <% categoria.forEach(categoria=> { %>
+                            <option value="<%= categoria.id%>">
+                                <%= categoria.tipo %>
+                            </option>
+                            <% }); %>
+                    </select>
+                    <input type="file" id="file" name="file" accept="image/" multiple required><br><br>
+                    <button type="submit">Guardar cambios en Producto</button>
 
-            <label for="precio">Precio </label>
-            <p><input type="number" name="precio" id="precio" value="<%= Producto.precio %>"></p>
-           
-            <label for="modelo">Modelo </label>
-            <p><input type="text" name="modelo" id="modelo" value="<%= Producto.modelo %>"></p>
-          
-            <label for="descripcion">Descripción </label>
-            <p><input type="text" name="descripcion" id="descripcion" value="<%= Producto.descripcion %>"></p>
-           
-            <br>
-            <p> <button class="botonAgregar" type="submit">Actualizar Producto</button>
-                <br>
-            <a  class="botonVolver" href="/productos"> Volver al Listado de Productos</a></p>
-        </form>
-    </section>
+                </form>
+                <% if(producto.deleted_at==false){%>
+                    <form action="/productoDelete/<%= producto.id%>?_method=delete" method="post">
+                        <div class="signinForm">
+                            <button type="submit">Eliminar Producto</button>
+                        </div>
+                    </form>
+                    <% }else{ %>
+                        <form action="/recuperarProducto/<%= producto.id%>?_method=put" method="post">
+                            <button type="submit">Recuperar Producto</button>
+                        </form>
+                        <% } %>
+            </div>
+
+        </section>
+
+        <%- include('./partials/footer.ejs') %>
 </body>
 
 </html>

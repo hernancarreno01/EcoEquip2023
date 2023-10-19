@@ -1,27 +1,33 @@
 const express = require('express');
 const router = express.Router();
 const productosController = require('../controllers/productosController');
+const multer = require('multer');
+const path = require('path');
 
-// Rutas para la lista de productos
-/*
-router.get('/productos', (req, res) => {
-  const productos = db.Producto.findAll();
-  res.json(productos);
-});
-*/
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    let folder = path.join(__dirname, '../../public/img/productos')
+    cb(null, folder)
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + Math.round(Math.random() * 1E9)
+    cb(null, uniqueSuffix + path.extname(file.originalname))
 
-router.get('/productos', productosController.list);
-router.get('/productos/new', productosController.new);
-router.get('/productos/detail/:id', productosController.detail);
+  }
+})
 
-// Rutas para la creación y edición de productos
-router.get('/productos/add', productosController.add);
-router.post('/productos/create', productosController.create);
-router.get('/productos/edit/:id', productosController.edit);
-router.post('/productos/update/:id', productosController.update);
-// Rutas para la eliminación de productos
-//
-//router.get('/productos/delete/:id', productosController.delete);
-//router.post('/productos/delete/:id', productosController.destroy);
+const uploadFile = multer({ storage })
+
+router.get("/agregarProducto",  productosController.productosCreate);  // DONE
+router.get("/productosList", productosController.productosList); // DONE
+router.get("/productosDetail/:id", productosController.productosDetail); // DONE
+router.get("/productosEdit/:id", productosController.productosEdit); // DONE
+
+router.put("/recuperarProducto/:id",productosController.recuperarProducto);  // DONE
+router.put("/productosEdit/:id",uploadFile.single("imagen_01"), productosController.productosEditProcess);
+
+router.post("/agregarProducto",uploadFile.single("imagen_01"), productosController.altaProducto);
+
+router.delete("/productosDelete/:id",productosController.productosDelete);
 
 module.exports = router;

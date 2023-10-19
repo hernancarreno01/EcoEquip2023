@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <%- include('./partials/head.ejs') %>
-      
-          <title>EcoEquip - Home</title>
-          
-      </head>
-<body>
 
-    <h1><%= producto.nombre %> </h1>    
-    <br>
-    <p>PRECIO: <%= '$ ' + producto.precio %> </p>
-    <p>MODELO: <%= producto.modelo %> </p>
-    <p>DESCRIPCIÓN: <%= producto.descripcion%> </p>
-    <div>
-        <a href="/productos/edit/<%= producto.id %>">Editar Producto</a>
-        <br>
-        <a href="/productos/delete/<%= producto.id %>">Eliminar Producto</a>
-        <br>
-        <a href="/productos/restore/<%= producto.id %>">Restaurar Producto</a>
-    </div>
+        <title>EcoEquip - Detalle de Producto</title>
+    </head>
 
-</body>
+    <body>
+        <%- include('./partials/header.ejs') %>
+
+        <h1 class="h1">Detalle de Producto</h1>
+        <section class="perfil">
+            <div class="bloqueImagen">
+                <div>
+                    <img class="avatar" src="/img/productos/<%=producto.imagen_01%>" />
+                    <img class="avatar" src="/img/productos/<%=producto.imagen_02%>" />
+                    <img class="avatar" src="/img/productos/<%=producto.imagen_03%>" />
+                </div>
+                <a href="/productoEdit/<%=producto.id%>">Cambiar Imagenes</a>
+            </div>
+            <div class="bloqueDatos">
+                <p>Nombre de Producto: <%= producto.nombre %></p>
+                <p>Precio del Producto: $ <%= producto.precio %></p>
+                <p>Modelo del Producto: <%= producto.modelo %></p>
+                <p>Descripción del Producto: <%= producto.descripcion %></p>
+                <p>Categoría del Producto: <%= producto.categoria %></p>
+                <a href="/productosEdit/<%= producto.id %>">Editar Producto</a>
+            </div>
+            <div class="bloqueImagen">
+                <div>
+                    <img class="avatar" src="/img/productos/<%=producto.imagen_01%>" />
+                    <img class="avatar" src="/img/productos/<%=producto.imagen_02%>" />
+                    <img class="avatar" src="/img/productos/<%=producto.imagen_03%>" />
+                </div>
+            </div>
+
+        </section>
+
+        <%- include('./partials/footer.ejs') %>
+    </body>
 </html>

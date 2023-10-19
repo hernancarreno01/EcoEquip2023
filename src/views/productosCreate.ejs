@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/stylelogin.css" />
+    <title>EcoEquip - Agregar Producto</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="mark">
+      <img src="./img/logoEcoEquipParaFondoClaro.png" alt="EcoEquip" />
+    </div>
+    <div class="form">
+      <h2>Agregar Producto</h2>
+      <br>
+      <form class="signinForm" action="/agregarProducto" method="post" enctype="multipart/form-data" >
+        <label for="nombre">Nombre del Producto:</label>
+        <input type="text" name="nombre" autocomplete="NombreDeProducto" placeholder="Ingresar Nombre de Producto" aria-label="" />
+        <label for="precio">Precio:</label>
+        <input type="text" name="precio" autocomplete="Precio" placeholder="Ingresar Precio" aria-label="" />
+        <label for="modelo">Modelo del Producto:</label>
+        <input type="text" name="modelo"  autocomplete="Modelo" placeholder="Ingresar Modelo" aria-label="" />
+        <label for="descripcion">Descripción del Producto:</label>
+        <textarea rows="4" cols="60" name="descripcion" autocomplete="Descripcion" placeholder="Ingresar Descripción" aria-label=""></textarea>        
+        <br>
+        <label for="categoria">Categoría del Producto:</label>
+        <select type="select" class="categoria_id" name="categoria_id" id="categoria_id" >
+          <option value="" disabled selected>- Seleccionar Categoría - </option>
+          <% categoria.forEach(categoria => { %>
+          <option value="<%= categoria.id%>"><%= categoria.tipo%></option>
+          <% }); %>
+        </select><br>
+        <input type="file" id="imagen_01" name="imagen_01">
+        <br>
+        <input type="file" id="imagen_02" name="imagen_02">
+        <br>
+        <input type="file" id="imagen_03" name="imagen_03">
+        <br>
+        <br>
+        <button type="submit">Agregar Producto</button>
+      </form>
+    </div>
+  </div>
+  <div class="container land"></div>
+</body>
+
+</html>

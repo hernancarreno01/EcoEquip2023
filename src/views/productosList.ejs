@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     <%- include('./partials/head.ejs') %>
-  
-      <title>EcoEquip - Home</title>
-      
+    <title>EcoEquip - Usuarios</title>
   </head>
-
-<body>
-
-    <h1>LISTADO DE PRODUCTOS</h1>
-    <br>
-    <ul>
-        <% for( let i = 0; i < productos.length; i++ ) { %>
-        <li>
-            <a href="/productos/detail/<%= productos[i].id %>"><%= productos[i].nombre %></a>
-        </li>
-        <% } %>
-
-    </ul>
-    <br>
-    <a  href="/productos/add">Agregar Producto</a></p>
-</body>
-
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <div  class="table">
+        <h2>Lista de Productos</h2>
+        <thead>
+          </thead>
+          <br>
+          <tbody>
+            <section class="userList">
+              <% productos.forEach(function(producto) { %>
+                <div class="userProfile" >
+                  <ul><hr class="rounded">
+                    <li class="userTitle"><th>Foto de Producto: </th></li>
+                    <li class="userTitle"><th>Nombre de Producto: </th></li>
+                    <li class="userInfo"><td><%= producto.nombre %></td></li>
+                    <li class="userTitle"><th>Modelo: </th></li>
+                    <li class="userInfo"><td><%= producto.modelo %></td></li>
+                    <li class="userTitle"><th>Descripción: </th></li>
+                    <li class="userInfo"><td><%= producto.descripcion %></td></li>
+                    <li class="userTitle"><th>Categoría: </th>   </li>
+                    <li class="userInfo"><td><%= producto.categorias_id %></td></li>
+                    <li class="userInfo"><td><a href="/productosDetail/<% producto.id%>"></a><img class="UserImg" src="/img/productos/<%=producto.imagen_01%>" /></td></li>
+                    <li class="userInfo"><td><a href="/productosDetail/<% producto.id%>"></a><img class="UserImg" src="/img/productos/<%=producto.imagen_02%>" /></td></li>
+                    <li class="userInfo"><td><a href="/productosDetail/<% producto.id%>"></a><img class="UserImg" src="/img/productos/<%=producto.imagen_03%>" /></td></li>
+                    <li class="userTitle"><th>Borrado?: </th></li>
+                    <li class="userInfo"><td><%= producto.deleted_at %></td></li>
+                  </ul>
+                 </div> 
+                </tr><br>
+              <% }); %>
+          </section>
+          </tbody>
+        </table>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+  </body>
 </html>
