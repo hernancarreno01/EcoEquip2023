@@ -5,6 +5,26 @@
 
 📋 <strong><a href="https://trello.com/invite/b/Scb6zxY8/ATTI7272b788f3fa90e9d488c6256f3a84252462C99D/ecoequip">Tablero EcoEquip</a></strong>
 
+## Retrospectiva - Sprint 6
+
+**Lo que hicimos bien en el Sprint Anterior:
+
+**Adaptación ante desafíos:** A pesar de los desafíos inesperados, el equipo demostró una gran capacidad de adaptación. La reducción del grupo no impidió que continuáramos avanzando.
+
+**Comunicación efectiva:** Mantuvimos una comunicación efectiva a pesar de la situación. Esto nos permitió coordinarnos y abordar los desafíos de manera eficiente.
+
+**Compromiso del equipo:** A pesar de la disminución en el número de miembros, el compromiso de los que permanecieron en el grupo se mantuvo alto. Todos siguieron trabajando con dedicación.
+
+**Áreas en las que mejoramos:**
+
+**Reorganización de tareas:** Aprendimos a reorganizar las tareas y responsabilidades de manera más eficiente para adaptarnos a la nueva situación. Esto nos ayudó a mantener el flujo de trabajo.
+
+**Aprendizaje continuo:** Aprovechamos la oportunidad para aprender nuevas habilidades y conocimientos que fueron necesarios debido a la reducción del equipo. Esto amplió nuestra versatilidad.
+
+**Áreas en las que aún podemos mejorar:**
+
+**Planificación de contingencia:** Es importante que trabajemos en la creación de planes de contingencia para situaciones similares en el futuro. Esto nos permitirá estar mejor preparados.
+
 
 ## Retrospectiva - Sprint 05
 
