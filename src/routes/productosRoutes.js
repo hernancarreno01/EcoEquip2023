@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
   }
 })
 
-const uploadFile = multer({ storage })
+const uploadFile = multer ({ storage })
 
 router.get("/productosCreate",  productosController.productosCreate);  // DONE
 router.get("/productosList", productosController.productosList); // DONE
@@ -24,10 +24,8 @@ router.get("/productosDetail/:id", productosController.productosDetail); // DONE
 router.get("/productosEdit/:id", productosController.productosEdit); // DONE
 
 router.put("/recuperarProducto/:id",productosController.recuperarProducto);  // DONE
-router.put("/productosEdit/:id",uploadFile.single("imagen_01"), productosController.productosEditProcess);
-
+router.put("/productosEdit/:id",uploadFile.single("archivo"), productosController.productosEditProcess);
 router.post("/agregarProducto",uploadFile.single("imagen_01"), productosController.altaProducto);
-
 router.delete("/productosDelete/:id",productosController.productosDelete);
 
 module.exports = router;
