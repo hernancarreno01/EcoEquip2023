@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const db = require('../database/models');
+const db = require('../database/models')
 const sequelize = db.sequelize;
 
 const Productos = db.Producto;
@@ -10,7 +10,7 @@ const productosController = {
   'productosList': async (req, res) => {
     await db.Producto.findAll({ paranoid: false })
       .then(productos => {
-        res.render('productosList.ejs', { productos })
+        res.render('productosList.ejs', {productos})
       })
   },
 
@@ -18,7 +18,7 @@ const productosController = {
 
     await db.Producto.findAll({ paranoid: false })
       .then(categoria => {
-        res.render('productosCreate.ejs', { categoria })
+        res.render('productosCreate.ejs', {categoria})
       })
   },
 
