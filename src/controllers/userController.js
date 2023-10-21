@@ -38,7 +38,8 @@ const userController = {
     'profileEditProcess': async (req, res) => {
         
         let usuarioEncontrado = await db.Usuario.update({
-            ...req.body
+            ...req.body,
+            "imagen_perfil": req.file.filename
         },{where:{
                 id: req.params.id
             }})

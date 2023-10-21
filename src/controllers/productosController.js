@@ -25,9 +25,9 @@ const productosController = {
   'altaProducto': async (req, res) => {
     const productoNuevo = await db.Producto.create({
       ...req.body,
-      "image_01":req.file.filename,
-      "image_02":req.file.filename,
-      "image_03":req.file.filename,
+      "imagen_01":req.file.filename,
+      "imagen_02":req.file.filename,
+      "imagen_03":req.file.filename,
 
     })
     console.log(productoNuevo);
