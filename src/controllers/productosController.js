@@ -17,8 +17,8 @@ const productosController = {
   'productosCreate': async (req, res) => {
 
     await db.Producto.findAll({ paranoid: false })
-      .then(categoria => {
-        res.render('productosCreate.ejs', {categoria})
+      .then(categorias => {
+        res.render('productosCreate.ejs', {categorias})
       })
   },
 
@@ -40,10 +40,10 @@ const productosController = {
   },
 
   'productosEdit': async (req, res) => {
-    const categorias = await db.Categoria.findAll({ paranoid: false });
+    const categorias = await db.Categorias.findAll({ paranoid: false });
     const productoEncontrado = await db.Producto.findOne({ where: { id: req.params.id } });
 
-    res.render('productosEdit', { categoria: categorias, producto: productoEncontrado })
+    res.render('productosEdit', { categorias: categorias, producto: productoEncontrado })
   },
 
   'productosEditProcess': async (req, res) => {
