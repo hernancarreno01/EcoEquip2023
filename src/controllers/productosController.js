@@ -16,18 +16,17 @@ const productosController = {
 
   'productosCreate': async (req, res) => {
 
-    await db.Producto.findAll({ paranoid: false })
-      .then(categoria => {
-        res.render('productosCreate.ejs', {categoria})
-      })
+    const categoria =  await db.Categoria.findAll()
+    res.render('productosCreate.ejs', {categoria: categoria})
+    
   },
 
   'altaProducto': async (req, res) => {
     const productoNuevo = await db.Producto.create({
       ...req.body,
       "imagen_01":req.file.filename,
-      "imagen_02":req.file.filename,
-      "imagen_03":req.file.filename,
+      // "imagen_02":req.file.filename,
+      // "imagen_03":req.file.filename,
 
     })
     console.log(productoNuevo);
@@ -49,7 +48,10 @@ const productosController = {
   'productosEditProcess': async (req, res) => {
 
     let productoEncontrado = await db.Producto.update({
-      ...req.body
+      ...req.body,
+      "imagen_01":req.file.filename,
+      "imagen_02":req.file.filename,
+      "imagen_03":req.file.filename,
     }, {
       where: {
         id: req.params.id

@@ -22,12 +22,13 @@ module.exports = (sequelize, dataTypes) => {
         imagen_01: {
             type: dataTypes.STRING
         },
+        /*categorias_id: dataTypes.INTEGER
         imagen_02: {
             type: dataTypes.STRING
         },
         imagen_03: {
             type: dataTypes.STRING
-        },
+        },*/
     };
     let config = {
         tableName: 'productos',
@@ -43,7 +44,7 @@ module.exports = (sequelize, dataTypes) => {
     Producto.associate = function(models) {
         Producto.belongsTo(models.Categoria,{
             foreignKey:"categorias_id",
-            as:"categorias"
+            as:"categoria"
         })
     }
 
