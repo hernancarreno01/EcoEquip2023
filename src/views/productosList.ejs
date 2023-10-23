@@ -16,7 +16,7 @@
               <% productos.forEach(function(producto) { %>
                 <div class="userProfile" >
                   <ul><hr class="rounded">
-                    <li class="userTitle"><th>Foto de Producto: </th></li>
+
                     <li class="userTitle"><th>Nombre de Producto: </th></li>
                     <li class="userInfo"><td><%= producto.nombre %></td></li>
                     <li class="userTitle"><th>Modelo: </th></li>
@@ -25,9 +25,10 @@
                     <li class="userInfo"><td><%= producto.descripcion %></td></li>
                     <li class="userTitle"><th>Categoría: </th>   </li>
                     <li class="userInfo"><td><%= producto.categorias_id %></td></li>
+                    <li class="userTitle"><th>Foto de Producto: </th></li>
                     <li class="userInfo"><td><a href="/productosDetail/<% producto.id%>"></a><img class="UserImg" src="/img/productos/<%=producto.imagen_01%>" /></td></li>
-                    <li class="userInfo"><td><a href="/productosDetail/<% producto.id%>"></a><img class="UserImg" src="/img/productos/<%=producto.imagen_02%>" /></td></li>
-                    <li class="userInfo"><td><a href="/productosDetail/<% producto.id%>"></a><img class="UserImg" src="/img/productos/<%=producto.imagen_03%>" /></td></li>
+                    <!--<li class="userInfo"><td><a href="/productosDetail/<% producto.id%>"></a><img class="UserImg" src="/img/productos/<%=producto.imagen_02%>" /></td></li>
+                    <li class="userInfo"><td><a href="/productosDetail/<% producto.id%>"></a><img class="UserImg" src="/img/productos/<%=producto.imagen_03%>" /></td></li>-->
                     <li class="userTitle"><th>Borrado?: </th></li>
                     <li class="userInfo"><td><%= producto.deleted_at %></td></li>
                   </ul>

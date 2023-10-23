@@ -16,10 +16,9 @@ const productosController = {
 
   'productosCreate': async (req, res) => {
 
-    await db.Producto.findAll({ paranoid: false })
-      .then(categorias => {
-        res.render('productosCreate.ejs', {categorias})
-      })
+    const categorias =  await db.Categorias.findAll()
+    res.render('productosCreate.ejs', {categorias: categorias})
+    
   },
 
   'altaProducto': async (req, res) => {
