@@ -197,9 +197,11 @@ ul li {
 }
 .bloqueImagenDetail .preview {
     width: 90%;
+    border-radius: 20px;
     height: auto; /* Esto mantiene la relación de aspecto de la imagen */
     display: block;
     margin: 0 auto; /* Esto centra la imagen dentro del bloqueImagenDetail */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
 
 .bloqueDatosDetail {
@@ -357,7 +359,7 @@ input[type="text"]:focus {
         justify-content: space-between;
         flex-direction: column;
         align-content: center;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .bloqueImagenDetail {
