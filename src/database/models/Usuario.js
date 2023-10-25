@@ -35,9 +35,7 @@ module.exports = (sequelize, dataTypes) => {
         roles_id: {
             type: dataTypes.INTEGER
         },
-        /*facturas_id: {
-            type: dataTypes.INTEGER
-        },
+        
         creado_el: {
             type: dataTypes.DATE
         },
@@ -46,12 +44,12 @@ module.exports = (sequelize, dataTypes) => {
         },
         borrado_el: {
             type: dataTypes.DATE
-        }*/
+        }
     };
 
     let config = {
         tableName: "usuarios",
-        timestamps: false,//estaba en true y lo cambié porque daba error 1054:Unknown column 'createdAt' in 'field list'
+        timestamps: true,//estaba en true y lo cambié porque daba error 1054:Unknown column 'createdAt' in 'field list'
         paranoid: true,
         deletedAt: 'borrado_el',
         createdAt: 'creado_el',
