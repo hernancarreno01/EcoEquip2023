@@ -20,6 +20,30 @@
     width: 25%;
     margin: 5%;
 }
+.categoria_id {
+margin-bottom: 10px;
+}
+
+/* Estilo para el select */
+select {
+    padding: 10px; /* Aumenta el padding para hacerlo más grande */
+    border: 1px solid #ccc; /* Agrega un borde */
+    border-radius: 10px; /* Agrega bordes redondeados */
+    width: 200px; /* Ajusta el ancho según tus necesidades */
+    transform: translateY(-4px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Puedes personalizar aún más, como el color de fondo y el texto */
+  select:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo al pasar el ratón */
+  }
+  
+  /* Estilo cuando está enfocado (clicked) */
+  select:focus {
+    border-color: #007bff; /* Cambia el color del borde al hacer clic */
+    outline: none; /* Elimina el contorno predeterminado */
+  }
 
 .contenedor {
     width: 95%;

@@ -24,7 +24,7 @@ router.get("/productosDetail/:id", productosController.productosDetail); // DONE
 router.get("/productosEdit/:id", productosController.productosEdit); // DONE
 
 router.put("/recuperarProducto/:id",productosController.recuperarProducto);  // DONE
-router.put("/productosEdit/:id",uploadFile.single("archivo"), productosController.productosEditProcess);
+router.put("/productosEdit/:id",uploadFile.single("imagen_01"), productosController.productosEditProcess);
 router.post("/productosCreate", uploadFile.single("imagen_01"), productosController.altaProducto);
 
 
