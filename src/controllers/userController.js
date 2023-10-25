@@ -49,7 +49,7 @@ const userController = {
                 id: req.params.id
             }})
             console.log(usuarioEncontrado);
-            res.redirect('/profile/'+ usuarioEncontrado.id)
+            res.redirect('/profile/'+ req.params.id)
         
         /*let usuarioEncontrado = await listaUsuarios.find(( user)=> user.id == req.params.id)
                 
