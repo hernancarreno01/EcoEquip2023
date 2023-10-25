@@ -31,6 +31,13 @@
           <option value="<%= ciudad.id%>"><%= ciudad.nombre_ciudad%></option>
           <% }); %>
         </select>
+        <select type="select" class="rol_id" name="rol_id" id="rol_id" >
+          <option value="" disabled selected>- Seleccione el Rol- </option>
+          <% rol.forEach(rol => { %>
+          <option value="<%= rol.id%>"><%= rol.nombre%></option>
+          <% }); %>
+        </select>
+        
         <input type="password" name="contrasenia" autocomplete="new-password" placeholder="Contraseña" />
         <input type="text" name="telefono"  autocomplete="telefono" placeholder="Teléfono" aria-label="" />
         <input type="file" id="avatar" name="imagen_perfil" accept="image/" multiple required><br><br> <!--cuidado con el name, en la bd está como imagen_perfil-->

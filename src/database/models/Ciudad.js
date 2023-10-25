@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
     Ciudad.associate = function(models) {
         Ciudad.hasMany(models.Usuario,{
             foreignKey:"ciudad_id",
-            as:"ciudad"
+            as:"usuarios"//decía ciudad
         })
     }
     return Ciudad;

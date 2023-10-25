@@ -38,14 +38,16 @@
                 <input type="text" id="telephone" name="telefono" value=<%= usuario.telefono %>>
                 <p>Rol: </p> 
                 <select class='selector' id="role" name="roles_id" required>
-                    <option value="" disabled selected><%= usuario.roles_id %></option>
-                    <option value="Administrador" name="admin">Administrador</option>
-                    <option value="Usuario" name="usuario">Usuario</option>
+                    <% rol.forEach(rol => { %>
+                    <option value="<%= rol.id%>"><%= rol.nombre %></option>
+                    <!-- <option value="Administrador" name="admin">Administrador</option>
+                    <option value="Usuario" name="usuario">Usuario</option> -->
+                    <% }); %>
                 <input type="file" id="archivo" name="archivo" accept="image/" multiple required><br><br>
                 <button type="submit">Guardar cambios</button>
 
             </form>
-            <% if(usuario.deleted == false){%>
+            <% if(usuario.borrado_el != "0000-00-00"){%>
             <form action="/userDelete/<%= usuario.id%>?_method=delete" method="post">
                 <div class="signinForm">
                     <button type="submit" >Eliminar usuario</button>
@@ -53,7 +55,7 @@
             </form> 
             <% }else{ %>
             <form action="/userRetrieve/<%= usuario.id%>?_method=put" method="post">
-                <button type="submit" >Recuperar ususario</button>
+                <button type="submit" >Recuperar usuario</button>
             </form>                        
             <% } %>
         </div>

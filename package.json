@@ -20,5 +20,6 @@
     "override": "^0.0.1",
     "sequelize": "^6.33.0"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {}
 }

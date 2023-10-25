@@ -11,11 +11,13 @@ const userController = {
         res.render('login');
     },    
     'register': async (req, res) => {
-        
-        await db.Ciudad.findAll({paranoid: false})
+        let ciudades = await db.Ciudad.findAll({paranoid: false})
+        let roles = await db.Rol.findAll({paranoid: false})
+        res.render('register.ejs', {ciudad: ciudades, rol: roles})
+        /*await db.Ciudad.findAll({paranoid: false})
             .then(ciudad => {
                 res.render('register.ejs', {ciudad})
-            })        
+            }) */       
     },
      
     'users': async (req, res)=>{
@@ -31,9 +33,12 @@ const userController = {
     },
     'profileEdit': async (req,res)=>{
         const ciudades = await db.Ciudad.findAll({ paranoid: false });
-        const usuarioEncontrado = await db.Usuario.findOne({ where: { id: req.params.id } });        
+        let roles = await db.Rol.findAll({paranoid: false})
+        const usuarioEncontrado = await db.Usuario.findOne({ 
+            where: { id: req.params.id }
+        });   
         
-        res.render('profileEdit', { ciudad: ciudades,usuario: usuarioEncontrado})
+        res.render('profileEdit', { ciudad: ciudades, rol: roles, usuario: usuarioEncontrado})
     },
     'profileEditProcess': async (req, res) => {
         
@@ -44,7 +49,7 @@ const userController = {
                 id: req.params.id
             }})
             console.log(usuarioEncontrado);
-            res.redirect('/profile/:id')
+            res.redirect('/profile/'+ usuarioEncontrado.id)
         
         /*let usuarioEncontrado = await listaUsuarios.find(( user)=> user.id == req.params.id)
                 
@@ -64,7 +69,8 @@ const userController = {
     'altaUser': async (req, res)=> {        
         const usuarioNuevo = await db.Usuario.create({
                 ...req.body,
-                "imagen_perfil": req.file.filename
+                "imagen_perfil": req.file.filename,
+                "roles_id ":2
         })
         console.log(usuarioNuevo);
         res.redirect('/profile/'+ usuarioNuevo.id)

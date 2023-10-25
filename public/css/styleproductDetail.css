@@ -179,24 +179,37 @@ ul li {
     justify-content: space-between;
     flex-direction: column;
     align-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .bloqueImagenDetail {
     padding: 10px;
+    width: 60%;
+    max-width: 500px;
     border-radius: 15px;
     background-color: #e0ebe5;
     margin-bottom: 30px;
     border: 1px solid var(--gris-oscuro);
     object-fit: cover;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin: 0 auto; /* Esto centra el bloque en la página */
+    text-align: center; /* Esto centra el contenido dentro del bloque */
 }
+.bloqueImagenDetail .preview {
+    width: 90%;
+    border-radius: 20px;
+    height: auto; /* Esto mantiene la relación de aspecto de la imagen */
+    display: block;
+    margin: 0 auto; /* Esto centra la imagen dentro del bloqueImagenDetail */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
 
 .bloqueDatosDetail {
     padding: 10px;
     width: 100%;
     margin-right: 10px;
     margin-bottom: 30px;
+    margin-top: 30px;
     padding: 10px;
     border-radius: 15px;
     background-color: #e0ebe5;
@@ -206,20 +219,28 @@ ul li {
 }
 
 .botonEdit {
-    margin-top: 5px;
     display: flex;
-    position: relative;
+    justify-content: center;
     align-items: center;
-    width: 40%;
-    font-size: 1.3em;
-    padding: 0.3em;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    height: 60px;
+    border: none;
     border-radius: 15px;
-    border: 1px solid var(--verde-oscuro);
-    color: var(--gris-claro);
-    background-color: var(--verde-oscuro);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.55s;
-}
+    margin-bottom: 20px;
+    padding: 0 15px;
+    font-size: 1.2rem;
+    outline: none;
+    box-shadow: 0 0 5px var(--verde-oscuro);
+    background-color: var(--verde-oscuro2);
+    color: white;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
 
 .botonEdit2 {
     margin-top: 5px;
@@ -338,7 +359,7 @@ input[type="text"]:focus {
         justify-content: space-between;
         flex-direction: column;
         align-content: center;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .bloqueImagenDetail {
@@ -365,20 +386,28 @@ input[type="text"]:focus {
     }
 
     .botonEdit {
-        margin-top: 5px;
         display: flex;
-        position: relative;
+        justify-content: center;
         align-items: center;
-        width: 40%;
-        font-size: 1.3em;
-        padding: 0.3em;
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+        height: 60px;
+        border: none;
         border-radius: 15px;
-        border: 1px solid var(--verde-oscuro);
-        color: var(--gris-claro);
-        background-color: var(--verde-oscuro);
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-        transition: all 0.55s;
-    }
+        margin-bottom: 20px;
+        padding: 0 15px;
+        font-size: 1.2rem;
+        outline: none;
+        box-shadow: 0 0 5px var(--verde-oscuro);
+        background-color: var(--verde-oscuro2);
+        color: white;
+        font-weight: bold;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+      }
 
     .botonEdit2 {
         margin-top: 5px;

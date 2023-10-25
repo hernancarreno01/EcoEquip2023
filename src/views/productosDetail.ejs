@@ -12,20 +12,21 @@
 
         <h1 class="h1">Detalle de Producto</h1>
         <section class="productosDetail">
-            <div class="bloqueImagenDetail">
-                <div>
-                    <img class="avatar" src="/img/productos/<%=producto.imagen_01%>" />
-                    <img class="avatar" src="/img/productos/<%=producto.imagen_02%>" />
-                    <img class="avatar" src="/img/productos/<%=producto.imagen_03%>" />
-                </div>
-                <a href="/productosEdit/<%=producto.id%>">Cambiar Imagenes</a>
-            </div>
+
             <div class="bloqueDatosDetail">
                 <p>Nombre de Producto: <%= producto.nombre %></p>
                 <p>Precio del Producto: $ <%= producto.precio %></p>
                 <p>Modelo del Producto: <%= producto.modelo %></p>
                 <p>Descripción del Producto: <%= producto.descripcion %></p>
-                <p>Categoría del Producto: <%= producto.categoria %></p>
+                <p>Categoría del Producto: <%= producto.categorias_id %></p>
+            </div>
+            <div class="bloqueImagenDetail">
+                <div>
+                    <img class="preview" src="/img/productos/<%=producto.imagen_01%>" />
+                <!--    <img class="preview" src="/img/productos/<%=producto.imagen_02%>" />
+                    <img class="preview" src="/img/productos/<%=producto.imagen_03%>" />-->
+                </div>
+                <a href="/productosEdit/<%=producto.id%>">Cambiar Imagenes</a>
             </div>
             <a class="botonEdit" href="/productosEdit/<%= producto.id %>">Editar Producto</a>
         </section>

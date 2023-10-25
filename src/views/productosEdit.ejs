@@ -26,16 +26,16 @@
                     <input type="text" id="descripcion" name="descripcion" value=<%=producto.descripcion %>><br>
                     <select type="select" class="categoria_id" name="categoria_id" id="categoria_id">
                         <option value disabled selected>Seleccionar Categoría</option>
-                        <% categoria.forEach(categoria=> { %>
-                            <option value="<%= categoria.id%>">
-                                <%= categoria.tipo %>
+                        <% categorias.forEach(categorias=> { %>
+                            <option value="<%= categorias.id%>">
+                                <%= categorias.tipo %>
                             </option>
                             <% }); %>
                     </select>
                     <div>
                         <img class="avatar" src="../../public/img/productos/<%=producto.imagen_01%>" />
                     </div>
-                    <input type="file" id="imagen_01" name="imagen_01" accept="image/" multiple><br>
+                    <input type="file" id="imagen_01" name="imagen_01" accept="image/" multiple><br><!--
                     <div>
                         <img class="avatar" src="../../public/img/productos/<%=producto.imagen_02%>" />
                     </div>
@@ -43,7 +43,7 @@
                     <div>
                         <img class="avatar" src="../../public/img/productos/<%=producto.imagen_03%>" />
                     </div>
-                    <input type="file" id="imagen_03" name="imagen_03" accept="image/" multiple><br><br>
+                    <input type="file" id="imagen_03" name="imagen_03" accept="image/" multiple><br><br>-->
                     <button class="botonEdit2" type="submit">Guardar cambios en Producto</button>
 
                 </form>
