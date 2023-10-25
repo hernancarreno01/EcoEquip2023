@@ -17,13 +17,13 @@
                 <form class="form" action="/productosEdit/<%= producto.id %>?_method=put" method="POST"
                     enctype="multipart/form-data">
                     <p>Nombre del Producto: </p>
-                    <input type="text" id="nombre" name="nombre" value=<%=producto.nombre %>>
+                    <input type="text" id="nombre" name="nombre" value="<%=producto.nombre %>">
                     <p>Precio: </p>
-                    <input type="text" id="precio" name="precio" value=<%=producto.precio %>>
+                    <input type="text" id="precio" name="precio" value="<%=producto.precio %>">
                     <p>Modelo: </p>
-                    <input type="text" id="modelo" name="modelo" value=<%=producto.modelo %>>
+                    <input type="text" id="modelo" name="modelo" value="<%=producto.modelo %>">
                     <p>Descripción del Producto: </p>
-                    <input type="text" id="descripcion" name="descripcion" value=<%=producto.descripcion %>><br>
+                    <input type="text" id="descripcion" name="descripcion" value="<%=producto.descripcion %>"><br>
                     <p>Seleccionar Categoría: </p>
                     <select type="select" class="categoria_id" name="categoria_id" id="categoria_id">
                         <option value disabled selected></option>

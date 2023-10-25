@@ -50,15 +50,13 @@ const productosController = {
     let productoEncontrado = await db.Producto.update({
       ...req.body,
       "imagen_01":req.file.filename,
-      "imagen_02":req.file.filename,
-      "imagen_03":req.file.filename,
     }, {
       where: {
         id: req.params.id
       }
     })
     console.log(productoEncontrado);
-    res.redirect('/productosDetail/:id')
+    res.redirect('/productosDetail/' + req.params.id)
   },
 
   'productosDelete': async (req, res) => {
