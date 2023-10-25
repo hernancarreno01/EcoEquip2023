@@ -13,10 +13,64 @@
     --verde-aqua: #e0ebe5;
     --dl-color-pallet-green: #dfe7ddff;
 }
+.btn-conteiner {
+    display: flex;
+    justify-content: center;
+    --color-text: #ffffff;
+    --color-background: #ff135a;
+    --color-outline: #ff145b80;
+    --color-shadow: #00000080;
+  }
+  .btn-content i.fa-eye {
+    color: var(--verde-oscuro);
+    font-size: 0.6rem;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+  .btn-content {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--color-shadow);
+    background: var(--verde-aqua);
+    transition: 1s;
+    border-radius: 100px;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn-content:hover, .btn-content:focus {
+    transition: 1s;
+    -webkit-animation: btn-content 2s;
+    animation: btn-content 0.5s;
+    outline: 0.2em solid transparent;
+    outline-offset: 0.1em;
+    box-shadow: 0 0 0.4em 0 var(--color-background);
+    background: var(--verde-claro);
+  }
+  
+  @keyframes btn-content {
+    0% {
+      outline: 0.2em solid var(--color-background);
+      outline-offset: 0;
+    }
+  }
 .container{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+.botonEdit1 {
+    width: 200px;
+    font-size: 5px;
+    padding: 5px;
+}
+
+.UserImg {
+    width: 150px;
+    border: #658864 1px solid;
 }
 .product{
     width: 90%;

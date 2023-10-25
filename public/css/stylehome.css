@@ -981,10 +981,12 @@
 }
 
 .userProfile {
-  border: #293a28 solid 4px;
+  border: var(--verde-oscuro) solid 4px;
   width: calc(30% - 20px);
   padding: 10px; /* Espaciado interno para cada perfil */
+  border-radius: 20px;
   box-sizing: border-box;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.3);
 }
 
 .userProfile .UserImg {

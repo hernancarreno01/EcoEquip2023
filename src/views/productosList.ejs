@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/styleProductList.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>EcoEquip - Usuarios</title>
   </head>
   <body>
@@ -30,8 +32,10 @@
                     <!--<li class="userInfo"><td><a href="/productosDetail/<% producto.id%>"></a><img class="UserImg" src="/img/productos/<%=producto.imagen_02%>" /></td></li>
                     <li class="userInfo"><td><a href="/productosDetail/<% producto.id%>"></a><img class="UserImg" src="/img/productos/<%=producto.imagen_03%>" /></td></li>-->
                     <li class="userTitle"><th>Borrado?: </th></li>
-                    <li class="userInfo"><td><%= producto.deleted_at %></td></li>
-                  </ul>
+                    <li class="userInfo"><td><%= producto.deleted_at %></td></li><br>
+                    <a class="btn-content" href="/productosDetail/<%= producto.id %>">
+                      <i class="fas fa-eye"></i> VER DETALLE
+                  </a>
                  </div> 
                 </tr><br>
               <% }); %>
