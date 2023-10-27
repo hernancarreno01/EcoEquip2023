@@ -16,13 +16,13 @@
       <br>
       <form class="signinForm" action="/productosCreate" method="post" enctype="multipart/form-data" >
         <label for="nombre">Nombre del Producto:</label>
-        <input type="text" name="nombre" autocomplete="NombreDeProducto" placeholder="Ingresar Nombre de Producto" aria-label="" />
+        <input type="text" name="nombre" id="nombre" autocomplete="NombreDeProducto" placeholder="Ingresar Nombre de Producto" aria-label="" />
         <label for="precio">Precio:</label>
-        <input type="text" name="precio" autocomplete="Precio" placeholder="Ingresar Precio" aria-label="" />
+        <input type="text" name="precio" id="precio" autocomplete="Precio" placeholder="Ingresar Precio" aria-label="" />
         <label for="modelo">Modelo del Producto:</label>
         <input type="text" name="modelo"  autocomplete="Modelo" placeholder="Ingresar Modelo" aria-label="" />
         <label for="descripcion">Descripción del Producto:</label>
-        <textarea rows="4" cols="60" name="descripcion" autocomplete="Descripcion" placeholder="Ingresar Descripción" aria-label=""></textarea>        
+        <textarea rows="4" cols="60" name="descripcion" id="descripcion" autocomplete="Descripcion" placeholder="Ingresar Descripción" aria-label=""></textarea>        
         <br>        
         <label for="categorias">Categoría del Producto:</label>
         <select type="select" class="categorias_id" name="categorias_id" id="categorias_id">
@@ -44,6 +44,7 @@
     </div>
   </div>
   <div class="container land"></div>
+  <script src="/js/productosAddValidation.js"></script>
 </body>
 
 </html>
