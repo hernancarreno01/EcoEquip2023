@@ -34,8 +34,20 @@ const productosController = {
   },
 
   'productosDetail': async (req, res) => {
-    let productoEncontrado = await db.Producto.findOne({ where: { id: req.params.id } })
-    res.render('productosDetail', { producto: productoEncontrado })
+    try {
+      const productoEncontrado = await db.Producto.findByPk(req.params.id, {
+        include: [{ model: db.Categorias, as: 'categoria' }]
+      });
+  
+      if (productoEncontrado) {
+        res.render('productosDetail', { producto: productoEncontrado });
+      } else {
+        res.status(404).send('Producto no encontrado.');
+      }
+    } catch (error) {
+      console.error("Error al buscar el producto: " + error);
+      res.status(500).send('Error interno del servidor.');
+    }
   },
 
   'productosEdit': async (req, res) => {

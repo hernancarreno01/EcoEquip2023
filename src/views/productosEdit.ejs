@@ -24,9 +24,9 @@
                     <input type="text" id="modelo" name="modelo" value="<%=producto.modelo %>">
                     <p>Descripción del Producto: </p>
                     <input type="text" id="descripcion" name="descripcion" value="<%=producto.descripcion %>"><br>
-                    <p>Seleccionar Categoría: </p>
+                    <p>Categoría: </p>
                     <select type="select" class="categoria_id" name="categoria_id" id="categoria_id">
-                        <option value disabled selected></option>
+                        <option value="" disabled selected>- Seleccionar categorias - </option>
                         <% categorias.forEach(categorias=> { %>
                             <option value="<%= categorias.id%>">
                                 <%= categorias.tipo %>
