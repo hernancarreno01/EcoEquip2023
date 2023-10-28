@@ -15,6 +15,10 @@ body {
   display: flex;
   justify-content: center;
 }
+.is-invalid {
+  background-color: rgb(233, 182, 182);
+  border: red solid 2px;
+}
 
 .divider {
   width: 70%;

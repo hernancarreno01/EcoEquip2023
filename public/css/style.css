@@ -19,6 +19,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+.is-invalid {
+  background-color: red;
+  border: red solid 2px;
+}
+.is-valid {
+  background-color: var(--verde-claro);
+  border: var(--verde-oscuro) solid 2px;
+}
+.alert-warning {
+  font-family: "Prompt", sans-serif;
+  font-size: 10px;
+}
 
 html {
   font-family: "Prompt", sans-serif;
