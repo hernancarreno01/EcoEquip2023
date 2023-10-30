@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const { body, validationResult } = require('express-validator');
 const mainRouter = require('./routes/mainRouter')
 const usersRouter = require('./routes/usersRouter')
 const productosRoutes = require('./routes/productosRoutes')
