@@ -46,6 +46,19 @@
     transform: translateY(-4px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
+
+  .validationmail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--verde-claro);
+    font-size: smaller;
+    max-width: 400px;
+    text-align: center;
+    margin-top: -13px;
+    margin-bottom: 20px;
+    line-height: 0.9;
+  }
   
   
   .container {

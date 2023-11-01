@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-
   <%- include('./partials/head.ejs') %>
 
     <link rel="stylesheet" href="/css/stylelogin.css" />
+    <link rel="stylesheet" href="/css/styleregister.css" />
 
     <title>EcoEquip - Register</title>
 </head>
@@ -18,30 +18,45 @@
     <div class="form">
       <h2>Creá tu cuenta</h2>
       <h3>Ingresá tus datos</h3>
-      <form class="signinForm" action="/register" method="post" enctype="multipart/form-data" >
-        <input type="text" name="nombre_usuario" autocomplete="NombredeUsuario" placeholder="Nombre de Usuario" aria-label="" />
+      <br />
+      <div class="containerError">
+        <ul class="errores"></ul>
+      </div>
+      <form class="signinForm" action="/register" method="post" enctype="multipart/form-data">
+        <input type="text" name="nombre_usuario" autocomplete="NombredeUsuario" placeholder="Nombre de Usuario"
+          aria-label="" />
         <input type="text" name="nombres" autocomplete="name" placeholder="Nombre" aria-label="" />
-        <input type="text" name="apellido"  autocomplete="family-name" placeholder="Apellido" aria-label="" />
-        <input type="email" name="email" autocomplete="email" placeholder="Correo" aria-label="" />
-        <input type="text" name="direccion"  autocomplete="Dirección" placeholder="Dirección" aria-label="" />
+        <input type="text" name="apellido" autocomplete="family-name" placeholder="Apellido" aria-label="" />
+        <input type="email" name="email" autocomplete="email" placeholder="Correo Electrónico" aria-label="" />
+        <div class="validationmail">
+          <p>
+            La casilla de correo contener letras mayúsculas, minúsculas,
+            un número y un carácter especial
+          </p>
+        </div>
+        <input type="text" name="direccion" autocomplete="Dirección" placeholder="Dirección" aria-label="" />
         <!--<input type="text" name="ciudad"  autocomplete="ciudad" placeholder="Ciudad" aria-label="" />-->
-        <select type="select" class="ciudad_id" name="ciudad_id" id="ciudad_id" >
-          <option value="" disabled selected>- Seleccione la ciudad - </option>
-          <% ciudad.forEach(ciudad => { %>
-          <option value="<%= ciudad.id%>"><%= ciudad.nombre_ciudad%></option>
-          <% }); %>
+        <select type="select" class="ciudad_id" name="ciudad_id" id="ciudad_id">
+          <option value="" disabled selected>- Seleccione la ciudad -</option>
+          <% ciudad.forEach(ciudad=> { %>
+            <option value="<%= ciudad.id%>">
+              <%= ciudad.nombre_ciudad%>
+            </option>
+            <% }); %>
         </select>
-        <select type="select" class="rol_id" name="rol_id" id="rol_id" >
-          <option value="" disabled selected>- Seleccione el Rol- </option>
-          <% rol.forEach(rol => { %>
-          <option value="<%= rol.id%>"><%= rol.nombre%></option>
-          <% }); %>
+        <select type="select" class="rol_id" name="rol_id" id="rol_id">
+          <option value="" disabled selected>- Seleccione el Rol-</option>
+          <% rol.forEach(rol=> { %>
+            <option value="<%= rol.id%>">
+              <%= rol.nombre%>
+            </option>
+            <% }); %>
         </select>
-        
+
         <input type="password" name="contrasenia" autocomplete="new-password" placeholder="Contraseña" />
-        <input type="text" name="telefono"  autocomplete="telefono" placeholder="Teléfono" aria-label="" />
-        <input type="file" id="avatar" name="imagen_perfil" accept="image/" multiple required><br><br> <!--cuidado con el name, en la bd está como imagen_perfil-->
-        
+        <input type="text" name="telefono" autocomplete="telefono" placeholder="Teléfono" aria-label="" />
+        <input type="file" id="avatar" name="imagen_perfil" accept="image/" multiple required /><br /><br />
+        <!--cuidado con el name, en la bd está como imagen_perfil-->
 
         <span>Al registrarte aceptas nuestros
           <a href="/signup">Términos y Condiciones</a></span>
@@ -53,6 +68,8 @@
   </div>
 
   <div class="container land"></div>
+  <script src="/js/usuariosAddValidation.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>
