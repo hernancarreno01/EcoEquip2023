@@ -7,10 +7,10 @@ const Usuarios = db.Usuario;
 //let listaUsuarios = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf-8'));
 
 const userController = {
-    'login': async (req, res) => {
+    login: async (req, res) => {
         res.render('login');
     },    
-    'register': async (req, res) => {
+    register: async (req, res) => {
         let ciudades = await db.Ciudad.findAll({paranoid: false})
         let roles = await db.Rol.findAll({paranoid: false})
         res.render('register.ejs', {ciudad: ciudades, rol: roles})
@@ -20,18 +20,22 @@ const userController = {
             }) */       
     },
      
-    'users': async (req, res)=>{
+    users: async (req, res)=>{
         await db.Usuario.findAll({paranoid: false})
             .then(usuarios => {
                 res.render('users.ejs', {usuarios})
             })        
     },
-    'profile': async (req,res)=>{
+    profile: async (req,res)=>{
         // let usuarioEncontrado = await db.Usuario.findByPk(req.params.id,{paranoid: false})
-        let usuarioEncontrado = await db.Usuario.findOne({ where: { id: req.params.id } })
+        let usuarioEncontrado = await db.Usuario.findByPk(req.params.id)
+        console.log(usuarioEncontrado);        
+        
+        console.log(req.params.id);
         res.render('profile', {usuario: usuarioEncontrado})
+
     },
-    'profileEdit': async (req,res)=>{
+    profileEdit: async (req,res)=>{
         const ciudades = await db.Ciudad.findAll({ paranoid: false });
         let roles = await db.Rol.findAll({paranoid: false})
         const usuarioEncontrado = await db.Usuario.findOne({ 
@@ -40,11 +44,11 @@ const userController = {
         
         res.render('profileEdit', { ciudad: ciudades, rol: roles, usuario: usuarioEncontrado})
     },
-    'profileEditProcess': async (req, res) => {
+    profileEditProcess: async (req, res) => {
         
         let usuarioEncontrado = await db.Usuario.update({
             ...req.body,
-            "imagen_perfil": req.file.filename
+            imagen_perfil: req.file.filename
         },{where:{
                 id: req.params.id
             }})
@@ -66,11 +70,11 @@ const userController = {
     
         res.render('profileEdit', {usuario: usuarioEncontrado})*/
     },
-    'altaUser': async (req, res)=> {        
+    altaUser: async (req, res)=> {        
         const usuarioNuevo = await db.Usuario.create({
                 ...req.body,
-                "imagen_perfil": req.file.filename,
-                "roles_id ":2
+                imagen_perfil: req.file.filename,
+                roles_id :2
         })
         console.log(usuarioNuevo);
         res.redirect('/profile/'+ usuarioNuevo.id)
