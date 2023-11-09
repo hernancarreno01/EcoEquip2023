@@ -12,22 +12,23 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     const uniqueSuffix = Date.now() + Math.round(Math.random() * 1E9)
     cb(null, uniqueSuffix + path.extname(file.originalname))
-
   }
 })
 
 const uploadFile = multer ({ storage })
+
+
 
 router.get("/productosCreate", productosController.productosCreate);// DONE
 router.get("/productosList", productosController.productosList); // DONE
 router.get("/productosDetail/:id", productosController.productosDetail); // DONE
 router.get("/productosEdit/:id", productosController.productosEdit); // DONE
 
-router.put("/recuperarProducto/:id",productosController.recuperarProducto);  // DONE
 router.put("/productosEdit/:id",uploadFile.single("imagen_01"), productosController.productosEditProcess);
 router.post("/productosCreate", uploadFile.single("imagen_01"), productosController.altaProducto);
 
 
-router.delete("/productosDelete/:id",productosController.productosDelete);
+router.delete("/productosEdit/:id",productosController.deleteProcess);
+router.post("/productosEdit/:id",productosController.undelteProcess);
 
 module.exports = router;

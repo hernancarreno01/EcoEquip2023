@@ -28,9 +28,22 @@
                 </div>
                 <a href="/productosEdit/<%=producto.id%>">Cambiar Imagenes</a>
             </div>
-            <a class="botonEdit" href="/productosEdit/<%= producto.id %>">Editar Producto</a>
+            <a class="botonEdit" href="/productosEdit/<%= producto.id %> onclick="validarFormulario()">Editar Producto</a>
         </section>
 
         <%- include('./partials/footer.ejs') %>
+
+        <script>
+            function validarFormulario() {
+              var nombre = document.getElementById("nombre").value;
+        
+              if (nombre.length < 5) {
+                alert("El nombre debe tener al menos 5 caracteres");
+                return;
+              }
+        
+              document.getElementById("miFormulario").submit();
+            }
+          </script>
     </body>
 </html>
