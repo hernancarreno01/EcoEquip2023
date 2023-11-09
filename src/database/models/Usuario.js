@@ -53,7 +53,7 @@ module.exports = (sequelize, dataTypes) => {
         paranoid: true,
         deletedAt: 'borrado_el',
         createdAt: 'creado_el',
-        updatedAt: 'updated_at'
+        updatedAt: 'borrado_el'
 
     };
 
