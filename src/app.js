@@ -7,6 +7,8 @@ const productosRoutes = require('./routes/productosRoutes')
 const path = require("path");
 const methodOverride = require('method-override');
 const multer = require('multer');
+const apiProduct = require('./routes/apis/productRouteApis');
+const apiUser = require('./routes/apis/userRouteApis');
  
 
 app.use(express.static('public'));
@@ -22,6 +24,8 @@ app.listen(3001, () => console.log("servidor 3001 funcionando"));
 app.use(mainRouter)
 app.use(usersRouter)
 app.use(productosRoutes)
+app.use('/api/user', apiUser)
+app.use('/api/product', apiProduct)
 
 
 
