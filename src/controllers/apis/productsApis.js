@@ -26,7 +26,7 @@ const controller = {
                     name: producto.nombre,
                     description: producto.descripcion,
                     category: producto.categoria,
-                    detail: "/api/products/detail" + producto.id,
+                    detail: "/api/products/" + producto.id,
                 })),
             };
         });
@@ -36,7 +36,7 @@ const controller = {
                 name: row.nombre,
                 description: row.descripcion,
                 category: row.categoria,
-                detail: "/api/products/detail" + row.id,
+                detail: "/api/products/" + row.id,
             };
         });
         res.json(respuesta);
