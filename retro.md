@@ -28,7 +28,7 @@
 
 ## Retrospectiva - Sprint 6
 
-**Lo que hicimos bien en el Sprint Anterior:
+**Lo que hicimos bien en el Sprint Anterior:**
 
 **Adaptación ante desafíos:** A pesar de los desafíos inesperados, el equipo demostró una gran capacidad de adaptación. La reducción del grupo no impidió que continuáramos avanzando.
 
