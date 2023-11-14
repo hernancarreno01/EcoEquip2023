@@ -1,6 +1,11 @@
 const { Association } = require("sequelize");
 const db = require("../../database/models");
 
+/**
+ * Product API controller.
+ *
+ * Exports API endpoints for listing and retrieving product data.
+ */
 const controller = {
     list: async (req, res) => {
         let respuesta = {
@@ -10,7 +15,7 @@ const controller = {
         };
         const [products, categories] = await Promise.all([
             db.Producto.findAll({ include: [{ association: "categoria" }] }),
-            db.Categoria.findAll({ include: [{ association: "productos" }] }),
+            db.Categorias.findAll({ include: [{ association: "productos" }] }),
         ]);
         respuesta.count = products.length;
         categories.forEach((categoria) => {

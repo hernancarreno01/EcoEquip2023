@@ -20,11 +20,11 @@
   box-sizing: border-box;
 }
 .is-invalid {
-  background-color: red;
-  border: red solid 2px;
+  background-color: rgb(238, 219, 219);
+  border: rgb(63, 10, 10) solid 2px;
 }
 .is-valid {
-  background-color: var(--verde-claro);
+  background-color: var(--verde-aqua);
   border: var(--verde-oscuro) solid 2px;
 }
 .alert-warning {

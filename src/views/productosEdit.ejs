@@ -4,6 +4,7 @@
 <head>
     <%- include('./partials/head.ejs') %>
         <link rel="stylesheet" href="/css/styleproductDetail.css" />
+        
 
         <title>EcoEquip - Editar Producto</title>
 </head>
@@ -14,6 +15,10 @@
         <h1 class="h1">Editar Producto</h1>
         <section class="productDetail>">
             <div class="bloqueDatosDetail">
+                <br />
+                <div class="containerError">
+                  <ul class="errores"></ul>
+                </div>
                 <form class="form" action="/productosEdit/<%= producto.id %>?_method=put" method="POST"
                     enctype="multipart/form-data">
                     <p>Nombre del Producto: </p>
@@ -68,6 +73,8 @@
         </section>
 
         <%- include('./partials/footer.ejs') %>
+        <script src="/js/productosAddValidation.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>
