@@ -24,8 +24,8 @@ app.listen(3001, () => console.log("servidor 3001 funcionando"));
 app.use(mainRouter)
 app.use(usersRouter)
 app.use(productosRoutes)
-app.use('/api/user', apiUser)
-app.use('/api/product', apiProduct)
+app.use('/api/users', apiUser)
+app.use('/api/products', apiProduct)
 
 
 

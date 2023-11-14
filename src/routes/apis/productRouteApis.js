@@ -4,7 +4,8 @@ const controller = require('../../controllers/apis/productsApis');
 
 
 router.get("/", controller.list);
-router.get("/detail/:id", controller.detail);
+router.get("/:id", controller.detail);
+router.get("/products/:id", controller.detail2);
 
 
 module.exports = router;

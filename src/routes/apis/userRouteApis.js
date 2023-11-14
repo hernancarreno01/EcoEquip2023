@@ -4,7 +4,7 @@ const controller = require('../../controllers/apis/usersApis');
 
 
 router.get("/", controller.list);
-router.get("/detail/:id", controller.detail);
+router.get("/:id", controller.detail);
 
 
 module.exports = router;

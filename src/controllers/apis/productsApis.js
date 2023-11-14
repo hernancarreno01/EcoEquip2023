@@ -19,7 +19,16 @@ const controller = {
         ]);
         respuesta.count = products.length;
         categories.forEach((categoria) => {
-            respuesta.countByCategory[categoria.tipo] = categoria.productos.length;
+            respuesta.countByCategory[categoria.tipo] = {
+                count: categoria.productos.length,
+                products: categoria.productos.map((producto) => ({
+                    id: producto.id,
+                    name: producto.nombre,
+                    description: producto.descripcion,
+                    category: producto.categoria,
+                    detail: "/api/products/detail" + producto.id,
+                })),
+            };
         });
         respuesta.products = products.map((row) => {
             return {
@@ -27,27 +36,32 @@ const controller = {
                 name: row.nombre,
                 description: row.descripcion,
                 category: row.categoria,
-                detail: "/api/product/detail" + row.id,
+                detail: "/api/products/detail" + row.id,
             };
         });
         res.json(respuesta);
     },
+
+    detail2: async (req, res) => {
+        const product = await db.Product.findByPk(req.params.id);
+    
+        res.json(product);
+    }, 
+
     detail: async (req, res) => {
         let producto = await db.Producto.findByPk(req.params.id);
-              let respuesta = {
-                  ...producto,
-                  id: producto.id,
-                  name: producto.precio,
-                  price: producto.precio,
-                  model: producto.modelo,
-                  description: producto.descripcion,
-                  category: producto.categorias_id,
-
-
-                  url_imagen: '/img/productos/' + producto.imagen_01,
-            };
-            res.json(respuesta);
-          },
+        let respuesta = {
+            ...producto,
+            id: producto.id,
+            name: producto.precio,
+            price: producto.precio,
+            model: producto.modelo,
+            description: producto.descripcion,
+            category: producto.categorias_id,
+            url_imagen: '/img/productos/' + producto.imagen_01,
+        };
+        res.json(respuesta);
+    },
 };
 
-module.exports = controller
+module.exports = controller;
