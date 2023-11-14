@@ -7,7 +7,7 @@
 
 ## Retrospectiva - Sprint 7
 
-**Lo que hicimos bien en el Sprint Anterior:
+**Lo que hicimos bien en el Sprint Anterior:**
 
 **Adaptación ante desafíos:** Nuevamente, enfrentamos desafíos significativos con la ausencia de tres compañeros. Sin embargo, pudimos adaptarnos eficazmente y mantener el progreso del proyecto.  Cabe aclarar que algunos puntos del Sprint quedaron en standby debido a la falta de tiempo, por lo tanto se intentará durante el proximo sprint completar los pendientes.
 
@@ -15,13 +15,13 @@
 
 **Compromiso del equipo:** El compromiso de los dos miembros que continuaron trabajando se mantuvo alto, demostrando la dedicación y responsabilidad del equipo.
 
-**Áreas en las que mejoramos:
+**Áreas en las que mejoramos:**
 
 **Reorganización de tareas:** Refinamos aún más nuestra habilidad para reorganizar tareas y responsabilidades de manera eficiente. La experiencia anterior nos ayudó a optimizar el flujo de trabajo, incluso con un equipo reducido.
 
 **Aprendizaje continuo:** Aprovechamos la oportunidad para profundizar en nuestras habilidades existentes y adquirir nuevas capacidades para compensar las ausencias. Este enfoque continuo en el aprendizaje fortaleció nuestra versatilidad.
 
-**Áreas en las que aún podemos mejorar:
+**Áreas en las que aún podemos mejorar:**
 
 **Planificación de contingencia: La situación destacó la necesidad de una planificación de contingencia más sólida. Debemos desarrollar estrategias específicas para abordar la falta de contribución de algunos miembros y garantizar la continuidad del proyecto. Esto nos permitirá estar mejor preparados en situaciones similares en el futuro.
 
