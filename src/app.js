@@ -25,7 +25,7 @@ app.use(mainRouter)
 app.use(usersRouter)
 app.use(productosRoutes)
 app.use('/api/users', apiUser)
-app.use('/api/products', apiProduct)
+app.use('/api/product', apiProduct)
 
 
 

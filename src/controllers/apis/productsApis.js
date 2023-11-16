@@ -19,25 +19,28 @@ const controller = {
         ]);
         respuesta.count = products.length;
         categories.forEach((categoria) => {
-            respuesta.countByCategory[categoria.tipo] = {
-                count: categoria.productos.length,
-                products: categoria.productos.map((producto) => ({
-                    id: producto.id,
-                    name: producto.nombre,
-                    description: producto.descripcion,
-                    category: producto.categoria,
-                    detail: "/api/products/" + producto.id,
-                })),
-            };
-        });
-        respuesta.products = products.map((row) => {
-            return {
-                id: row.id,
-                name: row.nombre,
-                description: row.descripcion,
-                category: row.categoria,
-                detail: "/api/products/" + row.id,
-            };
+            respuesta.countByCategory[categoria.tipo] = categoria.productos.length
+            });
+            respuesta.products = products.map((row) => {
+                return {
+                    id: row.id,
+                    name: row.nombre,
+                    description: row.descripcion,
+                    category: row.categoria,
+                    detail: "/api/product/detail/" + row.id,
+                };
+            // respuesta.countByCategory[categoria.tipo] = {
+            //     count: categoria.productos.length,
+            //     products: categoria.productos.map((producto) => ({
+            //         id: producto.id,
+            //         name: producto.nombre,
+            //         description: producto.descripcion,
+            //         category: producto.categoria,
+            //         detail: "/api/products/" + producto.id,
+            //     })),
+            // };
+        
+        
         });
         res.json(respuesta);
     },

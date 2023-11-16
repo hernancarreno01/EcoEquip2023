@@ -1,6 +1,6 @@
 const db = require("../../database/models");
 
-const controller = {
+const userController = {
   list: async (req, res) => {
     let respuesta = {
       count: 0,
@@ -31,4 +31,4 @@ const controller = {
     res.json(respuesta);
   },
 };
-module.exports = controller;
+module.exports =  userController;
