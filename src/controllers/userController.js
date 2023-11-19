@@ -6,6 +6,8 @@ const sequelize = db.sequelize;
 
 const Usuarios = db.Usuario;
 //let listaUsuarios = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf-8'));
+const bcryptjs = require('bcryptjs');
+
 
 const userController = {
     login: async (req, res) => {
@@ -74,6 +76,7 @@ const userController = {
     altaUser: async (req, res)=> {        
         const usuarioNuevo = await db.Usuario.create({
                 ...req.body,
+                contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10),
                 imagen_perfil: req.file.filename,
                 roles_id :2
         })
