@@ -7,6 +7,7 @@ const sequelize = db.sequelize;
 const Usuarios = db.Usuario;
 //let listaUsuarios = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf-8'));
 const bcryptjs = require('bcryptjs');
+const { log } = require('util');
 
 
 const userController = {
@@ -22,20 +23,20 @@ const userController = {
         if(usuarioALoguear){
             let contraseniaOk = bcryptjs.compareSync( req.body.contrasenia, usuarioALoguear.contrasenia);
             if(contraseniaOk){
-                //delete usuarioALoguear.contrasenia;
-                const usuarioALoguear = await db.Usuario.findOne({ 
-                    where: { email: req.body.email }
-                }); 
+                delete usuarioALoguear.contrasenia;              
                 req.session.usuarioLogueado = usuarioALoguear;
                 res.redirect('/profile');
             }else{
                 res.render('login')
             }
-        }
-        
-        //
-        
-    },    
+        }        
+    }, 
+    logout: (req, res) =>{
+        req.session.destroy();
+        console.log(req.session);
+        return res.redirect('/')
+
+    },
     register: async (req, res) => {
         let ciudades = await db.Ciudad.findAll({paranoid: false})
         let roles = await db.Rol.findAll({paranoid: false})
@@ -52,15 +53,14 @@ const userController = {
                 res.render('users.ejs', {usuarios})
             })        
     },
-    profile: (req,res)=>{        
+    profile: async (req,res)=>{        
         //let usuarioEncontrado = await db.Usuario.findByPk(req.params.id)
        
         //console.log(usuarioEncontrado); 
         //console.log(req.params.id);
-        let usuarioLogueado = req.session.usuarioLogueado
+        let ciudades = await db.Ciudad.findAll({paranoid: false})
         console.log(req.session);
-        return res.render('profile', {usuario: req.session.usuarioLogueado})
-        //return res.render('profile', {usuario: req.session.usuarioLogueado})
+        return res.render('profile', {ciudad: ciudades, usuario: req.session.usuarioLogueado})
 
     },
     profileEdit: async (req,res)=>{
