@@ -9,8 +9,13 @@ const methodOverride = require('method-override');
 const multer = require('multer');
 const apiProduct = require('./routes/apis/productRouteApis');
 const apiUser = require('./routes/apis/userRouteApis');
+const session = require('express-session');
  
-
+app.use(session({
+    secret: 'geheimnis',
+    resave: false,
+    saveUninitialized: false
+}));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

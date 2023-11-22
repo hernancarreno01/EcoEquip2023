@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         ciudad_id: dataTypes.INTEGER,
         contrasenia: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING        
         },
         imagen_perfil: {
             type: dataTypes.STRING

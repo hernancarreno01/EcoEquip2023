@@ -10,8 +10,28 @@ const bcryptjs = require('bcryptjs');
 
 
 const userController = {
-    login: async (req, res) => {
-        res.render('login');
+    login: (req, res) => {
+        return res.render('login');
+    }, 
+    loginProcess: async (req, res) =>{
+        console.log(req.body);
+        console.log(req.session);
+        const usuarioALoguear = await db.Usuario.findOne({ 
+            where: { email: req.body.email }
+        }); 
+        if(usuarioALoguear){
+            let contraseniaOk = bcryptjs.compareSync( req.body.contrasenia, usuarioALoguear.contrasenia);
+            if(contraseniaOk){
+                delete usuarioALoguear.contrasenia;
+                req.session.usuarioLogueado = usuarioALoguear;
+                res.redirect('/profile/' + usuarioALoguear.id, {usuario: usuarioALoguear});
+            }else{
+                res.render('login')
+            }
+        }
+        
+        //
+        
     },    
     register: async (req, res) => {
         let ciudades = await db.Ciudad.findAll({paranoid: false})
@@ -29,13 +49,15 @@ const userController = {
                 res.render('users.ejs', {usuarios})
             })        
     },
-    profile: async (req,res)=>{
-        // let usuarioEncontrado = await db.Usuario.findByPk(req.params.id,{paranoid: false})
-        let usuarioEncontrado = await db.Usuario.findByPk(req.params.id)
-        console.log(usuarioEncontrado);        
-        
-        console.log(req.params.id);
-        res.render('profile', {usuario: usuarioEncontrado})
+    profile: (req,res)=>{        
+        //let usuarioEncontrado = await db.Usuario.findByPk(req.params.id)
+       
+        //console.log(usuarioEncontrado); 
+        //console.log(req.params.id);
+        let usuarioLogueado = req.session.usuarioLogueado
+        console.log(req.session);
+        return res.redirect('/profile/'+ usuarioLogueado.id, {usuario: req.session.usuarioLogueado})
+        //return res.render('profile', {usuario: req.session.usuarioLogueado})
 
     },
     profileEdit: async (req,res)=>{
@@ -72,8 +94,18 @@ const userController = {
         fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(listaUsuarios, null, 2), 'utf-8')
     
         res.render('profileEdit', {usuario: usuarioEncontrado})*/
-    },
-    altaUser: async (req, res)=> {        
+    },   
+    
+    altaUser: async (req, res)=> {   
+        const ciudades = await db.Ciudad.findAll({ paranoid: false });
+        let roles = await db.Rol.findAll({paranoid: false})
+        const usuarioEnDb = await db.Usuario.findOne({ 
+            where: { email: req.body.email }
+        });   
+    
+        if (usuarioEnDb){
+            res.render('register',{ ciudad: ciudades, rol: roles});               
+        };
         const usuarioNuevo = await db.Usuario.create({
                 ...req.body,
                 contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10),
@@ -81,24 +113,8 @@ const userController = {
                 roles_id :2
         })
         console.log(usuarioNuevo);
-        res.redirect('/profile/'+ usuarioNuevo.id)
-        /*let usuarioNuevo = {
-            "id":listaUsuarios.length + 1,
-            "username":req.body.nombre_usuario,
-            "name":req.body.nombre,
-            "lastName": req.body.apellido, 
-            "email": req.body.email,
-            "adress":req.body.direccion,
-            "city":req.body.ciudad,
-            "password": req.body.contrasenia,usuarioNuevo
-            "avatar":req.file.filename,
-            "telephone":req.body.telefono,
-            "role": "usuario",
-            "deleted": false
-        };
-        listaUsuarios.push(usuarioNuevo);
-        fs.writeFileSync(path.join(__dirname, '../data/users.json'),JSON.stringify(listaUsuarios, null,2), 'utf-8')*/
-        
+        //res.redirect('/profile/'+ usuarioNuevo.id) 
+        res.redirect('/login')
     },
     'userDelete': async (req, res) => {
         let usuarioEncontrado = await db.Usuario.destroy({where:{
