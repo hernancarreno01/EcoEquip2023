@@ -10,7 +10,9 @@ const multer = require('multer');
 const apiProduct = require('./routes/apis/productRouteApis');
 const apiUser = require('./routes/apis/userRouteApis');
 const session = require('express-session');
- 
+const userLoggedMiddleware = require('./database/middlewares/userLoggedMiddleware');
+
+app.use(userLoggedMiddleware);
 app.use(session({
     secret: 'geheimnis',
     resave: false,

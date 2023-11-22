@@ -18,9 +18,26 @@
             <span class="navbar-link">CONTACTO</span>
           </div>
         </section>
+         <!-- queda hacer bien este dropdown menu para usuarios-->
         <section class="home-icons">
-          <a href="/productCart"><img alt="iconsbxscart3271299" src="/img/shopping-cart.png" class="home-image1" />
-            <a href="/login"><img alt="iconsbxsheartcircle3271300" src="/img/user.png" class="home-image2" /></a>
+          <select type="select" class="opciones-usuario" name="" id="">
+            <% if (locals.estaLogueado){ %>
+              <option value=""> Opciones de usuario</option>
+              <option value=""><a class="botonEditarPerfil" href="/profileEdit">Editar Perfil</a></option>
+              <option value=""><a class="botonLogout" href="/logout">Salir</a></option>
+            
+            <% }else{ %>
+              <option value="" ><a href="/login"><img alt="iconsbxsheartcircle3271300" src="/img/user.png" class="home-image2" /></a>Ingresar</option>
+            <% }%>
+
+          </select>
+                    
+          <!-- <a href="/productCart"><img alt="iconsbxscart3271299" src="/img/shopping-cart.png" class="home-image1" />
+          <a href="/login"><img alt="iconsbxsheartcircle3271300" src="/img/user.png" class="home-image2" /></a>
+          <a class="botonEditarPerfil" href="/profileEdit">Editar Perfil</a>
+          <a class="botonLogout" href="/logout">Salir</a>
+         <a class="botonLogin" href="/login">Ingresar</a> -->
+            
         </section>
       </div>
       <section data-role="BurgerMenu" class="home-burger-menu">
