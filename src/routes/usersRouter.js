@@ -23,7 +23,7 @@ router.get("/login",  userController.login);
 router.post("/login",  userController.loginProcess);
 router.get("/register",  userController.register);
 router.get("/users", userController.users);
-router.get("/profile/:id", userController.profile);
+router.get("/profile", userController.profile);
 router.get("/profileEdit/:id", userController.profileEdit);
 
 router.post("/register",uploadFile.single("imagen_perfil"), userController.altaUser);//OK

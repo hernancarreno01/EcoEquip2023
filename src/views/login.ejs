@@ -18,10 +18,12 @@
     <div class="form">
       <h2>Bienvenido</h2>
       <h3>Ingresá los datos de tu cuenta</h3>
-      <form class="signinForm">
-        <input type="email" autocomplete="email" placeholder="Correo" aria-label="" />
-        <input type="password" autocomplete="new-password" placeholder="Contraseña" />
-        <button type="submit">Ingresar</button>
+      <form class="signinForm" action="/login" method="post" >
+        <input type="email" name= "email" autocomplete="email" placeholder="Correo" aria-label="" />
+        <input type="password" name="contrasenia" autocomplete="new-password" placeholder="Contraseña" />
+        <button type="submit">Ingresar
+
+        </button>
       </form>
       <hr class="divider" />
       <span>¿No tenés cuenta? <a href="/register">Registrate</a></span>

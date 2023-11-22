@@ -22,9 +22,12 @@ const userController = {
         if(usuarioALoguear){
             let contraseniaOk = bcryptjs.compareSync( req.body.contrasenia, usuarioALoguear.contrasenia);
             if(contraseniaOk){
-                delete usuarioALoguear.contrasenia;
+                //delete usuarioALoguear.contrasenia;
+                const usuarioALoguear = await db.Usuario.findOne({ 
+                    where: { email: req.body.email }
+                }); 
                 req.session.usuarioLogueado = usuarioALoguear;
-                res.redirect('/profile/' + usuarioALoguear.id, {usuario: usuarioALoguear});
+                res.redirect('/profile');
             }else{
                 res.render('login')
             }
@@ -56,7 +59,7 @@ const userController = {
         //console.log(req.params.id);
         let usuarioLogueado = req.session.usuarioLogueado
         console.log(req.session);
-        return res.redirect('/profile/'+ usuarioLogueado.id, {usuario: req.session.usuarioLogueado})
+        return res.render('profile', {usuario: req.session.usuarioLogueado})
         //return res.render('profile', {usuario: req.session.usuarioLogueado})
 
     },
