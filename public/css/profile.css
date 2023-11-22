@@ -22,8 +22,40 @@
 }
 .bloqueImagen{
     width: 50%;
+    float: left; 
     text-align: center;
 }
 .bloqueDatos{
+    float: left;
     width: 50%;
 }
+.user-info1{
+    border: var(--verde-claro) solid 3px;
+    width: 60px; /* Ancho fijo de 150px */
+    height: 60px; /* Altura fija de 150px */
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+  }
+  .user-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .bloqueImagen, 
+    .bloqueDatos {
+      float: none;
+      width: 50%;
+    }
+    .avatar{
+        width: 50%;
+    }
+    .bloqueDatos{
+        text-align: center; 
+    }
+  }
+  .perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

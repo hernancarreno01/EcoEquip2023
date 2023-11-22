@@ -20,6 +20,15 @@
         </section>
          <!-- queda hacer bien este dropdown menu para usuarios-->
         <section class="home-icons">
+          <% if (usuario) { %>
+            <div class="user-info">
+              <img class="user-info1" src="/img/avatars/<%= usuario.imagen_perfil %>" alt="User profile picture">
+              <div style="text-align: center;">
+                <span><%= usuario.nombre_usuario %></span>
+              </div>
+            </div>  
+          <% } %>
+          <!--
           <select type="select" class="opciones-usuario" name="" id="">
             <% if (locals.estaLogueado){ %>
               <option value=""> Opciones de usuario</option>
@@ -30,7 +39,7 @@
               <option value="" ><a href="/login"><img alt="iconsbxsheartcircle3271300" src="/img/user.png" class="home-image2" /></a>Ingresar</option>
             <% }%>
 
-          </select>
+          </select>-->
                     
           <!-- <a href="/productCart"><img alt="iconsbxscart3271299" src="/img/shopping-cart.png" class="home-image1" />
           <a href="/login"><img alt="iconsbxsheartcircle3271300" src="/img/user.png" class="home-image2" /></a>
