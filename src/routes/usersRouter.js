@@ -35,7 +35,7 @@ router.get("/profileEdit", userController.profileEdit);
 
 router.post("/register",uploadFile.single("imagen_perfil"), userController.altaUser);//OK
 
-router.put("/profileEdit/:id",uploadFile.single("imagen_perfil"), userController.profileEditProcess);
+router.put("/profileEdit",uploadFile.single("imagen_perfil"), userController.profileEditProcess);
 router.delete("/userDelete/:id",userController.userDelete);//OK
 router.put("/userRetrieve/:id",userController.recuperarProcess )
 
