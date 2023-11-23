@@ -5,10 +5,9 @@ const db = require('../database/models')
 const sequelize = db.sequelize;
 
 const Usuarios = db.Usuario;
-//let listaUsuarios = JSON.parse(fs.readFigit leSync(path.join(__dirname, '../data/users.json'), 'utf-8'));
+//let listaUsuarios = JSON.parse(fs.readFigit gileSync(path.join(__dirname, '../data/users.json'), 'utf-8'));
 const bcryptjs = require('bcryptjs');
 const { log } = require('util');
-
 
 const userController = {
     login: (req, res) => {
