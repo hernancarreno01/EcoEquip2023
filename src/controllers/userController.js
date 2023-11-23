@@ -74,15 +74,31 @@ const userController = {
         res.render('profileEdit', { ciudad: ciudades, rol: roles, usuario: req.session.usuarioLogueado})
     },
     profileEditProcess: async (req, res) => {
-        
-        let usuarioEncontrado = await db.Usuario.update({
-            ...req.body,
-            imagen_perfil: req.file.filename
-        },{where:{
-                id: req.params.id
-            }})
+        const ciudades = await db.Ciudad.findAll({ paranoid: false });
+        let roles = await db.Rol.findAll({paranoid: false})
+        const usuarioEncontrado = await db.Usuario.findByPk(req.session.usuarioLogueado.id);
             console.log(usuarioEncontrado);
-            res.redirect('/profile/'+ req.params.id)
+            if (!usuarioEncontrado) {
+                return res.status(404).send('Usuario no encontrado');
+            }
+            await usuarioEncontrado.update({
+                ...req.body,
+                imagen_perfil: req.file.filename,
+                roles_id: 2
+            });
+            req.session.usuarioLogueado = {...req.body,
+                imagen_perfil: req.file.filename,
+                roles_id: 2}
+            
+            res.redirect('/profile')
+        
+        // let usuarioEncontrado = await db.Usuario.update({
+        //     ...req.body,
+        //     imagen_perfil: req.file.filename
+        // },{where:{
+        //         id: req.params.id
+        //     }})
+        
         
         /*let usuarioEncontrado = await listaUsuarios.find(( user)=> user.id == req.params.id)
                 
