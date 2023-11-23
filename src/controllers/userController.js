@@ -25,15 +25,18 @@ const userController = {
             if(contraseniaOk){
                 delete usuarioALoguear.contrasenia;              
                 req.session.usuarioLogueado = usuarioALoguear;
+                res.cookie("email", req.body.mail, { maxAge: (4000 * 60) * 10 });
                 res.redirect('/profile');
             }else{
-                res.render('login')
+                console.log('Contraseña incorrecta');
+                res.render('/register')
             }
         }        
     }, 
     logout: (req, res) =>{
         req.session.destroy();
-        return res.redirect('/')
+        return res.redirect('/');
+        res.clearCookie("email")
 
     },
     register: async (req, res) => {

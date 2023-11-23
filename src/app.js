@@ -11,6 +11,8 @@ const apiProduct = require('./routes/apis/productRouteApis');
 const apiUser = require('./routes/apis/userRouteApis');
 const session = require('express-session');
 const userLoggedMiddleware = require('./database/middlewares/userLoggedMiddleware');
+const usuarioLogueado= require("./middlewares/userLoggedMiddleware")
+const cookie = require('cookie-parser')
 
 
 app.use(session({
@@ -18,11 +20,13 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+app.use(cookie());
 app.use(userLoggedMiddleware);
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(usuarioLogueado);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
