@@ -21,6 +21,8 @@
     height: 2px;
     border-top: 1px solid var(--gris-claro);
   }
+
+  
   
   input[type="text"],
   input[type="email"],
@@ -78,6 +80,12 @@
     align-items: center;
     margin: 20px auto;
   }
+  .ciudad_id{
+margin-bottom:  10px;
+  }
+  .rol_id{
+    margin-bottom:  10px;
+      }
   
   .mark img {
     height: 100%;
@@ -147,7 +155,7 @@
   .signinForm button:active {
     transform: translate(0, 0px);
   }
-  
+
   .land {
     display: none;
     width: 100%;

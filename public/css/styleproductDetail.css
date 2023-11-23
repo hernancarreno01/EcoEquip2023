@@ -23,6 +23,11 @@
 .categoria_id {
 margin-bottom: 10px;
 }
+@media (max-width: 1050px) {
+    .home-textinput {
+      display: none; /* Oculta el input cuando la pantalla es más pequeña que 992px */
+    }
+  }
 
 /* Estilo para el select */
 select {
@@ -463,10 +468,10 @@ input[type="text"]:focus {
 
     input[type="text"] {
         width: 93%;
-        height: 50px;
+        height: 30px;
         border: 2px solid var(--gris-oscuro);
         border-radius: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         padding: 0 15px;
         outline: none;
         color: var(--verde-oscuro);
