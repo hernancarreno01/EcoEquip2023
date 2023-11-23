@@ -65,11 +65,11 @@ const userController = {
     profileEdit: async (req,res)=>{
         const ciudades = await db.Ciudad.findAll({ paranoid: false });
         let roles = await db.Rol.findAll({paranoid: false})
-        const usuarioEncontrado = await db.Usuario.findOne({ 
-            where: { id: req.params.id }
-        });   
+        // const usuarioEncontrado = await db.Usuario.findOne({ 
+        //     where: { id: req.params.id }
+        // });   
         
-        res.render('profileEdit', { ciudad: ciudades, rol: roles, usuario: usuarioEncontrado})
+        res.render('profileEdit', { ciudad: ciudades, rol: roles, usuario: req.session.usuarioLogueado})
     },
     profileEditProcess: async (req, res) => {
         

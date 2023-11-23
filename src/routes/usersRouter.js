@@ -5,6 +5,7 @@ const multer = require('multer');
 const path = require('path');
 const guestMiddelware = require( '../database/middlewares/guestMiddleware');
 const authMiddelware = require( '../database/middlewares/authMiddleware');
+const userLoggedMiddleware = require('../database/middlewares/userLoggedMiddleware');
 
 
 const storage = multer.diskStorage({
@@ -28,8 +29,8 @@ router.post("/login",  userController.loginProcess);
 router.get("/logout", userController.logout);
 router.get("/register", guestMiddelware, userController.register);
 router.get("/users", userController.users);
-router.get("/profile", authMiddelware, userController.profile);
-router.get("/profileEdit/:id", userController.profileEdit);
+router.get("/profile",authMiddelware, userController.profile);
+router.get("/profileEdit", userController.profileEdit);
 
 router.post("/register",uploadFile.single("imagen_perfil"), userController.altaUser);//OK
 

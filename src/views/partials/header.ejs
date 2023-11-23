@@ -19,8 +19,26 @@
           </div>
         </section>
          <!-- queda hacer bien este dropdown menu para usuarios-->
-        <section class="home-icons">
-          <% if (usuario) { %>
+         <ul class="user-dropdown"> 
+          <% if (locals.usuarioLogueado) { %>         
+            <li class="login-options">
+              <a class="dropdown-toggle"  id="dropUser" role="button" data-bs-toggle="dropdown"
+              aria-expanded ="false"><img src="/img/avatars/<%=locals.usuarioLogueado.imagen_perfil %>" class="home-image2" />Hola <%=locals.usuarioLogueado.nombre_usuario %></a>
+             
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/profileEdit"> Editar perfil</a>
+                <li><hr class="dropdown-divider" ></li>
+                <a class="dropdown-item" href="/logout">Salir</a>
+              </ul>
+            </li>  
+            <% } else { %>        
+              <li class="nologin-options"><a class="nav-link" href="/login">Ingresar</a></li>
+              <li class="nologin-options"><a class="nav-link" href="/register">Registrarse</a></li>  
+            <% } %>          
+         </ul>
+
+        <!--<section class="home-icons">
+          <% if (locals.estaLogueado) { %>
             <div class="user-info">
               <img class="user-info1" src="/img/avatars/<%= usuario.imagen_perfil %>" alt="User profile picture">
               <div style="text-align: center;">
@@ -28,20 +46,9 @@
               </div>
             </div>  
           <% } %>
-          <!--
-          <select type="select" class="opciones-usuario" name="" id="">
-            <% if (locals.estaLogueado){ %>
-              <option value=""> Opciones de usuario</option>
-              <option value=""><a class="botonEditarPerfil" href="/profileEdit">Editar Perfil</a></option>
-              <option value=""><a class="botonLogout" href="/logout">Salir</a></option>
-            
-            <% }else{ %>
-              <option value="" ><a href="/login"><img alt="iconsbxsheartcircle3271300" src="/img/user.png" class="home-image2" /></a>Ingresar</option>
-            <% }%>
-
-          </select>-->
+          
                     
-          <!-- <a href="/productCart"><img alt="iconsbxscart3271299" src="/img/shopping-cart.png" class="home-image1" />
+          <a href="/productCart"><img alt="iconsbxscart3271299" src="/img/shopping-cart.png" class="home-image1" />
           <a href="/login"><img alt="iconsbxsheartcircle3271300" src="/img/user.png" class="home-image2" /></a>
           <a class="botonEditarPerfil" href="/profileEdit">Editar Perfil</a>
           <a class="botonLogout" href="/logout">Salir</a>

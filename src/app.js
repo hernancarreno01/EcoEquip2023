@@ -12,12 +12,13 @@ const apiUser = require('./routes/apis/userRouteApis');
 const session = require('express-session');
 const userLoggedMiddleware = require('./database/middlewares/userLoggedMiddleware');
 
-app.use(userLoggedMiddleware);
+
 app.use(session({
     secret: 'geheimnis',
     resave: false,
     saveUninitialized: false
 }));
+app.use(userLoggedMiddleware);
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

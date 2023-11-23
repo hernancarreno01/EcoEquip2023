@@ -15,7 +15,7 @@
             <div>                
                 <img class="avatar" src="/img/avatars/<%=usuario.imagen_perfil%>" alt="imagenPerfil" />  
             </div>
-            <a href="/profileEdit/<%=usuario.id%>">Cambiar foto de perfil</a>
+            <a href="/profileEdit">Cambiar foto de perfil</a>
         </div>
         <div class="bloqueDatos">
             <p>Nombre de usuario: <b><%= usuario.nombre_usuario %></b></p>
@@ -26,7 +26,7 @@
             <p>Ciudad: <b><%= usuario.ciudad %></b></p>
             <p>Teléfono: <b><%= usuario.telefono %></b></p>
             <p>Rol: <b><%= usuario.roles_id %></b></p> 
-            <a href="/profileEdit/<%= usuario.id %>">Editar perfil</a> 
+            <a href="/profileEdit">Editar perfil</a> 
         </div>
         
     </section>
