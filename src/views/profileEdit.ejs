@@ -46,14 +46,14 @@
                 <button type="submit">Guardar cambios</button>
 
             </form>
-            <% if(usuario.borrado_el != null){%>
-            <form action="/userDelete/<%= usuario.id%>?_method=delete" method="post">
+            <% if(locals.usuarioLogueado.borrado_el != null){%>
+            <form action="/userRetrieve/<%= locals.usuarioLogueado.id%>?_method=put" method="post">
                 <div class="signinForm">
                     <button type="submit" >Recuperar usuario</button>
                 </div>
             </form> 
             <% }else{ %>
-            <form action="/userRetrieve/<%= usuario.id%>?_method=put" method="post">
+            <form action="/userDelete/<%= locals.usuarioLogueado.id%>?_method=delete" method="post">
                 <button type="submit" >Eliminar usuario</button>
             </form>                        
             <% } %>
