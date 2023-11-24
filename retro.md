@@ -5,6 +5,30 @@
 
 📋 <strong><a href="https://trello.com/invite/b/Scb6zxY8/ATTI7272b788f3fa90e9d488c6256f3a84252462C99D/ecoequip">Tablero EcoEquip</a></strong>
 
+## Retrospectiva - Sprint 8 (Final)
+
+**Lo que hicimos bien en los 8 Sprints:**
+
+**Adaptación constante:** A lo largo de los 8 sprints, enfrentamos varios desafíos, incluida la baja de algunos compañeros. La capacidad del equipo para adaptarse continuamente a estas situaciones fue impresionante, permitiéndonos mantener un progreso constante en el proyecto.
+
+**Comunicación efectiva a lo largo del proyecto:** A pesar de los cambios en la composición del equipo, la comunicación se mantuvo como un punto fuerte. La coordinación constante entre los miembros restantes fue clave para abordar los desafíos de manera eficiente y garantizar la alineación en los objetivos.
+
+**Compromiso sostenido:** A lo largo de los 8 sprints, el equipo demostró un compromiso constante. A pesar de las dificultades, los miembros se mantuvieron dedicados y responsables, lo que contribuyó al éxito general del proyecto.
+
+**Logro de objetivos propuestos:** A pesar de las adversidades, logramos alcanzar los objetivos que nos propusimos al inicio del proyecto. Esta consecución refleja la perseverancia y la habilidad del equipo para superar obstáculos.
+
+**Experiencia enriquecedora:** Los 8 sprints representaron una experiencia muy enriquecedora para todos los miembros del equipo. Aprendimos no solo sobre el desarrollo de software, sino también sobre la importancia de la flexibilidad, la colaboración y la resiliencia en un entorno de trabajo.
+
+**Áreas en las que mejoramos a lo largo de los 8 Sprints:**
+
+**Reorganización eficiente de tareas:** Aprendimos a reorganizar tareas y responsabilidades de manera más eficiente con la experiencia acumulada a lo largo de los sprints. La capacidad para ajustarnos rápidamente se convirtió en una fortaleza del equipo.
+
+**Aprendizaje continuo:** Aprovechamos cada oportunidad para mejorar nuestras habilidades existentes y adquirir nuevas capacidades. Este enfoque continuo en el aprendizaje contribuyó a nuestra versatilidad y adaptabilidad.
+
+**Áreas en las que aún podemos mejorar para futuros proyectos:**
+
+**Planificación de contingencia:** La situación con la baja de algunos compañeros resaltó la necesidad de una planificación de contingencia más sólida. Para futuros proyectos, debemos desarrollar estrategias específicas para abordar la falta de contribución de algunos miembros, garantizando así la continuidad del proyecto en cualquier circunstancia similar.
+
 ## Retrospectiva - Sprint 7
 
 **Lo que hicimos bien en el Sprint Anterior:**
