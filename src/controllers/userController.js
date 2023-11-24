@@ -60,7 +60,7 @@ const userController = {
         //console.log(usuarioEncontrado); 
         //console.log(req.params.id);
         let ciudades = await db.Ciudad.findAll({paranoid: false})
-        console.log(req.session);
+        //console.log(req.session);
         return res.render('profile', {ciudad: ciudades, usuario: req.session.usuarioLogueado})
 
     },
@@ -137,6 +137,30 @@ const userController = {
         res.redirect('/login')
     },
     'userDelete': async (req, res) => {
+        console.log("metodo delete" + req.body);
+        try {
+            const usuarioEliminado = await db.Usuario.destroy({
+                where: { id: req.session.usuarioLogueado.id }
+            });
+            req.session.destroy();
+        // await usuarioEncontrado.destroy();
+        // req.session.usuarioLogueado.deleted = true;  
+        res.redirect('/')
+
+    } catch (error) {
+        console.log(error);
+    }
+        /*delete: async (req, res) => {
+        try {
+            let idUser = req.params.id;
+            let deleteUsers = await User.findByPk(idUser);
+            await deleteUsers.destroy();
+            res.render("./users/destroyRedirect");
+        } catch (error) {
+            console.log(error);
+        }
+    }
+        
         let usuarioEncontrado = await db.Usuario.destroy({where:{
             id: req.params.id
         }})
