@@ -21,7 +21,13 @@
     height: 2px;
     border-top: 1px solid var(--gris-claro);
   }
-
+.errores{
+  background-color: var(--verde-claro2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 15px;
+}
   
   
   input[type="text"],
@@ -108,7 +114,7 @@ margin-bottom:  10px;
   .form h3 {
     font-size: 1.5rem;
     color: var(--verde-oscuro2);
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     font-weight: 500;
   }
   
