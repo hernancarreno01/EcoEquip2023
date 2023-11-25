@@ -31,7 +31,12 @@
   font-family: "Prompt", sans-serif;
   font-size: 10px;
 }
-
+.avatarProfile{
+  max-width: 200px;
+  border-radius: 10px;
+  border: 2px solid var(--verde-oscuro);
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.3);
+}
 html {
   font-family: "Prompt", sans-serif;
   font-size: 16px;

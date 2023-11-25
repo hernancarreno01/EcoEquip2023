@@ -26,8 +26,13 @@
     text-align: center;
 }
 .bloqueDatos{
-    float: left;
-    width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.datosForm{
+  display: flex;
+  flex-direction: column;
 }
 .user-info1{
     border: var(--verde-claro) solid 3px;

@@ -1,0 +1,15 @@
+D:\OneDrive\HD\EcoEquip2023\src\controllers\apis\productsApis.js:13
+      db.Categoria.findAll({ include: [{ association: "productos" }] }),
+                   ^
+
+TypeError: Cannot read properties of undefined (reading 'findAll')
+    at list (D:\OneDrive\HD\EcoEquip2023\src\controllers\apis\productsApis.js:13:20)
+    at Layer.handle [as handle_request] (D:\OneDrive\HD\EcoEquip2023\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\OneDrive\HD\EcoEquip2023\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\OneDrive\HD\EcoEquip2023\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\OneDrive\HD\EcoEquip2023\node_modules\express\lib\router\layer.js:95:5)
+    at D:\OneDrive\HD\EcoEquip2023\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\OneDrive\HD\EcoEquip2023\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\OneDrive\HD\EcoEquip2023\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\OneDrive\HD\EcoEquip2023\node_modules\express\lib\router\index.js:175:3)
+    at router (D:\OneDrive\HD\EcoEquip2023\node_modules\express\lib\router\index.js:47:12)
