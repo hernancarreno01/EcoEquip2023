@@ -18,9 +18,13 @@
     <div class="form">
       <h2>Bienvenido</h2>
       <h3>Ingresá los datos de tu cuenta</h3>
-      <form class="signinForm" action="/login" method="post" >
-        <input type="email" name= "email" autocomplete="email" placeholder="Correo" aria-label="" />
-        <input type="password" name="contrasenia" autocomplete="new-password" placeholder="Contraseña" />
+      <div class="containerError">
+        <ul class="errores"></ul>
+      </div>
+      <form
+      class="signinForm" action="/login" method="post" >
+        <input type="email" id="email" name= "email" autocomplete="email" placeholder="Correo" aria-label="" />
+        <input type="password" id="contrasenia" name="contrasenia" autocomplete="new-password" placeholder="Contraseña" />
         <button type="submit">Ingresar
 
         </button>
@@ -31,6 +35,8 @@
   </div>
 
   <div class="container land"></div>
+  <script src="/js/usuariosLogValidation.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>

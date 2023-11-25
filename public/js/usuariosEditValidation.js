@@ -5,7 +5,6 @@ window.onload = function () {
   const tieneMayuscula = /[A-Z]/;
   const tieneNumero = /\d/;
 
-
   const inputNombreUsuario = document.querySelector("#userName");
   inputNombreUsuario.focus();
   const form = document.querySelector(".signinForm");
@@ -75,7 +74,7 @@ window.onload = function () {
     if (form.adress1.value == "") {
       form.adress1.classList.remove("is-valid");
       form.adress1.classList.add("is-invalid");
-      errores.push("El campo adress es obligatorio");
+      errores.push("El campo direcció es obligatorio");
     } else {
       form.adress1.classList.remove("is-invalid");
       form.adress1.classList.add("is-valid");
@@ -115,19 +114,20 @@ window.onload = function () {
           const error = errores[i];
           ul.innerHTML += `<li> ${error} </li>`;
         }
-        Swal.fire(
-          {
-            icon: 'error',
-            title: 'Se detectaron uno o mas errores!',
-            text: 'Por favor revisar el detalle de errores.'
-          })
+        Swal.fire({
+          icon: "error",
+          title: "Se detectaron uno o mas errores!",
+          text: "Por favor revisar el detalle de errores.",
+        });
       } else {
-        ul.innerHTML = '';
+        ul.innerHTML = "";
         Swal.fire(
-          'Felicitaciones!',
-          'Has creado un tu usuario correctamente',
-          'success'
-        ).then(() => { form.submit(); })
+          "Felicitaciones!",
+          "Has editado tu usuario correctamente",
+          "success"
+        ).then(() => {
+          form.submit();
+        });
       }
     }
     const captNombres = document.getElementById("firstName");
@@ -139,5 +139,5 @@ window.onload = function () {
     const captContrasenia = document.getElementById("constrasenia");
     const captTelefono = document.getElementById("telefono");
     const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-  })
-}
+  });
+};
