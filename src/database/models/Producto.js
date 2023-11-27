@@ -19,6 +19,9 @@ module.exports = (sequelize, dataTypes) => {
         modelo: {
             type: dataTypes.STRING
         },
+        stock: {
+            type: dataTypes.INTEGER
+        },
         descripcion: {
             type: dataTypes.STRING,
             validate: {
@@ -36,7 +39,7 @@ module.exports = (sequelize, dataTypes) => {
         imagen_02: {
             type: dataTypes.STRING
         },
-        imagen_03: {
+        stock: {
             type: dataTypes.STRING
         },*/
     };

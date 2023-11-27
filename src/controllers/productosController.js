@@ -22,7 +22,7 @@ const productosController = {
       ...req.body,
       imagen_01: req.file.filename,
       //"imagen_02":req.file.filename,
-      //"imagen_03":req.file.filename,
+      //"stock":req.file.filename,
     });
     console.log(productoNuevo);
     res.redirect("/productosDetail/" + productoNuevo.id);
