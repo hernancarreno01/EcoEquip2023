@@ -23,6 +23,7 @@ const productController = {
                     name: row.nombre,
                     description: row.descripcion,
                     category: row.categoria,
+                    stock: row.stock,
                     detail: "/api/products/detail/" + row.id,
                 };
             });
@@ -51,7 +52,7 @@ const productController = {
                 nombre: producto.nombre,
                 descripcion: producto.descripcion,
                 precio: producto.precio,
-
+                stock: producto.stock,
                 categoria: producto.categoria ? producto.categoria.tipo : null,
                 categoria_id: producto.categoria ? producto.categoria.id : null,
                 imagen_url: '/img/productos/' + producto.imagen_01,
