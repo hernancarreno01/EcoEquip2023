@@ -27,8 +27,10 @@
                     <img class="preview" src="/img/productos/<%=producto.imagen_03%>" />-->
                 </div>
                 <a href="/productosEdit/<%=producto.id%>">Cambiar Imagenes</a>
-            </div>
-            <a class="botonEdit" href="/productosEdit/<%= producto.id %> onclick="validarFormulario()">Editar Producto</a>
+            </div>   
+            <% if (locals.usuarioLogueado.roles_id === 1) { %> 
+                <a class="botonEdit" href="/productosEdit/<%= producto.id %> onclick="validarFormulario()">Editar Producto</a>
+            <% } %>
         </section>
 
         <%- include('./partials/footer.ejs') %>

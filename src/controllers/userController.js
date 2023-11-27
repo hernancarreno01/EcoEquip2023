@@ -83,38 +83,19 @@ const userController = {
             }
             await usuarioEncontrado.update({
                 ...req.body,
-                imagen_perfil: req.file.filename,
-                roles_id: 2
+                imagen_perfil: req.file.filename
+               
             });
-            req.session.usuarioLogueado = {...req.body,
+            req.session.usuarioLogueado = {
+                ...req.body,
                 imagen_perfil: req.file.filename,
-                roles_id: 2}
-            
-            res.redirect('/profile')
-        
-        // let usuarioEncontrado = await db.Usuario.update({
-        //     ...req.body,
-        //     imagen_perfil: req.file.filename
-        // },{where:{
-        //         id: req.params.id
-        //     }})
-        
-        
-        /*let usuarioEncontrado = await listaUsuarios.find(( user)=> user.id == req.params.id)
                 
-        usuarioEncontrado.userName = req.body.userName;
-        usuarioEncontrado.firstName = req.body.firstName;
-        usuarioEncontrado.lastName = req.body.lastName;
-        usuarioEncontrado.email = req.body.email;
-        usuarioEncontrado.adress = req.body.adress;
-        usuarioEncontrado.city = req.body.city;
-        usuarioEncontrado.telephone = req.body.telephone;
-        usuarioEncontrado.avatar = req.file.filename;
+            }
+            
+            res.redirect('/profile')   
+    },    
         
-        fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(listaUsuarios, null, 2), 'utf-8')
-    
-        res.render('profileEdit', {usuario: usuarioEncontrado})*/
-    },   
+        
     
     altaUser: async (req, res)=> {   
         const ciudades = await db.Ciudad.findAll({ paranoid: false });
