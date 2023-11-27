@@ -23,6 +23,7 @@ const productController = {
                     name: row.nombre,
                     description: row.descripcion,
                     category: row.categoria,
+                    price: row.precio,
                     stock: row.stock,
                     detail: "/api/products/detail/" + row.id,
                 };
