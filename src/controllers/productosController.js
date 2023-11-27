@@ -58,28 +58,16 @@ const productosController = {
   },
 
   productosEditProcess: async (req, res) => {
-    let productoEncontrado = await db.Producto.update(
-      {
+    try {
+      const productoEncontrado = await db.Producto.findOne({
+        where: { id: req.params.id },
+      });
+      await productoEncontrado.update({
         ...req.body,
         imagen_01: req.file.filename,
-      },
-      {
-        where: {
-          id: req.params.id,
-        },
-      }
-    );
-    async function productosEditProcess(req, res) {
-      try {
-        // Lógica para obtener y validar datos del formulario
+      })
+      res.redirect("/productosDetail/"+ req.params.id);   
 
-        // Intenta actualizar el producto
-        const productoActualizado = await Producto.update(nuevosDatos, {
-          where: { id: productId },
-        });
-
-        // Envía una respuesta exitosa si la actualización fue exitosa
-        res.status(200).json({ mensaje: "Producto actualizado correctamente" });
       } catch (error) {
         // Manejo de errores, incluyendo errores de validación
         if (error instanceof Sequelize.ValidationError) {
@@ -90,10 +78,6 @@ const productosController = {
           res.status(500).json({ error: "Error interno del servidor" });
         }
       }
-    }
-
-    console.log(productoEncontrado);
-    res.redirect("/productosDetail/" + req.params.id);
   },
 
   deleteProcess: (req, res) => {

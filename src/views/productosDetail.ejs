@@ -26,7 +26,9 @@
                 <!--    <img class="preview" src="/img/productos/<%=producto.imagen_02%>" />
                     <img class="preview" src="/img/productos/<%=producto.imagen_03%>" />-->
                 </div>
+                <% if (locals.usuarioLogueado.roles_id === 1) { %> 
                 <a href="/productosEdit/<%=producto.id%>">Cambiar Imagenes</a>
+                <% } %>
             </div>   
             <% if (locals.usuarioLogueado.roles_id === 1) { %> 
                 <a class="botonEdit" href="/productosEdit/<%= producto.id %> onclick="validarFormulario()">Editar Producto</a>

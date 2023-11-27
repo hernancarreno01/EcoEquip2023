@@ -30,7 +30,7 @@
                     <p>Descripción del Producto: </p>
                     <input type="text" id="descripcion" name="descripcion" value="<%=producto.descripcion %>"><br>
                     <p>Categoría: </p>
-                    <select type="select" class="categoria_id" name="categoria_id" id="categoria_id">
+                    <select type="select" class="categoria_id" name="categorias_id" id="categoria_id">
                         <option value="" disabled selected>- Seleccionar categorias - </option>
                         <% categorias.forEach(categorias=> { %>
                             <option value="<%= categorias.id%>">
