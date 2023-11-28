@@ -17,40 +17,47 @@
             <span class="navbar-link">BLOG</span>
             <span class="navbar-link"><a href="#footer">CONTACTO</a></span>
           </div>
-        </section>
-         <!-- queda hacer bien este dropdown menu para usuarios-->
-         <ul class="user-dropdown"> 
-          <% if (locals.usuarioLogueado) { %>         
-            <li class="login-options">
-              <a class="dropdown-toggle"  id="dropUser" role="button" data-bs-toggle="dropdown"
-              aria-expanded ="false"><img src="/img/avatars/<%=locals.usuarioLogueado.imagen_perfil %>" class="home-image2" />Hola <%=locals.usuarioLogueado.nombre_usuario %></a>
-             
+          <section class="userWelcome">
+            <div>
+              <ul class="user-dropdown">
+                <% if (locals.usuarioLogueado) { %>
+                  <li class="login-options">
+                    <a class="dropdown-toggle" id="dropUser" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false"><img src="/img/avatars/<%=locals.usuarioLogueado.imagen_perfil %>"
+                        class="home-image3" /></a> </div>
+          </section>
+          <section class="userlogin1">
+            <div class="nameAvatar">Hola <%=locals.usuarioLogueado.nombres %>
+            </div>
+            <div>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/profileEdit"> Editar perfil</a>
-                <li><hr class="dropdown-divider" ></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
                 <a class="dropdown-item" href="/logout">Salir</a>
               </ul>
-            </li>  
-            <% } else { %>        
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6">
-                    <a href="/login">
-                      <img src="/img/circle-user.png" class="home-image2" alt="Usuario" />
-                    </a>
-                  </div>
-                  <div class="col-md-6">
-                    <ul class="list-unstyled">
-                      <li class="nologin-options"><a class="nav-link" href="/login">Ingresar</a></li>
-                      <li class="nologin-options"><a class="nav-link" href="/register">Registrarse</a></li>
-                    </ul>
+              </li>
+              <% } else { %>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a href="/login">
+                        <img src="/img/circle-user.png" class="home-image2" alt="Usuario" />
+                      </a>
+                    </div>
+                    <div class="col-md-6">
+                      <ul class="list-unstyled">
+                        <li class="nologin-options"><a class="nav-link" href="/login">Ingresar</a></li>
+                        <li class="nologin-options"><a class="nav-link" href="/register">Registrarse</a></li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-            <% } %>          
-         </ul>
+                <% } %>
+                  </ul>
 
-        <!--<section class="home-icons">
+                  <!--<section class="home-icons">
           <% if (locals.estaLogueado) { %>
             <div class="user-info">
               <img class="user-info1" src="/img/avatars/<%= usuario.imagen_perfil %>" alt="User profile picture">
@@ -66,8 +73,8 @@
           <a class="botonEditarPerfil" href="/profileEdit">Editar Perfil</a>
           <a class="botonLogout" href="/logout">Salir</a>
          <a class="botonLogin" href="/login">Ingresar</a> -->
-            
-        </section>
+            </div>
+          </section>
       </div>
       <section data-role="BurgerMenu" class="home-burger-menu">
         <svg viewBox="0 0 1024 1024" class="home-icon">

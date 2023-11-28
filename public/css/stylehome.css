@@ -11,6 +11,9 @@
   --blanco: #ffffff;
   --amarillo: #e4cb0c;
 }
+body {
+  scroll-behavior: smooth;
+}
 
 .home-container {
   width: 80%;
@@ -318,6 +321,7 @@
   transform: scale(1.15);
 }
 .home-image2 {
+  border-radius: 50%;
   width: 24px;
   height: 24px;
   margin: 0 24px 0 0;
@@ -330,6 +334,18 @@
 }
 .home-image2:hover {
   transform: scale(1.15);
+}
+.home-image3 {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0 24px 0 0;
+    position: relative;
+    box-sizing: border-box;
+    object-fit: cover;
+    border-color: transparent;
+    transform-origin: center center;
+    transition: transform 0.3s;
 }
 .home-image3 {
   width: 24px;
@@ -384,6 +400,44 @@
   margin-right: 64px;
   letter-spacing: 0.4em;
   text-decoration: none;
+}
+.login-options{
+  display: flex;
+}
+.userlogin1 {
+  display: flex;
+  align-items: right;
+  flex-direction: column; /* Centra verticalmente los elementos */
+}
+
+.user-dropdown {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center; /* Alinea los elementos hijos verticalmente */
+}
+.userWelcome{
+  display: flex;
+}
+.login-options {
+  margin-right: 10px; /* Espaciado entre la imagen y el saludo/opciones de usuario */
+}
+.nameAvatar{
+  font-weight: 700;
+}
+.user-dropdown img {
+  border-radius: 50%; /* Hace que la imagen sea redonda */
+  width: 70px; /* Ajusta el tamaño según tus necesidades */
+  height: 70px;
+  margin-right: 10px;
+  border:#293a28 solid 2px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.nologin-options {
+  margin-bottom: 5px; /* Espaciado entre las opciones de no logueado */
 }
 .home-close-mobile-menu {
   display: flex;
@@ -1251,7 +1305,16 @@ hr.rounded {
     justify-content: space-between;
   }
 }
-
+@media (max-width: 920px) {
+.user-dropdown img {
+  border-radius: 50%; /* Hace que la imagen sea redonda */
+  width: 70px; /* Ajusta el tamaño según tus necesidades */
+  height: 70px;
+  margin-right: 10px;
+  border:#293a28 solid 2px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+}
 @media (max-width: 991px) {
   .navbar-logo-title {
     margin-left: 0px;

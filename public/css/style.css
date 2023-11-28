@@ -58,6 +58,7 @@ body {
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
+  scroll-behavior: smooth;
 }
 
 p,
