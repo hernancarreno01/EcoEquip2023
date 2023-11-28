@@ -4,12 +4,21 @@
     <%- include('./partials/head.ejs') %>
     <link rel="stylesheet" href="/css/styleProductList.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>EcoEquip - Usuarios</title>
+    <title>EcoEquip - Productos</title>
   </head>
   <body>
     <%- include('./partials/header.ejs') %>
     <div  class="table">
-        <h2>Lista de Productos</h2>
+      <div class="encabezadoLista">
+
+        <h2 class="h2-lista">Lista de Productos</h2>
+
+        <% if (locals.usuarioLogueado.roles_id === 1) { %> 
+          <a class="botonCrear" href="/productosCreate" ><h3>Crear Producto</h3></a>
+        <% } %>
+          
+      </div>
+      
         <thead>
           </thead>
           <br>

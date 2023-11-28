@@ -80,6 +80,7 @@ figcaption {
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
 .button {
   color: var(--verde-oscuro);

@@ -40,7 +40,13 @@
     border-radius: 100px;
     box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.3);
   }
+
+  .encabezadoLista{
+   width: 100%;
+    text-align: center;
+  }
   
+
   .btn-content:hover, .btn-content:focus {
     transition: 1s;
     -webkit-animation: btn-content 2s;
