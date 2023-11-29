@@ -25,6 +25,7 @@ const productController = {
                     category: row.categoria,
                     price: row.precio,
                     stock: row.stock,
+                    imagen_url: "/img/productos/" + row.imagen_01,
                     detail: "/api/products/detail/" + row.id,
                 };
             });
