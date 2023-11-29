@@ -53,10 +53,16 @@
                     </div>
                     <input type="file" id="stock" name="stock" accept="image/" multiple><br><br>-->
                     <br>
-                    <button class="botonEdit2" type="submit">Guardar cambios en Producto</button>
+                    <button class="botonEdit" type="submit">Guardar cambios</button>
 
                 </form> 
-<!-- DELETE Y RECUPERAR
+
+                <% if (locals.usuarioLogueado.roles_id === 1) { %> 
+                    <form action="/productosEdit/<%= producto.id %>?_method=delete" method="post">
+                        <button class="botonEdit" type="submit">Eliminar producto</button>
+                    </form>
+                <% } %>
+                <!-- DELETE Y RECUPERAR
                 <% if(producto.deleted_at==false){%>
                     <form action="/productoDelete/<%= producto.id%>?_method=delete" method="post">
                         <div class="signinForm">

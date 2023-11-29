@@ -32,6 +32,9 @@
             </div>   
             <% if (locals.usuarioLogueado.roles_id === 1) { %> 
                 <a class="botonEdit" href="/productosEdit/<%= producto.id %> onclick="validarFormulario()">Editar Producto</a>
+                <form action="/productosEdit/<%= producto.id %>?_method=delete" method="post">
+                    <button class="botonEdit" type="submit">Eliminar producto</button>
+                </form>
             <% } %>
         </section>
 

@@ -42,7 +42,7 @@ window.onload = function () {
       form.apellido.classList.remove("is-valid");
       form.apellido.classList.add("is-invalid");
       errores.push("El campo apellido es obligatorio");
-    } else if (form.apellido.value.length < 1) {
+    } else if (form.apellido.value.length <1) {
       form.apellido.classList.remove("is-valid");
       form.apellido.classList.add("is-invalid");
       errores.push("El campo apellido debe tener al menos 1 caracter");
@@ -74,11 +74,12 @@ window.onload = function () {
     if (form.adress1.value == "") {
       form.adress1.classList.remove("is-valid");
       form.adress1.classList.add("is-invalid");
-      errores.push("El campo direcció es obligatorio");
+      errores.push("El campo dirección es obligatorio");
     } else {
       form.adress1.classList.remove("is-invalid");
       form.adress1.classList.add("is-valid");
     }
+    
     if (form.telefono.value == "") {
       form.telefono.classList.remove("is-valid");
       form.telefono.classList.add("is-invalid");
@@ -90,10 +91,13 @@ window.onload = function () {
     if (form.imagen_perfil.value == "") {
       form.imagen_perfil.classList.remove("is-valid");
       form.imagen_perfil.classList.add("is-invalid");
-      errores.push("Debe cargar una imagen de usuario");
-    } else {
+      errores.push("Debe cargar una imagen de usuario");      
+      } else {
       const file = form.imagen_perfil.files[0];
-      if (!/\.(jpg|jpeg|png|bmp)$/i.test(file.name)) {
+      if (!file) {
+        console.error("Error: 'file' no está definido");
+      }
+       else if (!/\.(jpg|jpeg|png|bmp)$/i.test(file.name)) {
         form.imagen_perfil.classList.remove("is-valid");
         form.imagen_perfil.classList.add("is-invalid");
         errores.push("El archivo debe ser de tipo jpg, jpeg, png o bmp");

@@ -67,28 +67,22 @@ const userController = {
     profileEdit: async (req,res)=>{
         const ciudades = await db.Ciudad.findAll({ paranoid: false });
         let roles = await db.Rol.findAll({paranoid: false})
-        // const usuarioEncontrado = await db.Usuario.findOne({ 
-        //     where: { id: req.params.id }
-        // });   
+         
         
         res.render('profileEdit', { ciudad: ciudades, rol: roles, usuario: req.session.usuarioLogueado})
     },
     profileEditProcess: async (req, res) => {
-        const ciudades = await db.Ciudad.findAll({ paranoid: false });
-        let roles = await db.Rol.findAll({paranoid: false})
+        await db.Ciudad.findAll({ paranoid: false });
+        await db.Rol.findAll({paranoid: false})
         const usuarioEncontrado = await db.Usuario.findByPk(req.session.usuarioLogueado.id);
-            console.log(usuarioEncontrado);
-            if (!usuarioEncontrado) {
-                return res.status(404).send('Usuario no encontrado');
-            }
-            await usuarioEncontrado.update({
+            await db.Usuario.update({
                 ...req.body,
-                imagen_perfil: req.file.filename
-               
-            });
+                imagen_perfil: req.file ? req.file.filename : usuarioEncontrado.imagen_perfil
+            }, {where: {id:req.session.usuarioLogueado.id}})
+            
             req.session.usuarioLogueado = {
                 ...req.body,
-                imagen_perfil: req.file.filename,
+                imagen_perfil:req.file ? req.file.filename : usuarioEncontrado.imagen_perfil,
                 
             }
             
@@ -111,7 +105,7 @@ const userController = {
                 ...req.body,
                 contrasenia: bcryptjs.hashSync(req.body.contrasenia, 10),
                 imagen_perfil: req.file.filename,
-                roles_id :2
+                //roles_id :2
         })
         console.log(usuarioNuevo);
         //res.redirect('/profile/'+ usuarioNuevo.id) 
