@@ -34,15 +34,21 @@
                     <li class="userInfo"><td><%= producto.modelo %></td></li>
                     <li class="userTitle"><th>Descripción: </th></li>
                     <li class="userInfo"><td><%= producto.descripcion %></td></li>
-                    <li class="userStock"><td><%= producto.stock %></td></li>
+                    <li class="userTitle"><th>Stock: </th>   </li>
+                    <li class="userInfo"><td><%= producto.stock %></td></li>
                     <li class="userTitle"><th>Categoría: </th>   </li>
                     <li class="userInfo"><td><%= producto.categorias_id %></td></li>
+
+                    <li class="userTitle"><th>Producto listado: </th></li>
+                    <% if (producto.deleted_at == null) { %>
+                      <li class="userInfo"><td>Disponible</td></li><br>
+                    <% } else { %>
+                      <li class="userInfo"><td>Eliminado: <%= producto.deleted_at %></td></li><br>
+                    <% } %>
                     <li class="userTitle"><th>Foto de Producto: </th></li>
                     <li class="userInfo"><td><a href="/productosDetail/<% producto.id%>"></a><img class="UserImg" src="/img/productos/<%=producto.imagen_01%>" /></td></li>
                     <!--<li class="userInfo"><td><a href="/productosDetail/<% producto.id%>"></a><img class="UserImg" src="/img/productos/<%=producto.imagen_02%>" /></td></li>
                     <li class="userInfo"><td><a href="/productosDetail/<% producto.id%>"></a><img class="UserImg" src="/img/productos/<%=producto.stock%>" /></td></li>-->
-                    <li class="userTitle"><th>Borrado?: </th></li>
-                    <li class="userInfo"><td><%= producto.deleted_at %></td></li><br>
                     <a class="btn-content" href="/productosDetail/<%= producto.id %>">
                       <i class="fas fa-eye"></i> VER DETALLE
                   </a>
