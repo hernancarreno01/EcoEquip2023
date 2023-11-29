@@ -75,18 +75,22 @@ const userController = {
         await db.Ciudad.findAll({ paranoid: false });
         await db.Rol.findAll({paranoid: false})
         const usuarioEncontrado = await db.Usuario.findByPk(req.session.usuarioLogueado.id);
-            await db.Usuario.update({
-                ...req.body,
-                imagen_perfil: req.file ? req.file.filename : usuarioEncontrado.imagen_perfil
-            }, {where: {id:req.session.usuarioLogueado.id}})
-            
-            req.session.usuarioLogueado = {
-                ...req.body,
-                imagen_perfil:req.file ? req.file.filename : usuarioEncontrado.imagen_perfil,
-                
+        if (!usuarioEncontrado) {
+            return res.status(404).send('Usuario no encontrado');
+        }
+        await usuarioEncontrado.update({
+            ...req.body,
+            //imagen_perfil: req.file.filename,
+            imagen_perfil:req.file ? req.file.filename : usuarioEncontrado.imagen_perfil,
+            roles_id: 2
+        });
+        req.session.usuarioLogueado = {...req.body,
+            //imagen_perfil: req.file.filename,
+            imagen_perfil:req.file ? req.file.filename : usuarioEncontrado.imagen_perfil,            
+            roles_id: 2
             }
-            
-            res.redirect('/profile')   
+
+        res.redirect('/profile')
     },    
         
         

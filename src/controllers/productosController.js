@@ -65,7 +65,8 @@ const productosController = {
       await productoEncontrado.update({
         ...req.body,
         imagen_01: req.file.filename,
-      })
+      },  {where: {id: req.params.id}})
+      
       res.redirect("/productosDetail/"+ req.params.id);   
 
       } catch (error) {
@@ -80,8 +81,8 @@ const productosController = {
       }
   },
 
-  deleteProcess: (req, res) => {
-    db.Producto.destroy({ where: { id: req.params.id } });
+  deleteProcess: async (req, res) => {
+    await db.Producto.destroy({ where: { id: req.params.id } });
     return res.redirect("/");
   },
   undelteProcess: (req, res) => {
