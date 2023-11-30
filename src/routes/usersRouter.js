@@ -38,6 +38,8 @@ router.post("/register",uploadFile.single("imagen_perfil"),validatorRegister, us
 
 router.put("/profileEdit",uploadFile.single("imagen_perfil"), userController.profileEditProcess);
 router.delete("/userDelete/:id",userController.userDelete);//OK
+
+
 router.put("/userRetrieve/:id",userController.recuperarProcess )
 
 

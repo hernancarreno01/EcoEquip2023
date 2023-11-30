@@ -15,23 +15,26 @@
           <br>
           <tbody>
             <section class="userList">
-              <% usuarios.forEach(function(usuario) { %>
+              <% usuarios.forEach(function(user) { %>
                 <div class="userProfile" >
                   <ul><hr class="rounded">
                     <li class="userTitle"><th>Foto de Perfil: </th></li>
-                    <li class="userInfo"><td><a href="/profile/<% usuario.id%>"></a><img class="UserImg" src="/img/avatars/<%=usuario.imagen_perfil%>" /></td></li>
+                    <li class="userInfo"><td><a href="/profile/<% user.id%>"></a><img class="UserImg" src="/img/avatars/<%=user.imagen_perfil%>" /></td></li>
                     <li class="userTitle"><th>Nombre de Usuario: </th></li>
-                    <li class="userInfo"><td><%= usuario.nombre_usuario %></td></li>
+                    <li class="userInfo"><td><%= user.nombre_usuario %></td></li>
                     <li class="userTitle"><th>Nombre: </th></li>
-                    <li class="userInfo"><td><%= usuario.nombres %></td></li>
+                    <li class="userInfo"><td><%= user.nombres %></td></li>
                     <li class="userTitle"><th>Apellido: </th></li>
-                    <li class="userInfo"><td><%= usuario.apellido %></td></li>
+                    <li class="userInfo"><td><%= user.apellido %></td></li>
                     <li class="userTitle"><th>Correo Electrónico: </th></li>
-                    <li class="userInfo"><td><%= usuario.email %></td></li>
+                    <li class="userInfo"><td><%= user.email %></td></li>
                     <li class="userTitle"><th>Rol: </th>   </li>
-                    <li class="userInfo"><td><%= usuario.roles_id %></td></li>
-                    <li class="userTitle"><th>Borrado?: </th></li>
-                    <li class="userInfo"><td><%= usuario.borrado_el %></td></li>
+                    <li class="userInfo"><td><%= user.roles_id %></td></li>
+                    <!--<li class="userTitle"><th>Borrado?: </th></li>
+                    <li class="userInfo"><td><%= user.borrado_el %></td></li> -->
+                    <a class="btn-content" href="/profile/<% user.id%>">
+                      <i class="fas fa-eye"></i> VER PERFIL
+                  </a>
                   </ul>
                  </div> 
                 </tr><br>

@@ -49,7 +49,7 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: "usuarios",
-        timestamps: true,//estaba en true y lo cambié porque daba error 1054:Unknown column 'createdAt' in 'field list'
+        timestamps: true,
         paranoid: true,
         deletedAt: 'borrado_el',
         createdAt: 'creado_el',

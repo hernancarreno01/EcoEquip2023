@@ -49,7 +49,7 @@ const userController = {
     },
      
     users: async (req, res)=>{
-        await db.Usuario.findAll({paranoid: false})
+        await db.Usuario.findAll({paranoid: false},{where: {borrado_el: null }} )
             .then(usuarios => {
                 res.render('users.ejs', {usuarios})
             })        
@@ -112,46 +112,25 @@ const userController = {
                 //roles_id :2
         })
         console.log(usuarioNuevo);
-        //res.redirect('/profile/'+ usuarioNuevo.id) 
         res.redirect('/login')
     },
+
+       
     'userDelete': async (req, res) => {
         console.log("metodo delete" + req.body);
         try {
-            const usuarioEliminado = await db.Usuario.destroy({
+            await db.Usuario.destroy({
                 where: { id: req.session.usuarioLogueado.id }
             });
             req.session.destroy();
-        // await usuarioEncontrado.destroy();
-        // req.session.usuarioLogueado.deleted = true;  
+         
         res.redirect('/')
 
     } catch (error) {
         console.log(error);
-    }
-        /*delete: async (req, res) => {
-        try {
-            let idUser = req.params.id;
-            let deleteUsers = await User.findByPk(idUser);
-            await deleteUsers.destroy();
-            res.render("./users/destroyRedirect");
-        } catch (error) {
-            console.log(error);
-        }
-    }
-        
-        let usuarioEncontrado = await db.Usuario.destroy({where:{
-            id: req.params.id
-        }})
-        console.log(usuarioEncontrado);
-        res.redirect('/users')
-        /*let usuarioEncontrado = listaUsuarios.find(( user)=> user.id == req.params.id)
-    
-        usuarioEncontrado.deleted = true;        
-        
-        fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(listaUsuarios, null, 2), 'utf-8')
-        res.render('profileEdit', {usuario: usuarioEncontrado})*/
+    }        
     },
+
     'recuperarProcess': async (req, res) => {
         const usuarioRecuperado = await db.Usuario.restore({where:{
             id: req.params.id

@@ -31,21 +31,23 @@
             </div>
             <div>
               <div class="paste-button">
-                <button class="button">Admin Menu &nbsp; ▼</button>
-                <div class="dropdown-content">
-                  <a id="top" href="/profileEdit">Editar Perfil</a>
-                  <a id="middle" href="/users">Ver Usuarios</a>
-                  <a id="middle" href="/productosList">Ver Producto</a>
-                  <a id="bottom" href="/logout">Salir</a>
-                </div>
+                <button class="button">Opciones &nbsp; ▼</button>
+                <% if (locals.usuarioLogueado.roles_id == 1) { %>
+                  <div class="dropdown-content">
+                    <a id="top" href="/profileEdit">Editar Perfil</a>
+                    <a id="middle" href="/users">Ver Usuarios</a>
+                    <a id="middle" href="/productosList">Ver Producto</a>
+                    <a id="bottom" href="/logout">Salir</a>
+                  </div>
+                  <% } else { %>
+                    <div class="dropdown-content">
+                      <a id="top" href="/profileEdit">Editar Perfil</a>
+                      <a id="middle" href="/productCart">Ver Carrito</a>
+                      <a id="middle" href="/productosList">Ver Productos</a>
+                      <a id="bottom" href="/logout">Salir</a>
+                    </div>
+                    <% } %>                
               </div>
-
-
-
-
-
-
-
               <% } else { %>
                 <div class="container">
                   <div class="row">
