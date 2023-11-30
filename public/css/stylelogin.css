@@ -8,7 +8,7 @@
   --blanco: #ffffff;
   --amarillo: #e4cb0c;
 }
-body {
+.body {
   width: 100vw;
   min-height: 100vh;
   background-color: var(--blanco);

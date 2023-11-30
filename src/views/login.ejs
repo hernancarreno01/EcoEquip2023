@@ -11,30 +11,39 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="mark">
-      <img src="./img/logoEcoEquipParaFondoClaro.png" alt="EcoEquip" />
-    </div>
-    <div class="form">
-      <h2>Bienvenido</h2>
-      <h3>Ingresá los datos de tu cuenta</h3>
-      <div class="containerError">
-        <ul class="errores"></ul>
+  <header>
+    <%- include('./partials/header.ejs') %>
+  </header>
+  <section class="body">  
+    <div class="container">
+      <div class="mark">
+        <img src="./img/logoEcoEquipParaFondoClaro.png" alt="EcoEquip" />
       </div>
-      <form
-      class="signinForm" action="/login" method="post" >
-        <input type="email" id="email" name= "email" autocomplete="email" placeholder="Correo" aria-label="" />
-        <input type="password" id="contrasenia" name="contrasenia" autocomplete="new-password" placeholder="Contraseña" />
-        <button type="submit">Ingresar
+      <div class="form">
+        <h2>Bienvenido</h2>
+        <h3>Ingresá los datos de tu cuenta</h3>
+        <div class="containerError">
+          <ul class="errores"></ul>
+        </div>
+        <form
+        class="signinForm" action="/login" method="post" >
+          <input type="email" id="email" name= "email" autocomplete="email" placeholder="Correo" aria-label="" />
+          <input type="password" id="contrasenia" name="contrasenia" autocomplete="new-password" placeholder="Contraseña" />
+          <button type="submit">Ingresar
 
-        </button>
-      </form>
-      <hr class="divider" />
-      <span>¿No tenés cuenta? <a href="/register">Registrate</a></span>
+          </button>
+        </form>
+        <hr class="divider" />
+        <span>¿No tenés cuenta? <a href="/register">Registrate</a></span>
+      </div>
     </div>
-  </div>
 
-  <div class="container land"></div>
+    <div class="container land"></div>
+    
+  </section>
+  <footer>
+    <%- include('./partials/footer.ejs') %>
+  </footer>
   <script src="/js/usuariosLogValidation.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
