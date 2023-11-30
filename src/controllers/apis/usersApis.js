@@ -11,8 +11,11 @@ const userController = {
     respuesta.users = users.map((row) => {
       return {
         id: row.id,
+        userName: row.nombre_usuario,
         name: row.apellido + " " + row.nombres,
         email: row.email,
+        phone: row.telefono,
+        imagen_url: "/img/avatars/" + row.imagen_perfil,
         detail: "/api/user/detail/" + row.id,
       };
     });
