@@ -14,22 +14,24 @@
         <section class="productosDetail">
 
             <div class="bloqueDatosDetail">
-                <p>Nombre de Producto: <%= producto.nombre %></p>
-                <p>Precio del Producto: $ <%= producto.precio %></p>
-                <p>Modelo del Producto: <%= producto.modelo %></p>
-                <p>Descripción del Producto: <%= producto.descripcion %></p>
-                <p>Categoría del Producto: <%= producto.categoria.tipo %></p>
+                <p><b>Nombre </b>: <%= producto.nombre %></p>
+                <p><b>Precio</b>: $ <%= producto.precio %></p>
+                <p><b>Modelo </b>: <%= producto.modelo %></p>
+                <p><b>Descripción</b>: <%= producto.descripcion %></p>
+                <p><b>Categoría</b>: <%= producto.categoria.tipo %></p>
             </div>
             <div class="bloqueImagenDetail">
                 <div>
                     <img class="preview" src="/img/productos/<%=producto.imagen_01%>" />
-                <!--    <img class="preview" src="/img/productos/<%=producto.imagen_02%>" />
-                    <img class="preview" src="/img/productos/<%=producto.stock%>" />-->
                 </div>
                 <% if (locals.usuarioLogueado.roles_id === 1) { %> 
-                <a href="/productosEdit/<%=producto.id%>">Cambiar Imagenes</a>
+                    <button class="boton-comprar">
+                        <a href="/productosEdit/<%=producto.id%>">Cambiar Imagenes</a>
+                    </button>
                 <% } %>
-            </div>   
+                <button class="boton-comprar"><a href="/productCart">Agregar al Carrito</a></button>
+            </div> 
+
             <% if (locals.usuarioLogueado.roles_id === 1) { %> 
                 <a class="botonEdit" href="/productosEdit/<%= producto.id %> onclick="validarFormulario()">Editar Producto</a>
                 <form action="/productosEdit/<%= producto.id %>?_method=delete" method="post">

@@ -2,7 +2,6 @@
   margin: 0px;
   padding: 0px;
   box-sizing: content-box;
-  /*font-family: 'Roboto', sans-serif;*/
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -79,7 +78,7 @@ select:focus {
   position: relative;
 }
 button[type="submit"] {
-  background-color: var(--verde-claro);
+  background-color: var(--verde-oscuro2);
   border-radius: 7px;
   border-color: 1px solid var(--verde-oscuro2);
   width: 150px;
@@ -105,6 +104,7 @@ button[type="submit"] {
 .boton-comprar {
   width: 40%;
   font-size: 1.3em;
+  margin-top: 10px;
   padding: 0.3em;
   border-radius: 15px;
   border: 1px solid var(--verde-oscuro);
@@ -222,10 +222,12 @@ ul li {
 .productosDetail {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: center;  
   align-content: center;
   align-items: center;
+  height: 100vh;
+
 }
 
 .bloqueImagenDetail {
@@ -248,16 +250,15 @@ ul li {
   width: 90%;
   border-radius: 20px;
   height: auto;
-  /* Esto mantiene la relación de aspecto de la imagen */
   display: block;
   margin: 0 auto;
-  /* Esto centra la imagen dentro del bloqueImagenDetail */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .bloqueDatosDetail {
   padding: 10px;
-  width: 100%;
+  text-align: left;
+  width: 90%;
   margin-right: 10px;
   margin-bottom: 30px;
   margin-top: 30px;
@@ -274,7 +275,7 @@ ul li {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 100%;
+  width: 70%;
   max-width: 400px;
   height: 60px;
   border: none;
@@ -355,6 +356,7 @@ input[type="text"]:focus {
 
 @media (min-width: 460px) {
   .bloqueDatosDetail {
+    width: 90%;
     padding: 10px;
     width: 400px;
   }
@@ -400,8 +402,8 @@ input[type="text"]:focus {
   letter-spacing: 10px;
 }
 
-@media (min-width: 900px) {
-  .contenedor {
+@media (min-width: 700px) {
+  /*.contenedor {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
@@ -411,18 +413,20 @@ input[type="text"]:focus {
   .descripcion img {
     display: block;
     margin-bottom: 10px;
-  }
+  }*/
 
   .productosDetail {
+    
     display: flex;
-    flex-wrap: wrap;
+    flex-direction:row;
     justify-content: space-between;
-    flex-direction: column;
+    
     align-content: center;
     align-items: center;
   }
 
   .bloqueImagenDetail {
+    width: 45%;
     padding: 10px;
     border-radius: 15px;
     background-color: #e0ebe5;
@@ -434,15 +438,15 @@ input[type="text"]:focus {
 
   .bloqueDatosDetail {
     padding: 10px;
-    width: 500px;
+    width: 45%;
     margin-right: 10px;
     margin-bottom: 30px;
     padding: 10px;
-    border-radius: 15px;
-    background-color: #e0ebe5;
+    /*background-color: #e0ebe5;
+    border-radius: 15px;    
     border: 1px solid var(--gris-oscuro);
     object-fit: cover;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);*/
   }
 
   .botonEdit {
@@ -451,10 +455,10 @@ input[type="text"]:focus {
     align-items: center;
     text-align: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 200px;
     height: 60px;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     margin-bottom: 20px;
     padding: 0 15px;
     font-size: 1.2rem;
@@ -481,7 +485,7 @@ input[type="text"]:focus {
     padding-top: 5px;
     border-radius: 15px;
     border: 1px solid var(--verde-oscuro);
-    color: var(--gris-claro);
+    color:var(--verde-oscuro2);
     background-color: var(--verde-oscuro);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.55s;
@@ -498,7 +502,7 @@ input[type="text"]:focus {
   }
 
   button[type="submit"] {
-    background-color: var(--verde-claro);
+    background-color: var(--verde-oscuro2);
     border-radius: 7px;
     border-color: 1px solid var(--verde-oscuro2);
     width: 150px;
